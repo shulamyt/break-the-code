@@ -1,0 +1,91 @@
+<h1>Can you break the code?</h1>
+<form name="loginForm" novalidate>
+    <div>
+        <label for="age">Age:</label>
+        <input id="age" ng-type="number" ng-model="user.age" required/>
+    </div>
+
+    <div>
+        <label for="gender">Gender:</label>
+
+        <select id="gender" ng-model="user.gender" required>
+            <option disabled selected> -- select an option -- </option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+    </div>
+
+    <div>
+        <input type="checkbox" ng-model="user.degree">I already have a degree!<br>
+    </div>
+
+    <div ng-show="user.degree == true">
+        <div>
+            <label for="highestRelevantDegree">Highest relevant degree:</label>
+            <select id="highestRelevantDegree" ng-model="user.highestRelevantDegree">
+                <option disabled selected> -- select an option -- </option>
+                <option value="BA">BA</option>
+                <option value="MA">MA</option>
+                <option value="PhD">PhD</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="degreeIn">In:</label>
+            <select id="degreeIn" ng-model="user.degreeIn">
+                <option disabled selected> -- select an option -- </option>
+                <option value="Computer science">Computer science</option>
+                <option value="Computer engineering">Computer engineering</option>
+                <option value="Computational Biology">Computational Biology</option>
+                <option value="Other">Other..</option>
+            </select>
+        </div>
+
+        <div ng-show="user.degreeIn == 'Other'">
+            <label for="otherDegree">Write your degree:</label>
+            <input id="otherDegree" ng-type="text" ng-model="user.otherDegree"/>
+        </div>
+
+        <div>
+            <label for="graduatedIn">Graduated in:</label>
+            <input id="graduatedIn" ng-type="number" ng-model="user.graduatedIn"/>
+        </div>
+
+    </div>
+
+
+    <div>
+        <input type="checkbox" ng-model="user.student">I'm a student!<br>
+    </div>
+
+    <div ng-show="user.student == true">
+        <!--TODO-->
+    </div>
+
+    <div>
+        <input type="checkbox" ng-model="user.experience">I have experience in programming!<br>
+    </div>
+
+    <div ng-show="user.experience == true">
+        <div>
+            <label for="experienceYears">How many years:</label>
+            <input id="experienceYears" ng-type="number" ng-model="user.experienceYears"/>
+        </div>
+
+        <div>
+            <label for="howExpertYouThinkYouAre">How expert you think you are:</label>
+            <input id="howExpertYouThinkYouAre" ng-type="number" ng-model="user.howExpertYouThinkYouAre"/>
+        </div>
+    </div>
+
+    <fieldset>
+        <legend>What program languages are you familiar with?</legend>
+            <input type="checkbox" id="java" value="java"/><label for="java">Java</label>
+            <input type="checkbox" id="C" value="C"/><label for="C">C</label>
+            <input type="checkbox" id="Cpp" value="Cpp"/><label for="Cpp">C++</label>
+    </fieldset>
+
+    <div>
+        <button type="submit" ng-disabled="loginForm.$invalid" ng-click="startTheGame()">Let's start!</button>
+    </div>
+</form>
