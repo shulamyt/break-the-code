@@ -4,8 +4,8 @@ angular.module('BreakTheCode').config(function($routeProvider){
     templateUrl: "/login/loginTemplate.html",
     controller: "LoginController"
   })
-  .when('/question', {
-    templateUrl: "assets/templates/question/index.html",
-    controller: "QustionContoller"
+  .when('/questions', {
+    templateUrl: "questions/questionsTemplate.html",
+    controller: "QuestionsController"
   })
 });

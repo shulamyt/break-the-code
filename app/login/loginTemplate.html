@@ -16,10 +16,10 @@
     </div>
 
     <div>
-        <input type="checkbox" ng-model="user.degree">I already have a degree!<br>
+        <input type="checkbox" ng-model="user.hasRelevantDegree">I already have degree in computers!<br>
     </div>
 
-    <div ng-show="user.degree == true">
+    <div ng-show="user.hasRelevantDegree == true">
         <div>
             <label for="highestRelevantDegree">Highest relevant degree:</label>
             <select id="highestRelevantDegree" ng-model="user.highestRelevantDegree">
@@ -31,8 +31,8 @@
         </div>
 
         <div>
-            <label for="degreeIn">In:</label>
-            <select id="degreeIn" ng-model="user.degreeIn">
+            <label for="degreeName">In:</label>
+            <select id="degreeName" ng-model="user.degreeName">
                 <option disabled selected> -- select an option -- </option>
                 <option value="Computer science">Computer science</option>
                 <option value="Computer engineering">Computer engineering</option>

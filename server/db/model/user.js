@@ -1,8 +1,10 @@
 var db = require('../db');
 
 var userSchema = new db.Schema({
-    age: { type: Number, required: true },
-    creationDate: { type: Date, required: true, default: Date.now }
+    creationDate: { type: Date, required: true, default: Date.now },
+    age: { type: Number},
+    gender: {type: String},
+    hasRelevantDegree: {type: Boolean}
     //title:  String,
     //author: String,
     //body:   String,
