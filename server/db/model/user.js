@@ -4,7 +4,8 @@ var userSchema = new db.Schema({
     creationDate: { type: Date, required: true, default: Date.now },
     age: { type: Number},
     gender: {type: String},
-    hasRelevantDegree: {type: Boolean}
+    hasRelevantDegree: {type: Boolean},
+    testPlan: {type: Array, required: true}
     //title:  String,
     //author: String,
     //body:   String,

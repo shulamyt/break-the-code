@@ -1,7 +1,7 @@
 //http://localhost:3000/index.html#/login
 angular.module('BreakTheCode').
-    controller('LoginController', ['$scope', '$location', '$http', '$element',
-    function($scope, $location, $http, $element) {
+    controller('LoginController', ['$scope', '$location', '$http',
+    function($scope, $location, $http) {
     var self = this;
     $scope.user = {};
 
