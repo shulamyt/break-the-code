@@ -1,5 +1,7 @@
 //http://localhost:3000/index.html#/login
-angular.module('BreakTheCode').controller('LoginController', ['$scope', '$location', '$http', function($scope, $location, $http) {
+angular.module('BreakTheCode').
+    controller('LoginController', ['$scope', '$location', '$http', '$element',
+    function($scope, $location, $http, $element) {
     var self = this;
     $scope.user = {};
 
@@ -21,6 +23,7 @@ angular.module('BreakTheCode').controller('LoginController', ['$scope', '$locati
                 console.log("we have a problem..");
                 //TODO : error handling
             });
+
 
     };
 

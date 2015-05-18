@@ -1,0 +1,7 @@
+.CodeMirror {
+    border: 1px solid #ccc;
+    height: 450px;
+    font-size: 90%;
+    margin-bottom: 6px;
+    background: white;
+}
