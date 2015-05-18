@@ -1,0 +1,5 @@
+{
+    "explain": "",
+    "code" :"var a = true;var b = false;if(a && b){print \"c\";}",
+    "answer":""
+}
