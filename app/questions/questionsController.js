@@ -5,7 +5,7 @@ angular.module('BreakTheCode')
 
             $scope.finishQuestion = finishQuestion;
             getNextQuestion();
-            
+
             function setQuestion(question){
                 $scope.content = question.content;
             }

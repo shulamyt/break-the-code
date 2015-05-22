@@ -1,1 +1,1 @@
-angular.module('BreakTheCode', ['ngRoute','ngResource', 'ngCookies']);
+angular.module('BreakTheCode', ['ngRoute','ngResource', 'ngCookies', 'timer']);
