@@ -3,7 +3,7 @@ fs = require('fs');
 
 module.exports = function (app) {
     app.get('/question', function (req, res) {
-        var fileName = "q1";
+        var fileName = req.param("questionId");
         var filePath = __dirname + "/../../questions/" + fileName + ".json";
         fs.readFile(filePath, 'utf8', function (err, data) {
             if (err) {
