@@ -4,7 +4,8 @@ angular.module('BreakTheCode')
         function($scope, $location, $http, $sce, QuestionService, AnswerService) {
 
             $scope.finishQuestion = finishQuestion;
-
+            getNextQuestion();
+            
             function setQuestion(question){
                 $scope.content = question.content;
             }
