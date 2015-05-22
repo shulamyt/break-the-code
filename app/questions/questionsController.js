@@ -39,6 +39,9 @@ angular.module('BreakTheCode')
 
             }
 
+            $scope.$on('timer-stopped', function (event, args) {
+                alert("timer-stop!");
+            });
 
 
 
