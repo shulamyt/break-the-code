@@ -6,3 +6,9 @@ mongod --config c:\mongodb\startmongo.conf
 https://codemirror.net/
 
 http://localhost:3000/#/login
+
+libs:
+
+https://github.com/codemirror/CodeMirror/
+https://github.com/beautify-web/js-beautify
+https://github.com/kpdecker/jsdiff
