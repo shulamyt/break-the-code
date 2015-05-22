@@ -1,7 +1,7 @@
 //http://localhost:3000/index.html#/login
 angular.module('BreakTheCode')
-    .controller('QuestionsController', ['$scope', '$location', '$http', 'QuestionService', 'AnswerService',
-        function($scope, $location, $http, QuestionService, AnswerService) {
+    .controller('QuestionsController', ['$scope', '$location', '$http', '$sce', 'QuestionService', 'AnswerService',
+        function($scope, $location, $http, $sce, QuestionService, AnswerService) {
 
             $scope.finishQuestion = finishQuestion;
 
@@ -18,7 +18,8 @@ angular.module('BreakTheCode')
                 var answer =  $scope.answer;
                 if(this.currentQuestion) {
                     var trueAnswer = this.currentQuestion.answer;
-                    AnswerService.checkAnswer(answer, trueAnswer);
+                    var result = AnswerService.checkAnswer(answer, trueAnswer);
+                    $scope.result = $sce.trustAsHtml(result.html());
                 }
             }
 
