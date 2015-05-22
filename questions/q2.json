@@ -1,5 +1,5 @@
 {
     "explain": "",
     "code" :"var b = false;if(b){print \"b\";}",
-    "answer":""
+    "answer":"222"
 }

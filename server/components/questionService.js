@@ -11,7 +11,7 @@ module.exports = function (app) {
             }
             var questionMetadata = JSON.parse(data);
             var beautifulCode = beautify_js(questionMetadata.code);
-            var question = {};
+            var question = questionMetadata;
             question.content = beautifulCode;
             res.json(201, question);
         });
