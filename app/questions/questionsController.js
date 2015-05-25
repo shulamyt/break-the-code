@@ -4,10 +4,20 @@ angular.module('BreakTheCode')
         function($scope, $location, $http, $sce, QuestionService, AnswerService) {
 
             $scope.finishQuestion = finishQuestion;
+            $scope.getNextQuestion = getNextQuestion;
             getNextQuestion();
 
             function setQuestion(question){
                 $scope.content = question.content;
+                $scope.timeForQuestion = getTimeForQuestion(question);
+            }
+
+            function getTimeForQuestion(question){
+                var timeForQuestion = question.timeForQuestion;
+                if(!timeForQuestion){
+                    timeForQuestion = 30;
+                }
+                return timeForQuestion;
             }
 
             function finishQuestion(){
@@ -38,11 +48,4 @@ angular.module('BreakTheCode')
                     });
 
             }
-
-            $scope.$on('timer-stopped', function (event, args) {
-                alert("timer-stop!");
-            });
-
-
-
         }]);
