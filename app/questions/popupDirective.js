@@ -7,7 +7,7 @@ angular.module('BreakTheCode')
                 var $popup = $(element).find('[data-point="popup"]');
                 $popup.dialog({
                     resizable: false,
-                    height:140,
+                    height:200,
                     modal: true,
                     autoOpen: false,
                     closeOnEscape: false,
@@ -19,6 +19,8 @@ angular.module('BreakTheCode')
                     }
                 });
                 scope.$on('timer-stopped', function (event, args) {
+                    scope.$apply();
+                    $popup.dialog( "close" );
                     $popup.dialog( "open" );
                 });
             }
