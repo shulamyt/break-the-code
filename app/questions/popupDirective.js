@@ -20,7 +20,6 @@ angular.module('BreakTheCode')
                 });
                 scope.$on('timer-stopped', function (event, args) {
                     scope.$apply();
-                    $popup.dialog( "close" );
                     $popup.dialog( "open" );
                 });
             }
