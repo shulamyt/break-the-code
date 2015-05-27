@@ -4,17 +4,23 @@ angular.module('BreakTheCode')
         function($scope, $location, $http, $sce, QuestionService, AnswerService) {
 
             $scope.finishQuestion = finishQuestion;
-            $scope.continueTest = continueTest;
-            $scope.countdownVal = 40;
-            getNextQuestion();
+            $scope.startNewQuestion = startNewQuestion;
+            startNewQuestion();
 
-            function continueTest(){
-                getNextQuestion();
-                setTimer($scope.timeForQuestion);
-                startTimer();
+            function startNewQuestion(){
+                var questionPromise = getNextQuestion();
+                questionPromise.success(function(question, status, headers, config) {
+                    setQuestion(question);
+                    setTimer($scope.timeForQuestion);
+                    startTimer();
+                }).error(function(data, status, headers, config) {
+                        console.log("we have a problem..");
+                        //TODO : error handling
+                });
             }
 
             function setQuestion(question){
+                this.currentQuestion = question;
                 $scope.content = question.content;
                 $scope.timeForQuestion = getTimeForQuestion(question);
             }
@@ -60,21 +66,12 @@ angular.module('BreakTheCode')
 
             function getNextQuestion(){
                 var questionPromise = QuestionService.getQuestion();
-                questionPromise.success(function(question, status, headers, config) {
-                    console.log("question");
-                    this.currentQuestion = question;
-                    setQuestion(question);
-                    //TODO : error handling
-                })
-                    .error(function(data, status, headers, config) {
-                        console.log("we have a problem..");
-                        //TODO : error handling
-                    });
-
+                return questionPromise;
             }
 
             $scope.$on('timer-stopped', function (event, args) {
                 checkAnswer();
                 openPopup();
             });
+
         }]);

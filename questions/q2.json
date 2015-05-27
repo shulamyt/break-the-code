@@ -1,5 +1,6 @@
 {
     "explain": "",
     "code" :"var b = false;if(b){print \"b\";}",
-    "answer":"222"
+    "answer":"222",
+    "timeForQuestion": 20
 }

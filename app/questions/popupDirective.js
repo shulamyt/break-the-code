@@ -14,7 +14,7 @@ angular.module('BreakTheCode')
                     buttons: {
                         "Let's continue !": function() {
                             $( this ).dialog( "close" );
-                            scope.continueTest();
+                            scope.startNewQuestion();
                         }
                     }
                 });
