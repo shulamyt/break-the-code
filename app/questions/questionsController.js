@@ -4,8 +4,14 @@ angular.module('BreakTheCode')
         function($scope, $location, $http, $sce, QuestionService, AnswerService) {
 
             $scope.finishQuestion = finishQuestion;
-            $scope.getNextQuestion = getNextQuestion;
+            $scope.continueTest = continueTest;
+            $scope.countdownVal = 40;
             getNextQuestion();
+
+            function continueTest(){
+                getNextQuestion();
+                startTimer();
+            }
 
             function setQuestion(question){
                 $scope.content = question.content;
@@ -21,8 +27,22 @@ angular.module('BreakTheCode')
             }
 
             function finishQuestion(){
+                stopTimer();
                 checkAnswer();
-                getNextQuestion();
+                openPopup();
+            }
+
+
+            function startTimer(){
+                $scope.$broadcast('timer-start');
+            }
+
+            function stopTimer(){
+                $scope.$broadcast('timer-stop');
+            }
+
+            function openPopup(){
+                $scope.$emit("openPopup");
             }
 
             function checkAnswer(){
@@ -51,5 +71,6 @@ angular.module('BreakTheCode')
 
             $scope.$on('timer-stopped', function (event, args) {
                 checkAnswer();
+                openPopup();
             });
         }]);

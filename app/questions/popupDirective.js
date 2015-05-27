@@ -14,13 +14,14 @@ angular.module('BreakTheCode')
                     buttons: {
                         "Let's continue !": function() {
                             $( this ).dialog( "close" );
-                            scope.getNextQuestion();
+                            scope.continueTest();
                         }
                     }
                 });
-                scope.$on('timer-stopped', function (event, args) {
-                    scope.$apply();
-                    $popup.dialog( "open" );
+                scope.$on('openPopup', function (event, args) {
+                    scope.$applyAsync(function() {
+                        $popup.dialog( "open" );
+                    });
                 });
             }
         };
