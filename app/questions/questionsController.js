@@ -10,6 +10,7 @@ angular.module('BreakTheCode')
 
             function continueTest(){
                 getNextQuestion();
+                setTimer($scope.timeForQuestion);
                 startTimer();
             }
 
@@ -21,7 +22,7 @@ angular.module('BreakTheCode')
             function getTimeForQuestion(question){
                 var timeForQuestion = question.timeForQuestion;
                 if(!timeForQuestion){
-                    timeForQuestion = 30;
+                    timeForQuestion = 13;
                 }
                 return timeForQuestion;
             }
@@ -32,13 +33,16 @@ angular.module('BreakTheCode')
                 openPopup();
             }
 
-
             function startTimer(){
                 $scope.$broadcast('timer-start');
             }
 
             function stopTimer(){
                 $scope.$broadcast('timer-stop');
+            }
+
+            function setTimer(time){
+                $scope.$broadcast('timer-set-countdown', time);
             }
 
             function openPopup(){
