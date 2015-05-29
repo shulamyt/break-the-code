@@ -8,6 +8,7 @@ angular.module('BreakTheCode')
             startNewQuestion();
 
             function startNewQuestion(){
+                cleanAnswerArea();
                 var questionPromise = getNextQuestion();
                 questionPromise.success(function(question, status, headers, config) {
                     setQuestion(question);
@@ -17,6 +18,10 @@ angular.module('BreakTheCode')
                         console.log("we have a problem..");
                         //TODO : error handling
                 });
+            }
+
+            function cleanAnswerArea(){
+                $scope.$emit("cleanAnswerArea");
             }
 
             function setQuestion(question){
@@ -36,7 +41,25 @@ angular.module('BreakTheCode')
             function finishQuestion(){
                 stopTimer();
                 checkAnswer();
-                openPopup();
+                calcScore();
+                if(isThereMoreQuestions()){
+                    openPopup();
+                }else{
+                    gameOver();
+                }
+
+            }
+
+            function isThereMoreQuestions(){
+                //TODO
+            }
+
+            function gameOver(){
+                //TODO
+            }
+
+            function calcScore(){
+                //TODO
             }
 
             function startTimer(){
