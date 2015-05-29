@@ -8,7 +8,15 @@ angular.module('BreakTheCode')
             $scope.startNewQuestion = startNewQuestion;
             startNewQuestion();
 
+            $scope.$on('nextQuestion', function (event, args) {
+                startNewQuestion();
+            });
+
             function startNewQuestion(){
+                if (!QuestionService.isThereMoreQuestions()) {
+                    gameOver();
+                    return;
+                }
                 cleanAnswerArea();
                 var questionPromise = getNextQuestion();
                 questionPromise.success(function(question, status, headers, config) {
@@ -27,6 +35,7 @@ angular.module('BreakTheCode')
 
             function setQuestion(question){
                 this.currentQuestion = question;
+                $scope.correctAnswer = question.answer;
                 $scope.content = question.content;
                 $scope.timeForQuestion = getTimeForQuestion(question);
             }
@@ -39,26 +48,23 @@ angular.module('BreakTheCode')
                 return timeForQuestion;
             }
 
+            function summarizeQuestion(){
+                var answer =  $scope.answer;
+                if(this.currentQuestion) {
+                    $scope.correctAnswer = this.currentQuestion.answer;
+                    $scope.$broadcast('checkAnswer');
+                }
+            }
+
             function finishQuestion() {
                 stopTimer();
-                checkAnswer();
-                calcScore();
-                if (QuestionService.isThereMoreQuestions()) {
-                    openPopup();
-                } else {
-                    gameOver();
-                }
-
+                summarizeQuestion();
             }
 
             function gameOver(){
                 //TODO
                 $scope.gameOver = true;
                 console.log("gameOver");
-            }
-
-            function calcScore(){
-                //TODO
             }
 
             function startTimer(){
@@ -73,27 +79,13 @@ angular.module('BreakTheCode')
                 $scope.$broadcast('timer-set-countdown', time);
             }
 
-            function openPopup(){
-                $scope.$emit("openPopup");
-            }
-
-            function checkAnswer(){
-                var answer =  $scope.answer;
-                if(this.currentQuestion) {
-                    var trueAnswer = this.currentQuestion.answer;
-                    var result = AnswerService.checkAnswer(answer, trueAnswer);
-                    $scope.result = $sce.trustAsHtml(result.html());
-                }
-            }
-
             function getNextQuestion(){
                 var questionPromise = QuestionService.getQuestion();
                 return questionPromise;
             }
 
             $scope.$on('timer-stopped', function (event, args) {
-                checkAnswer();
-                openPopup();
+                summarizeQuestion();
             });
 
         }]);

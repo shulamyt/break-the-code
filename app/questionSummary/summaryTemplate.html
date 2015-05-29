@@ -1,0 +1,20 @@
+<div data-point="popup">
+    <div>
+        <span ng-repeat="diff in differences" ng-class="{'added': diff.added, 'removed': diff.removed, 'correct': !diff.removed && !diff.added}">{{diff.value}}</span>
+    </div>
+
+    <div class="removed">
+        <span>Missing:</span><span>{{removed}}</span>
+    </div>
+
+    <div class="added">
+        <span>Added:</span><span>{{added}}</span>
+    </div>
+
+    <div class="correct">
+        <span>Correct:</span><span>{{correct}}</span>
+    </div>
+
+    <div ng-show="tooManyMistakes">
+    </div>
+</div>

@@ -10,10 +10,15 @@ angular.module('BreakTheCode')
                 diff.forEach(function(part){
                     // yellow for additions, red for deletions
                     // green for common parts
-                    var color = part.added ? 'yellow' :
-                        part.removed ? 'red' : 'green';
+                    var className = "correct";
+                    if(part.added){
+                        className = "added";
+                    }
+                    else if(part.removed){
+                        className = "removed";
+                    }
                     var span = $('<span></span>');
-                    span.css("color", color);
+                    span.addClass(className);
                     span.text(part.value);
                     result.append(span);
 

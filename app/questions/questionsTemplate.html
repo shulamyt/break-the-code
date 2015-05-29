@@ -6,4 +6,6 @@
 <answer-area></answer-area>
 <button ng-click="finishQuestion()" ng-disabled="gameOver">Think I made it!</button>
 
-<popup></popup>
+{{answer}}
+{{correctAnswer}}
+<summary answer="{{answer}}" correctAnswer1={{correctAnswer}} remainingTime="30"></summary>

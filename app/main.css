@@ -5,3 +5,13 @@
     margin-bottom: 6px;
     background: white;
 }
+
+.added{
+    color: yellow;
+}
+.correct{
+    color: green;
+}
+.removed{
+    color: red;
+}

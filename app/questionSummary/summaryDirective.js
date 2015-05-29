@@ -1,26 +1,32 @@
 angular.module('BreakTheCode')
-    .directive('popup', function() {
+    .directive('summary', function() {
         return {
             restrict: 'E',
-            templateUrl: 'questions/popupTemplate.html',
+            templateUrl: 'questionSummary/summaryTemplate.html',
+            controller : "SummaryController",
+            scope: {
+                answer: "@",
+                //correctAnswer1: "@"
+            },
             link: function (scope, element) {
-                var $popup = $(element).find('[data-point="popup"]');
-                $popup.dialog({
+                var popupEl = $(element).find('[data-point="popup"]');
+                popupEl.dialog({
                     resizable: false,
-                    height:200,
+                    height:400,
                     modal: true,
                     autoOpen: false,
                     closeOnEscape: false,
                     buttons: {
                         "Let's continue !": function() {
                             $( this ).dialog( "close" );
-                            scope.startNewQuestion();
+                            scope.$emit('nextQuestion');
+                            //scope.$broadcast('nextQuestion');
                         }
                     }
                 });
                 scope.$on('openPopup', function (event, args) {
                     scope.$applyAsync(function() {
-                        $popup.dialog( "open" );
+                        popupEl.dialog( "open" );
                     });
                 });
             }

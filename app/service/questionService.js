@@ -15,6 +15,9 @@ angular.module('BreakTheCode')
 
             questionService.isThereMoreQuestions = function(){
                 var questionIndex = UserService.getCurrentUserQuestionIndex();
+                if(questionIndex == undefined){
+                    return true;
+                }
                 var testPlan = UserService.getUserTestPlan();
                 var isThereMoreQuestions = questionIndex < testPlan.length - 1;
                 return isThereMoreQuestions;
