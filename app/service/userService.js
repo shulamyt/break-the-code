@@ -11,19 +11,17 @@ angular.module('BreakTheCode')
 
             UserService.getCurrentUserQuestionIndex  = function(){
                 var user = UserService.getCurrentUser();
-                var currentQuestionIndex;
-                if(user.currentQuestionIndex == undefined){
-                    currentQuestionIndex = 0;
-                }else{
-                    currentQuestionIndex = user.currentQuestionIndex;
-                }
+                var currentQuestionIndex = user.currentQuestionIndex;
                 return currentQuestionIndex;
             };
 
             UserService.getNextUserQuestionIndex = function(){
                 var user = UserService.getCurrentUser();
-                var currentQuestionIndex = UserService.getCurrentUserQuestionIndex();
-                var nextQuestionIndex = currentQuestionIndex + 1;
+                var currentUserQuestionIndex = UserService.getCurrentUserQuestionIndex();
+                var nextQuestionIndex = 0;
+                if(currentUserQuestionIndex != undefined){
+                    nextQuestionIndex = currentUserQuestionIndex + 1;
+                }
                 user.currentQuestionIndex = nextQuestionIndex;
                 UserService.setCurrentUser(user);
                 return nextQuestionIndex;
