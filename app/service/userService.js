@@ -18,17 +18,24 @@ angular.module('BreakTheCode')
                     });
             };
 
-            UserService.getNextUserQuestionIndex = function(){
+            UserService.getCurrentUserQuestionIndex  = function(){
                 var user = UserService.getCurrentUser();
                 var currentQuestionIndex;
                 if(user.currentQuestionIndex == undefined){
                     currentQuestionIndex = 0;
                 }else{
-                    currentQuestionIndex = user.currentQuestionIndex + 1;
+                    currentQuestionIndex = user.currentQuestionIndex;
                 }
-                user.currentQuestionIndex = currentQuestionIndex;
-                UserService.setCurrentUser(user);
                 return currentQuestionIndex;
+            };
+
+            UserService.getNextUserQuestionIndex = function(){
+                var user = UserService.getCurrentUser();
+                var currentQuestionIndex = UserService.getCurrentUserQuestionIndex();
+                var nextQuestionIndex = currentQuestionIndex + 1;
+                user.currentQuestionIndex = nextQuestionIndex;
+                UserService.setCurrentUser(user);
+                return nextQuestionIndex;
             };
 
             UserService.getUserTestPlan = function(){

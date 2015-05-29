@@ -6,13 +6,12 @@ angular.module('BreakTheCode')
             AnswerService.checkAnswer = function(currentAnswer, trueAnswer){
 
                 var diff = JsDiff.diffChars(trueAnswer, currentAnswer);
-                console.log(diff);
                 var result = $('<span></span>');
                 diff.forEach(function(part){
-                    // green for additions, red for deletions
-                    // grey for common parts
-                    var color = part.added ? 'green' :
-                        part.removed ? 'red' : 'grey';
+                    // yellow for additions, red for deletions
+                    // green for common parts
+                    var color = part.added ? 'yellow' :
+                        part.removed ? 'red' : 'green';
                     var span = $('<span></span>');
                     span.css("color", color);
                     span.text(part.value);

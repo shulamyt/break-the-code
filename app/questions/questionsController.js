@@ -4,6 +4,7 @@ angular.module('BreakTheCode')
         function($scope, $location, $http, $sce, QuestionService, AnswerService) {
 
             $scope.finishQuestion = finishQuestion;
+            $scope.gameOver = false;
             $scope.startNewQuestion = startNewQuestion;
             startNewQuestion();
 
@@ -38,24 +39,22 @@ angular.module('BreakTheCode')
                 return timeForQuestion;
             }
 
-            function finishQuestion(){
+            function finishQuestion() {
                 stopTimer();
                 checkAnswer();
                 calcScore();
-                if(isThereMoreQuestions()){
+                if (QuestionService.isThereMoreQuestions()) {
                     openPopup();
-                }else{
+                } else {
                     gameOver();
                 }
 
             }
 
-            function isThereMoreQuestions(){
-                //TODO
-            }
-
             function gameOver(){
                 //TODO
+                $scope.gameOver = true;
+                console.log("gameOver");
             }
 
             function calcScore(){

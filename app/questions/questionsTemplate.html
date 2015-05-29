@@ -1,9 +1,9 @@
 <h1>Question page</h1>
 
-<timer interval="1000" countdown="countdownVal">{{countdown}}</timer>
+<timer interval="1000">{{countdown}}</timer>
 
 <code-area></code-area>
 <answer-area></answer-area>
-<button ng-click="finishQuestion()">Think I made it!</button>
+<button ng-click="finishQuestion()" ng-disabled="gameOver">Think I made it!</button>
 
 <popup></popup>

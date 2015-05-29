@@ -13,13 +13,20 @@ angular.module('BreakTheCode')
                 return nextQuestionId;
             };
 
+            questionService.isThereMoreQuestions = function(){
+                var questionIndex = UserService.getCurrentUserQuestionIndex();
+                var testPlan = UserService.getUserTestPlan();
+                var isThereMoreQuestions = questionIndex < testPlan.length - 1;
+                return isThereMoreQuestions;
+            };
+
             questionService.getQuestion = function(){
                 var questionId = questionService.getNextQuestionId();
                 var promise = $http.get('/question', {
                     params: { questionId: questionId }
                 });
                 return promise;
-            }
+            };
 
             return questionService;
         }]);
