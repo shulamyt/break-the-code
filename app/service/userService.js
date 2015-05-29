@@ -5,17 +5,8 @@ angular.module('BreakTheCode')
 
             UserService.createUser = function(userData){
                 console.log(userData);
-                //$location.path('qustion');
-                $http.post('/createUser', userData)
-                    .success(function(user, status, headers, config) {
-                        console.log(user);
-                        console.log(status);
-                        UserService.setCurrentUser(user);
-                    })
-                    .error(function(data, status, headers, config) {
-                        console.log("we have a problem..");
-                        //TODO : error handling
-                    });
+                var userPromise = $http.post('/createUser', userData);
+                return userPromise;
             };
 
             UserService.getCurrentUserQuestionIndex  = function(){
