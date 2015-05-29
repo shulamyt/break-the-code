@@ -49,11 +49,20 @@ angular.module('BreakTheCode')
             }
 
             function summarizeQuestion(){
+                saveAnswer();
                 var answer =  $scope.answer;
                 if(this.currentQuestion) {
                     $scope.correctAnswer = this.currentQuestion.answer;
                     $scope.$broadcast('checkAnswer');
                 }
+            }
+
+            function saveAnswer(){
+                var answer = {};
+                answer.questionId = this.currentQuestion.id;
+                answer.correctAnswer = this.currentQuestion.answer;
+                answer.answer = $scope.answer;
+                AnswerService.save(answer);
             }
 
             function finishQuestion() {

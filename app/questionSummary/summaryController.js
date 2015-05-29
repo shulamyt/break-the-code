@@ -4,17 +4,22 @@ angular.module('BreakTheCode')
         function($scope, $rootScope, $location, $http, $sce, QuestionService, AnswerService) {
 
             $scope.$on('checkAnswer', function (event, args) {
-                var differences = createDiff();
-                calcScore(differences);
+                var differences = createDifferences();
+                countDifferences(differences);
+                calcScore();
                 $scope.differences = differences;
                 openPopup();
             });
 
-            function calcScore(differences){
+            function calcScore(){
+                
+            }
+
+            function countDifferences(differences){
                 var numAdded = 0;
                 var numCorrect = 0;
                 var numRemoved = 0;
-                for (diffIndex in differences){
+                for (var diffIndex in differences){
                     var diff = differences[diffIndex];
                     if(diff.added){
                         numAdded = numAdded + diff.count;
@@ -37,39 +42,11 @@ angular.module('BreakTheCode')
                 $scope.$emit('openPopup');
             }
 
-            //$scope.$watch('answer', function() {
-            //    createDiff();
-            //});
-
-
-            function createDiff(){
+            function createDifferences(){
                 var correctAnswer = $scope.$parent.correctAnswer;
                 var answer = $scope.answer;
                 var differences = JsDiff.diffChars(correctAnswer, answer);
                 return differences;
             }
-
-            // function (currentAnswer, trueAnswer){
-            //
-            //    var diff = JsDiff.diffChars(trueAnswer, currentAnswer);
-            //    var result = $('<span></span>');
-            //    diff.forEach(function(part){
-            //        // yellow for additions, red for deletions
-            //        // green for common parts
-            //        var className = "correct";
-            //        if(part.added){
-            //            className = "added";
-            //        }
-            //        else if(part.removed){
-            //            className = "removed";
-            //        }
-            //        var span = $('<span></span>');
-            //        span.addClass(className);
-            //        span.text(part.value);
-            //        result.append(span);
-            //
-            //    });
-            //    return result;
-            //};
 
         }]);

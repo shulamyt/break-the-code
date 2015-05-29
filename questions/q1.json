@@ -1,6 +1,8 @@
 {
+    "id": "q1",
     "explain": "",
     "code" :"var a = true;if(a){print \"a\";}",
     "answer":"111",
-    "timeForQuestion": 10
+    "timeForQuestion": 10,
+    "maxScore": 15
 }

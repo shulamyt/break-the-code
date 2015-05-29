@@ -2,7 +2,7 @@ var UserModel = require('../db/model/user');
 var testPlanService = require('./testPlanService');
 
 module.exports = function (app) {
-    app.post('/createUser', function (req, res) {
+    app.post('/user', function (req, res) {
         var testPlan = testPlanService.getTestPlan();
         var user = new UserModel({
             age: req.body.age,

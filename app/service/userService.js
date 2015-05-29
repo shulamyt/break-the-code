@@ -5,7 +5,7 @@ angular.module('BreakTheCode')
 
             UserService.createUser = function(userData){
                 console.log(userData);
-                var userPromise = $http.post('/createUser', userData);
+                var userPromise = $http.post('/user', userData);
                 return userPromise;
             };
 
