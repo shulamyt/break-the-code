@@ -4,11 +4,11 @@ var questionService = require('./../services/questionService');
 module.exports = function (app) {
 
     app.get('/answer/:questionId', function (req, res) {
-        var questionId = req.param("questionId");
+        var questionId = req.params.questionId;
         questionService.getQuestion(questionId).then(function(data) {
             var questionMetadata = JSON.parse(data);
             var answer = questionMetadata.answer;
-            res.json(201, answer);
+            res.status(201).json(answer);
         });
     });
 
@@ -23,7 +23,7 @@ module.exports = function (app) {
             if (err) {
                 return err;
             }
-            res.json(201, answer);
+            res.status(201).json(answer);
         })
 
     });

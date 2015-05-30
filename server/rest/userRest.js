@@ -13,7 +13,7 @@ module.exports = function (app) {
             if (err) {
                 return next(err);
             }
-            res.json(201, user);
+            res.status(201).json(user);
         })
 
     });
