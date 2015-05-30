@@ -14,6 +14,7 @@ module.exports = function (app) {
 
     app.post('/answer', function (req, res) {
         var answer = new AnswerModel({
+            userId: req.body.userId,
             questionId: req.body.questionId,
             rightAnswer: req.body.rightAnswer,
             userAnswer: req.body.userAnswer

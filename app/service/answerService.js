@@ -1,6 +1,6 @@
 angular.module('BreakTheCode')
-    .service('AnswerService', ['$http', '$q', 'QuestionService',
-        function($http, $q, QuestionService) {
+    .service('AnswerService', ['$http', '$q', 'QuestionService', 'UserService',
+        function($http, $q, QuestionService, UserService) {
             var AnswerService = {};
             var currentAnswer;
 
@@ -24,7 +24,8 @@ angular.module('BreakTheCode')
             AnswerService.saveAnswer = function(answer){
                 var question = QuestionService.getCurrentQuestion();
                 answer.questionId = question.id;
-
+                var user = UserService.getCurrentUser();
+                answer.userId = user._id;
                 var deferred = $q.defer();
                 $http.post('/answer', answer)
                     .success(function(data) {

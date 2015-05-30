@@ -6,6 +6,7 @@ var answerSchema = new db.Schema({
     //TODO - timer need to be more accurate
     questionId: {type: String, required: true},
     rightAnswer: {type: String, required: true},
+    userId: {type: String, required: true},
     userAnswer: {type: String}
 });
 
