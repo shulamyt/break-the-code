@@ -3,6 +3,7 @@ angular.module('BreakTheCode')
         return {
             restrict: 'E',
             templateUrl: 'questions/answerAreaTemplate.html',
+            controller : "answerAreaController",
             link: function (scope, element) {
                 scope.$on('cleanAnswerArea', function (event, args) {
                     scope.answer = "";

@@ -4,12 +4,25 @@ angular.module('BreakTheCode')
         function($scope, $rootScope, $location, $http, $sce, QuestionService, AnswerService) {
 
             $scope.$on('checkAnswer', function (event, args) {
-                var differences = createDifferences();
-                countDifferences(differences);
-                calcScore();
-                $scope.differences = differences;
                 openPopup();
+                getRightAnswer().then(function(rightAnswer){
+                    var answer = {};
+                    answer.userAnswer = $scope.answer;
+                    answer.rightAnswer = rightAnswer;
+                    answer.differences = createDifferences(answer.rightAnswer, answer.userAnswer);
+                    countDifferences(answer.differences);
+                    calcScore();
+                    $scope.differences = answer.differences;
+                    AnswerService.saveAnswer(answer);
+                });
             });
+
+            function getRightAnswer(){
+                var question = QuestionService.getCurrentQuestion();
+                var questionId = question.id;
+                var correctAnswer = AnswerService.getRightAnswer(questionId);
+                return correctAnswer;
+            }
 
             function calcScore(){
                 
@@ -32,6 +45,7 @@ angular.module('BreakTheCode')
                 $scope.removed = numRemoved;
                 $scope.added = numAdded;
                 $scope.correct = numCorrect;
+                //TODO - update this on answer to save to DB
             }
 
             $scope.$on('nextQuestion', function (event, args) {
@@ -42,10 +56,8 @@ angular.module('BreakTheCode')
                 $scope.$emit('openPopup');
             }
 
-            function createDifferences(){
-                var correctAnswer = $scope.$parent.correctAnswer;
-                var answer = $scope.answer;
-                var differences = JsDiff.diffChars(correctAnswer, answer);
+            function createDifferences(rightAnswer, answer){
+                var differences = JsDiff.diffChars(rightAnswer, answer);
                 return differences;
             }
 

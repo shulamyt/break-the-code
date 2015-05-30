@@ -15,6 +15,6 @@ var server = app.listen(3000, function () {
 
 })
 
-require('./server/components/userService')(app);
-require('./server/components/answerService')(app);
-require('./server/components/questionService')(app);
+require('./server/rest/userRest')(app);
+require('./server/rest/answerRest')(app);
+require('./server/rest/questionRest')(app);

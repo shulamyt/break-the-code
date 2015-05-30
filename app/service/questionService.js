@@ -1,7 +1,16 @@
 angular.module('BreakTheCode')
-    .service('QuestionService', ['$http', 'UserService',
-        function($http, UserService) {
+    .service('QuestionService', ['$http', '$q', 'UserService',
+        function($http, $q, UserService) {
             var questionService = {};
+            var currentQuestion;
+
+            questionService.getCurrentQuestion = function(){
+                return currentQuestion;
+            };
+
+            questionService.setCurrentQuestion = function(question){
+                currentQuestion = question;
+            };
 
             questionService.getNextQuestionId = function(){
                 var questionIndex = UserService.getNextUserQuestionIndex();
@@ -25,18 +34,29 @@ angular.module('BreakTheCode')
 
             questionService.getQuestion = function(){
                 var questionId = questionService.getNextQuestionId();
-                var promise = $http.get('/question', {
-                    params: { questionId: questionId }
+                var deferred = $q.defer();
+                $http.get('/question/' + questionId)
+                    .success(function(data) {
+                        deferred.resolve(data);
+                    }).error(deferred.reject);
+
+                deferred.promise.then(function(question){
+                    questionService.setCurrentQuestion(question);
                 });
-                return promise;
+
+                return deferred.promise;
             };
 
             questionService.saveQuestion = function(){
                 var questionId = questionService.getNextQuestionId();
-                var promise = $http.put('/question', {
+                var deferred = $q.defer();
+                $http.put('/question', {
                     params: { questionId: questionId }
-                });
-                return promise;
+                })
+                    .success(function(data) {
+                        deferred.resolve(data);
+                    }).error(deferred.reject);
+                return deferred.promise;
             };
 
             return questionService;

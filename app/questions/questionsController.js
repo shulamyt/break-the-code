@@ -18,15 +18,15 @@ angular.module('BreakTheCode')
                     return;
                 }
                 cleanAnswerArea();
-                var questionPromise = getNextQuestion();
-                questionPromise.success(function(question, status, headers, config) {
+                QuestionService.getQuestion().then(function(question, status, headers, config) {
                     setQuestion(question);
                     setTimer($scope.timeForQuestion);
                     startTimer();
-                }).error(function(data, status, headers, config) {
-                        console.log("we have a problem..");
-                        //TODO : error handling
                 });
+                // .error(function(data, status, headers, config) {
+                //        console.log("we have a problem..");
+                //        //TODO : error handling
+                //});
             }
 
             function cleanAnswerArea(){
@@ -49,20 +49,11 @@ angular.module('BreakTheCode')
             }
 
             function summarizeQuestion(){
-                saveAnswer();
                 var answer =  $scope.answer;
                 if(this.currentQuestion) {
                     $scope.correctAnswer = this.currentQuestion.answer;
                     $scope.$broadcast('checkAnswer');
                 }
-            }
-
-            function saveAnswer(){
-                var answer = {};
-                answer.questionId = this.currentQuestion.id;
-                answer.correctAnswer = this.currentQuestion.answer;
-                answer.answer = $scope.answer;
-                AnswerService.save(answer);
             }
 
             function finishQuestion() {
@@ -86,11 +77,6 @@ angular.module('BreakTheCode')
 
             function setTimer(time){
                 $scope.$broadcast('timer-set-countdown', time);
-            }
-
-            function getNextQuestion(){
-                var questionPromise = QuestionService.getQuestion();
-                return questionPromise;
             }
 
             $scope.$on('timer-stopped', function (event, args) {

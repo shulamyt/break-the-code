@@ -7,13 +7,13 @@ angular.module('BreakTheCode').
 
         $scope.startTheGame = function (){
             UserService.createUser($scope.user)
-                .success(function(user, status, headers, config) {
-                    UserService.setCurrentUser(user);
+                .then(function(user){
                     $location.path('questions');
-                })
-                .error(function(data, status, headers, config) {
-                    console.log("we have a problem..");
-                    //TODO : error handling
                 });
+
+            //.error(function(data, status, headers, config) {
+            //    console.log("we have a problem..");
+            //    //TODO : error handling
+            //});
         };
-}]);
+    }]);

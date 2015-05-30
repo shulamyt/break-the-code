@@ -1,20 +1,13 @@
-var beautify_js = require('js-beautify').js;
-fs = require('fs');
+var readFile = require('fs-readfile-promise');
 
-module.exports = function (app) {
-    app.get('/question', function (req, res) {
-        var fileName = req.param("questionId");
-        var filePath = __dirname + "/../../questions/" + fileName + ".json";
-        fs.readFile(filePath, 'utf8', function (err, data) {
-            if (err) {
-                return console.log(err);
-            }
-            var questionMetadata = JSON.parse(data);
-            var beautifulCode = beautify_js(questionMetadata.code);
-            var question = questionMetadata;
-            question.content = beautifulCode;
-            res.json(201, question);
-        });
+var QuestionService = function(){
 
-    });
+    this.getQuestion = function (questionId){
+        var filePath = __dirname + "/../../questions/" + questionId + ".json";
+        var file = readFile(filePath);
+        return file;
+    };
 };
+var questionService = new QuestionService();
+module.exports = questionService;
+

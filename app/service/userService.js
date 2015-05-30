@@ -1,12 +1,18 @@
 angular.module('BreakTheCode')
-    .service('UserService', ['$http',
-        function($http) {
+    .service('UserService', ['$http', '$q',
+        function($http, $q) {
             var UserService = {};
 
             UserService.createUser = function(userData){
-                console.log(userData);
-                var userPromise = $http.post('/user', userData);
-                return userPromise;
+                var deferred = $q.defer();
+                $http.post('/user', userData)
+                    .success(function(data) {
+                        deferred.resolve(data);
+                    }).error(deferred.reject);
+                deferred.promise.then(function(user){
+                    UserService.setCurrentUser(user);
+                });
+                return deferred.promise;
             };
 
             UserService.getCurrentUserQuestionIndex  = function(){

@@ -1,5 +1,5 @@
 var UserModel = require('../db/model/user');
-var testPlanService = require('./testPlanService');
+var testPlanService = require('./../components/testPlanService');
 
 module.exports = function (app) {
     app.post('/user', function (req, res) {
