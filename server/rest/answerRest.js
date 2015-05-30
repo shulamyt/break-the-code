@@ -1,5 +1,5 @@
 var AnswerModel = require('../db/model/answer');
-var questionService = require('./../components/questionService');
+var questionService = require('./../services/questionService');
 
 module.exports = function (app) {
 

@@ -1,5 +1,5 @@
 var beautify_js = require('js-beautify').js;
-var questionService = require('./../components/questionService');
+var questionService = require('./../services/questionService');
 
 module.exports = function (app) {
     app.get('/question/:questionId', function (req, res) {
