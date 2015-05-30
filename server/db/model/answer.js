@@ -5,8 +5,8 @@ var answerSchema = new db.Schema({
     //remaindedTime:
     //TODO - timer need to be more accurate
     questionId: {type: String, required: true},
-    correctAnswer: {type: String, required: true},
-    answer: {type: String, required: true}
+    rightAnswer: {type: String, required: true},
+    userAnswer: {type: String}
 });
 
 var Answer = db.model('Answer', answerSchema);
