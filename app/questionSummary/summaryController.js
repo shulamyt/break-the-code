@@ -37,7 +37,13 @@ angular.module('BreakTheCode')
                     if(diff.added){
                         numAdded = numAdded + diff.count;
                     }else if(diff.removed){
-                        numRemoved = numRemoved + diff.count;
+                        if(diff.count){
+                            numRemoved = numRemoved + diff.count;
+                        }else{
+                            var value = diff.value;
+                            numRemoved = numRemoved + value.length;
+                        }
+
                     }else{//correct
                         numCorrect = numCorrect + diff.count;
                     }
