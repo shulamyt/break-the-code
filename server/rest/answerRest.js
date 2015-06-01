@@ -17,7 +17,8 @@ module.exports = function (app) {
             userId: req.body.userId,
             questionId: req.body.questionId,
             rightAnswer: req.body.rightAnswer,
-            userAnswer: req.body.userAnswer
+            userAnswer: req.body.userAnswer,
+            time: req.body.time
         });
 
         answer.save(function (err, answer) {

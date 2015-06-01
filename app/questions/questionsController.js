@@ -1,7 +1,7 @@
 //http://localhost:3000/index.html#/login
 angular.module('BreakTheCode')
-    .controller('QuestionsController', ['$scope', '$location', '$http', '$sce', 'QuestionService', 'AnswerService',
-        function($scope, $location, $http, $sce, QuestionService, AnswerService) {
+    .controller('QuestionsController', ['$scope', '$location', '$http', '$sce', 'QuestionService', 'TimerService',
+        function($scope, $location, $http, $sce, QuestionService, TimerService) {
 
             $scope.finishQuestion = finishQuestion;
             $scope.gameOver = false;
@@ -20,6 +20,7 @@ angular.module('BreakTheCode')
                 cleanAnswerArea();
                 QuestionService.getQuestion().then(function(question, status, headers, config) {
                     setQuestion(question);
+                    TimerService.start();
                     setTimer($scope.timeForQuestion);
                     startTimer();
                 });
@@ -57,6 +58,7 @@ angular.module('BreakTheCode')
             }
 
             function finishQuestion() {
+                TimerService.stop();
                 stopTimer();
                 summarizeQuestion();
             }

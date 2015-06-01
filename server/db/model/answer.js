@@ -7,7 +7,8 @@ var answerSchema = new db.Schema({
     questionId: {type: String, required: true},
     rightAnswer: {type: String, required: true},
     userId: {type: String, required: true},
-    userAnswer: {type: String}
+    userAnswer: {type: String},
+    time: {type: Number}
 });
 
 var Answer = db.model('Answer', answerSchema);
