@@ -1,7 +1,7 @@
 //http://localhost:3000/index.html#/login
 angular.module('BreakTheCode').
-    controller('LoginController', ['$scope', '$location', 'UserService',
-    function($scope, $location, UserService) {
+    controller('LoginController', ['$scope', '$location', 'UserService', 'QuestionService',
+    function($scope, $location, UserService, QuestionService) {
     var self = this;
     $scope.user = {};
 
@@ -9,6 +9,7 @@ angular.module('BreakTheCode').
             UserService.createUser($scope.user)
                 .then(function(user){
                     $location.path('questions');
+                    QuestionService.restartQuestionIndex();
                 });
 
             //.error(function(data, status, headers, config) {

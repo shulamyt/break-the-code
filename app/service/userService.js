@@ -2,6 +2,7 @@ angular.module('BreakTheCode')
     .service('UserService', ['$http', '$q',
         function($http, $q) {
             var UserService = {};
+            var currentUser;
 
             UserService.createUser = function(userData){
                 var deferred = $q.defer();
@@ -22,14 +23,19 @@ angular.module('BreakTheCode')
 
 
             UserService.setCurrentUser = function(user){
+                currentUser = user;
                 var userJSON = JSON.stringify(user);
                 localStorage.setItem("user", userJSON);
             };
 
             UserService.getCurrentUser = function(){
-                var userJSON = localStorage.getItem("user");
-                var user = JSON.parse(userJSON);
-                return user;
+                if(!currentUser){
+                    var storageUser = localStorage.getItem("user");
+                    if(storageUser){
+                        currentUser = JSON.parse(storageUser);
+                    }
+                }
+                return currentUser;
             };
 
             return UserService;

@@ -3,7 +3,15 @@ angular.module('BreakTheCode')
         function($http, $q, UserService) {
             var questionService = {};
             var currentQuestion;
-            var currentQuestionIndex = -1;
+            var currentQuestionIndex = restoreCurrentQuestionIndex();
+
+            function restoreCurrentQuestionIndex(){
+                var localIndex = localStorage.getItem("currentQuestionIndex");
+                if(localIndex){
+                    return parseInt(localIndex);
+                }
+                return -1;
+            }
 
             questionService.getCurrentQuestion = function(){
                 return currentQuestion;
@@ -17,8 +25,14 @@ angular.module('BreakTheCode')
                 return currentQuestionIndex;
             };
 
+            questionService.restartQuestionIndex = function(){
+                currentQuestionIndex = -1;
+            };
+
             questionService.increaseQuestionIndex = function(){
-                return currentQuestionIndex = currentQuestionIndex + 1;
+                currentQuestionIndex = currentQuestionIndex + 1;
+                localStorage.setItem("currentQuestionIndex", currentQuestionIndex);
+                return currentQuestionIndex;
             };
 
             questionService.getNextQuestionId = function(){
