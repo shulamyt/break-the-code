@@ -15,3 +15,7 @@
 .removed{
     color: red;
 }
+
+.ui-button.ui-dialog-titlebar-close{
+    display: none;
+}
