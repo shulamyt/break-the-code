@@ -25,6 +25,7 @@ angular.module('BreakTheCode')
                 answer.questionId = QuestionService.getCurrentQuestion().id;
                 answer.time = TimerService.getTime();
                 answer.userId = UserService.getCurrentUser()._id;
+                answer.questionIndex = QuestionService.getCurrentQuestionIndex();
                 var deferred = $q.defer();
                 $http.post('/answer', answer)
                     .success(function(data) {

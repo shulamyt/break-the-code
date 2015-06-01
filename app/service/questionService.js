@@ -3,6 +3,7 @@ angular.module('BreakTheCode')
         function($http, $q, UserService) {
             var questionService = {};
             var currentQuestion;
+            var currentQuestionIndex = -1;
 
             questionService.getCurrentQuestion = function(){
                 return currentQuestion;
@@ -12,8 +13,16 @@ angular.module('BreakTheCode')
                 currentQuestion = question;
             };
 
+            questionService.getCurrentQuestionIndex = function(){
+                return currentQuestionIndex;
+            };
+
+            questionService.increaseQuestionIndex = function(){
+                return currentQuestionIndex = currentQuestionIndex + 1;
+            };
+
             questionService.getNextQuestionId = function(){
-                var questionIndex = UserService.getNextUserQuestionIndex();
+                var questionIndex = questionService.increaseQuestionIndex();
                 var testPlan = UserService.getUserTestPlan();
                 var nextQuestionId;
                 if(questionIndex < testPlan.length){
@@ -23,10 +32,7 @@ angular.module('BreakTheCode')
             };
 
             questionService.isThereMoreQuestions = function(){
-                var questionIndex = UserService.getCurrentUserQuestionIndex();
-                if(questionIndex == undefined){
-                    return true;
-                }
+                var questionIndex = questionService.getCurrentQuestionIndex();
                 var testPlan = UserService.getUserTestPlan();
                 var isThereMoreQuestions = questionIndex < testPlan.length - 1;
                 return isThereMoreQuestions;

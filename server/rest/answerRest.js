@@ -18,6 +18,7 @@ module.exports = function (app) {
             questionId: req.body.questionId,
             rightAnswer: req.body.rightAnswer,
             userAnswer: req.body.userAnswer,
+            questionIndex: req.body.questionIndex,
             time: req.body.time
         });
 

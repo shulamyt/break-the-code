@@ -15,24 +15,6 @@ angular.module('BreakTheCode')
                 return deferred.promise;
             };
 
-            UserService.getCurrentUserQuestionIndex  = function(){
-                var user = UserService.getCurrentUser();
-                var currentQuestionIndex = user.currentQuestionIndex;
-                return currentQuestionIndex;
-            };
-
-            UserService.getNextUserQuestionIndex = function(){
-                var user = UserService.getCurrentUser();
-                var currentUserQuestionIndex = UserService.getCurrentUserQuestionIndex();
-                var nextQuestionIndex = 0;
-                if(currentUserQuestionIndex != undefined){
-                    nextQuestionIndex = currentUserQuestionIndex + 1;
-                }
-                user.currentQuestionIndex = nextQuestionIndex;
-                UserService.setCurrentUser(user);
-                return nextQuestionIndex;
-            };
-
             UserService.getUserTestPlan = function(){
                 var user = UserService.getCurrentUser();
                 return user.testPlan;
