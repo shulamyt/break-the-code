@@ -3,7 +3,12 @@
 
 open cmd and run:
 (http://stackoverflow.com/questions/23726684/mongodb-on-a-windows-7-machine-no-connection-could-be-made)
-mongod --config c:\mongodb\startmongo.conf
+mongod
+
+https://www.npmjs.com/package/mongo-express
+run from:
+https://www.npmjs.com/package/mongo-express
+http://localhost:8081/
 
 
 https://codemirror.net/
