@@ -19,3 +19,23 @@
 .ui-button.ui-dialog-titlebar-close{
     display: none;
 }
+
+.your-answer{
+    float: left;
+}
+
+.right-answer{
+    float: right;
+}
+
+.vs{
+    float: left;
+}
+
+.clear{
+    clear: both;
+}
+
+.differences{
+    text-align: center;
+}

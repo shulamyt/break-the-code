@@ -1,5 +1,18 @@
 <div data-point="popup">
-    <div>
+    <div class="your-answer">
+        <div>Your: </div>
+        <div>{{answer}}</div>
+    </div>
+
+    <div class="right-answer">
+        <div>Right: </div>
+        <div>{{rightAnswer}}</div>
+    </div>
+
+    <div class="clear"></div>
+
+
+    <div class="differences">
         <span ng-repeat="diff in differences" ng-class="{'added': diff.added, 'removed': diff.removed, 'correct': !diff.removed && !diff.added}">{{diff.value}}</span>
     </div>
 
@@ -21,6 +34,7 @@
         </div>
     </div>
 
-    <div ng-show="tooManyMistakes">
+    <div ng-hide="tooManyMistakes">
+        <span>Bonus for finish before time: </span><span>{{bonus}}</span>
     </div>
 </div>

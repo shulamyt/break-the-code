@@ -8,7 +8,7 @@ angular.module('BreakTheCode')
                 getRightAnswer().then(function(rightAnswer){
                     var answer = {};
                     answer.userAnswer = $scope.answer;
-                    answer.rightAnswer = rightAnswer;
+                    answer.rightAnswer = $scope.rightAnswer = rightAnswer;
                     answer.differences = createDifferences(answer.rightAnswer, answer.userAnswer);
                     countDifferences(answer.differences);
                     calcScore();
