@@ -1,8 +1,9 @@
+var a = 2;
 print("1");
-if(true){
+if(a > 1){
     print("2");
 }
-else if(false){
+else if(a > 3){
     print("3");
 }
 else{

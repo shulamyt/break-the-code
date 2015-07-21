@@ -1,5 +1,6 @@
+var a = 2;
 print("1");
-if(false){
+if(a > 3){
     print("2");
 }
 else{
