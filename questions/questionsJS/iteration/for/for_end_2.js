@@ -5,5 +5,3 @@ for(var i=0; i++; i==array.length-1){
     print(i);
 }
 print("3");
-
-//good
