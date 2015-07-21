@@ -1,7 +1,7 @@
-var a = false;
-var b = false;
+var a = 2;
+var b = 5;
 print("1");
-if(a || !b){
+if(a > 3 || !(b > 7)){
     print("2");
 }
 else{
