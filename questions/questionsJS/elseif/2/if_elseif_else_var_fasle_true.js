@@ -1,13 +1,13 @@
 var a = false;
 var b = true;
-print(1);
+print("1");
 if(a){
-    print(2);
+    print("2");
 }
 else if(b){
-    print(3);
+    print("3");
 }
 else{
-    print(4);
+    print("4");
 }
-print(5);
+print("5");

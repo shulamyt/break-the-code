@@ -1,8 +1,8 @@
-print(1);
+print("1");
 if(!true){
-    print(2);
+    print("2");
 }
 else{
-    print(3);
+    print("3");
 }
-print(4);
+print("4");
