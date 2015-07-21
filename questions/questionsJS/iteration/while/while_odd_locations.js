@@ -1,9 +1,11 @@
-var array = ['a', 'b', 'c'];
+var array = ['a', 'b', 'c', 'e', 'f', 'g'];
 print("1");
 var i = 0;
 while(true){
     print("2");
-    print(array[i]);
+    if(i%2 == 0){
+    	print(array[i]);
+    }
     i++;
     if(i == array.length){
     	print("3");
