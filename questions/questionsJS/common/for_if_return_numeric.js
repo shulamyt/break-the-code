@@ -15,5 +15,3 @@ function foo(){
 
 foo();
 
-//better
-
