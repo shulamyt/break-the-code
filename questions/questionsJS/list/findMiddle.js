@@ -1,16 +1,16 @@
+var l1 = new List(["y", "d", "h", "a", "w", "s"]);
+var p1 = l1.head();
 
+var c = 0;
 
-var current = head;
-int length = 0;
-var middle = head;
-while(current.next() != null){
-  length++;
-  if(length%2 ==0){
-    middle = middle.next();
-  }
-  current = current.next();
+while (p1.next){
+	c = c + 1;
+	p1 = p1.next;
 }
-if(length%2 == 1){
-  middle = middle.next();
+
+var  p = l1.head();
+while (c > 0){
+	p = p.next;
 }
-return middle;
+
+print (p.value);
