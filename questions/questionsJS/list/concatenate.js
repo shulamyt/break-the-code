@@ -4,10 +4,6 @@ var l2 = new List(["a", "w", "s"]);
 var p1 = l1.head();
 var p2 = l2.head();
 
-// while(p1.next != null){
-// 	p1 = p1.next;
-// }
-
 while(p1 != null){
 	p1 = p1.next;
 }

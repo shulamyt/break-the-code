@@ -4,8 +4,7 @@ var l2 = new List();
 var p1 = l1.head();
 var p2 = null;
 
-while(p1.next != null){
-	p1 = p1.next;
+while(p1 != null){
 	var n = new Node();
 	n.value = p1.value;	
 	if(p2 == null){
@@ -14,6 +13,7 @@ while(p1.next != null){
 	else{
 		p2.next = n;
 	}
+	p1 = p1.next;
 }
 
 var p = l1.head();
