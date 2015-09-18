@@ -6,4 +6,4 @@ if(a > 1){
 if(a > 3){
     print("3");
 }
-print("5");
+print("4");

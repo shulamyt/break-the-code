@@ -6,6 +6,6 @@ while(n >= s){
     	break;
     }
 	s = s*2;
-	i ++;
+	i++;
 }
 return i;

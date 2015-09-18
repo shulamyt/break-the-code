@@ -1,14 +1,14 @@
-var l1 = new List(["x", "b", "r", "p", "r"]);
+var l1 = new List(["x", "b", "r", "p", "q"]);
 var p = l1.head();
 var val = "r";
-var ok = true;
+var f = false;
 while (p != null) {
     if (p.value == val)) {
-        ok = false;
+        f = false;
         break;
     }
 }
-if(ok){
+if(!f){
 	var n = new Node();
 	n.value = val;	
 	l1.last.next = n;

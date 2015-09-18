@@ -16,10 +16,10 @@ while(p1 != null){
 	p1 = p1.next;
 }
 
-var p = l1.head();
-p.value = "w";
+// var p = l1.head();
+// p.value = "w";
 
-p = l1.head();
+p = l2.head();
 while(p.next != null){
 	print(p.value);
 }

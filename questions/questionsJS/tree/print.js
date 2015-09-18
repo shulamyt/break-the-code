@@ -5,8 +5,8 @@
 var r = t.root;
 p(r);
 
-function f(n){
+function p(n){
 	print(n.value);
-	f(n.left);
-	f(n.right);
+	p(n.left);
+	p(n.right);
 }

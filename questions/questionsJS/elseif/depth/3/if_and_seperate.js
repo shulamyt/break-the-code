@@ -3,11 +3,9 @@ var b = 2;
 var c = 3;
 
 if(a > 0){
-	print("1");
 	if(b > 1){
-		print("2");
 		if(c > 2){
-			print("3");
+			print("1");
 		}
 	}
 }

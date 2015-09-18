@@ -8,3 +8,4 @@ while(p1 != null){
 	}
 	p1 = p1.next;
 }
+return false;

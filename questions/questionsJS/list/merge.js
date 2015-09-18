@@ -11,9 +11,11 @@ while(p1 != null && p2 !=null){
 	var n = new Node();
 	if(p1.value > p2.value){
 		n.value = p1.value;
+		p1 = p1.next;	
 	}
 	else{
 		n.value = p2.value;
+		p2 = p2.next;
 	}		
 	if(p == null){
 		p = n;
@@ -21,9 +23,7 @@ while(p1 != null && p2 !=null){
 	else{
 		p.next = n;
 	}
-	p  = p.next;
-	p1 = p1.next;
-	p2 = p2.next;
+	p = p.next;
 }
 
 while(p1 != null){
@@ -35,6 +35,7 @@ while(p1 != null){
 	else{
 		p.next = n;
 	}
+	p = p.next;
 }
 
 while(p2 != null){
@@ -46,6 +47,7 @@ while(p2 != null){
 	else{
 		p.next = n;
 	}
+	p = p.next;
 }
 
 l.print();

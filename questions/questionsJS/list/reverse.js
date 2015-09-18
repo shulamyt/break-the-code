@@ -3,7 +3,6 @@ var l1 = new List(["y", "d", "h"]);
 var p1 = l1.head();
 var p2 = null;
 
-//miss the head?
 while(p1 != null){
 	if(p2 == null){
 		p2 = p1;

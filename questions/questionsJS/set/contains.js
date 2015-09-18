@@ -1,7 +1,6 @@
-var l = new List(["x", "b", "r", "p", "r"]);
+var l = new List(["x", "b", "r", "k", "q"]);
 var p = l.head();
-var val = "r";
-var ok = true;
+var val = "k";
 while (p != null) {
     if (p.value == val)) {
         return true;

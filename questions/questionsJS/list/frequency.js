@@ -1,7 +1,7 @@
-var l1 = new List(["y", "d", "h", "a", "w", "s", "d"]);
+var l1 = new List(["h", "y", "a", "d", "h", "a", "w", "s", "h", "d"]);
 
 var p1 = l1.head();
-var val = "d";
+var val = "a";
 var c = 0;
 while(p1 != null){
 	if(p1.value == val){

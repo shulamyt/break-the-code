@@ -1,5 +1,5 @@
-var l1 = new List(["x", "b", "k", "p", "r"]);
-var l2 = new List(["x", "b", "r", "p", "r"]);
+var l1 = new List(["x", "b", "k", "p", "q"]);
+var l2 = new List(["x", "b", "r", "p", "q"]);
 
 var p1 = l1.head();
 

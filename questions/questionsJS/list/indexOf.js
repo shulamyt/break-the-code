@@ -5,7 +5,7 @@ var val = "a";
 var c = 0;
 while(p1 != null){
 	if(p1.value == val){
-		return true;
+		return c;
 	}
 	c = c + 1;
 	p1 = p1.next;

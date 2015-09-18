@@ -1,4 +1,4 @@
-var array = ['a', 'b', 'c', 'e', 'f', 'g'];
+var array = new Co['a', 'b', 'c', 'e', 'f', 'g'];
 print("1");
 var i = 0;
 while(true){

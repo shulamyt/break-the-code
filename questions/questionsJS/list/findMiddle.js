@@ -8,9 +8,11 @@ while (p1.next){
 	p1 = p1.next;
 }
 
+var i = 0;
 var  p = l1.head();
-while (c > 0){
+while (i < c/2){
 	p = p.next;
+	i = i + 1;
 }
 
 print (p.value);
