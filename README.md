@@ -23,3 +23,16 @@ https://github.com/kpdecker/jsdiff
 https://github.com/siddii/angular-timer
 https://github.com/EvanHahn/HumanizeDuration.js
 http://momentjs.com/
+
+--------------------------------------------------
+how to run:
+
+# open cmd
+# [run mongo]: mongod
+
+# open cmd
+# go to main folder
+# [run server]: node start_server.js
+
+# open browser
+# http://localhost:3000/#/login
