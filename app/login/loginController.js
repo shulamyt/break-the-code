@@ -5,6 +5,12 @@ angular.module('BreakTheCode').
     var self = this;
     $scope.user = {};
 
+    $scope.programmingLanguagesOptions = [
+    'C', 'C ++', 'C#', 'java', 'JavaScript', 'python',
+    'perl', 'PHP', 'Fortran', '.NET', 'SQL', 'Ruby',
+    'Matlab', 'Scala', 'Haskell'
+    ];
+
         $scope.startTheGame = function (){
             UserService.createUser($scope.user)
                 .then(function(user){

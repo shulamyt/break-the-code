@@ -30,7 +30,7 @@ You may retire at any point (even though we'd be happy if you stay with us until
             <select ng-model="user.degree.BA.started" ng-options="n for n in {{[] | range:1960:2016}}"></select>
         </td>
         <td> 
-        studied <select ng-model="user.degree.BA.studied" ng-options="n for n in [] | range:0:6"></select> years
+        and studied <select ng-model="user.degree.BA.studied" ng-options="n for n in [] | range:0:6"></select> years
         </td>
         <td><input type="checkbox" ng-model="user.degree.BA.finised">finised</td>
     </tr>
@@ -42,7 +42,7 @@ You may retire at any point (even though we'd be happy if you stay with us until
             <select ng-model="user.degree.MA.started" ng-options="n for n in {{[] | range:1960:2016}}"></select>
         </td>
         <td> 
-        studied <select ng-model="user.degree.MA.studied" ng-options="n for n in [] | range:0:6"></select> years
+        and studied <select ng-model="user.degree.MA.studied" ng-options="n for n in [] | range:0:6"></select> years
         </td>
         <td><input type="checkbox" ng-model="user.degree.MA.finised">finised</td>
     </tr>
@@ -54,11 +54,33 @@ You may retire at any point (even though we'd be happy if you stay with us until
             <select ng-model="user.degree.PhD.started" ng-options="n for n in {{[] | range:1960:2016}}"></select>
         </td>
         <td> 
-        studied <select ng-model="user.degree.PhD.studied" ng-options="n for n in [] | range:0:6"></select> years
+        and studied <select ng-model="user.degree.PhD.studied" ng-options="n for n in [] | range:0:6"></select> years
         </td>
         <td><input type="checkbox" ng-model="user.degree.PhD.finised">finised</td>
     </tr>
 </table>
+
+<h3>Which programming languages you have a good familiarity with:</h3><div>
+    <label ng-repeat="programmingLanguage in programmingLanguagesOptions">
+      <input type="checkbox" checklist-model="user.programmingLanguages" checklist-value="programmingLanguage"> {{programmingLanguage}}
+    </label>
+</div>
+
+<div>
+    <label for="yearsOfExperience">How many years work experience you have in programming?</label>
+    <input id="yearsOfExperience" ng-type="number" ng-model="user.yearsOfExperience"/>
+</div>
+
+<div>
+    <label for="assessProgrammingSkills">How do you assess your programming skills?</label>
+
+    <label ng-repeat="n in [0,1,2,3,4,5]">
+        <input type="radio" name="assessProgrammingSkills" ng-model="user.assessProgrammingSkills" ng-value="n" /> {{n}}
+    </label>
+</div>
+
+
+
 
     <div>
         <button type="submit" ng-disabled="loginForm.$invalid" ng-click="startTheGame()">Let's start!</button>
