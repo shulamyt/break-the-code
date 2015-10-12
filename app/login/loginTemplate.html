@@ -1,6 +1,6 @@
 <h1>Can you get the code?</h1>
-<p>The following game is part of an experiment in software engineering which aims to measure the comprehension of different code snippets. Note that the goal it to characterize the different code snippets, not to evaluate the programmers!</p>
-<p>During the game you will be given code snippets of varying difficulty drawn randomly from the pool of the game. There is a time limit  for each question. Try to answer every question as quickly as possible (and of course correctly, but please think it out and do not guess!). Remember that your score depends on how fast and how correctly you answered. There are questions where even a partial answer is acceptable.</p>
+<p>The following game is part of an experiment in software engineering which aims to measure the comprehension of different code snippets. Note that the goal is to characterize the different code snippets, not to evaluate the programmers!</p>
+<p>During the game you will be given code snippets of varying difficulty drawn randomly from a pool. There is a time limit  for each question. Try to answer every question as quickly as possible (and of course correctly, but please think it out and do not guess!). Remember that your score depends on how fast and how correctly you answered. There are questions where even a partial answer is acceptable.</p>
 <p>It is important to note:<br>
 We do not collect any identifying information. All information gathered is anonymous for research purposes only.<br>
 You may retire at any point (even though we'd be happy if you stay with us until the end).</p>
@@ -21,42 +21,46 @@ You may retire at any point (even though we'd be happy if you stay with us until
         </select>
     </div>
 <h3>How did you learn to program:</h3>
-<div><input type="checkbox" ng-model="user.degree.selfTaught">self taught</div>
+<div><label for="selfTaught">self taught<input type="checkbox" id="selfTaught" ng-model="user.degree.selfTaught"></label></div>
 <table>
     <tr>
         <td>BSc/BA: </td>
         <td>
             <label for="startedBA">started in </label>
-            <select ng-model="user.degree.BA.started" ng-options="n for n in {{[] | range:1960:2016}}"></select>
+            <select ng-model="user.degree.BA.started" ng-options="n for n in {{[] | disRange:2016:1980}}"></select>
         </td>
-        <td> 
-        and studied <select ng-model="user.degree.BA.studied" ng-options="n for n in [] | range:0:6"></select> years
+        <td>
+        and studied <select ng-model="user.degree.BA.studied" ng-options="n for n in ['0','1','2','3','4','5','5+']"></select> years
         </td>
-        <td><input type="checkbox" ng-model="user.degree.BA.finised">finised</td>
+        <td><input id="baFinised" type="checkbox" ng-model="user.degree.BA.finised">
+        <label for="baFinised">finised</label></td>
     </tr>
 
     <tr>
         <td>MSc/MA: </td>
         <td>
             <label for="startedBA">started in </label>
-            <select ng-model="user.degree.MA.started" ng-options="n for n in {{[] | range:1960:2016}}"></select>
+            <select ng-model="user.degree.MA.started" ng-options="n for n in {{[] | disRange:2016:1980}}"></select>
         </td>
         <td> 
-        and studied <select ng-model="user.degree.MA.studied" ng-options="n for n in [] | range:0:6"></select> years
+        and studied <select ng-model="user.degree.MA.studied" ng-options="n for n in ['0','1','2','3','4','5','5+']"></select> years
         </td>
-        <td><input type="checkbox" ng-model="user.degree.MA.finised">finised</td>
+
+         <td><input id="maFinised" type="checkbox" ng-model="user.degree.MA.finised">
+        <label for="maFinised">finised</label></td>
     </tr>
 
     <tr>
         <td>PhD: </td>
         <td>
             <label for="startedPhD">started in </label>
-            <select ng-model="user.degree.PhD.started" ng-options="n for n in {{[] | range:1960:2016}}"></select>
+            <select ng-model="user.degree.PhD.started" ng-options="n for n in {{[] | disRange:2016:1980}}"></select>
         </td>
         <td> 
-        and studied <select ng-model="user.degree.PhD.studied" ng-options="n for n in [] | range:0:6"></select> years
+        and studied <select ng-model="user.degree.PhD.studied" ng-options="n for n in ['0','1','2','3','4','5','5+']"></select> years
         </td>
-        <td><input type="checkbox" ng-model="user.degree.PhD.finised">finised</td>
+           <td><input id="phdFinised" type="checkbox" ng-model="user.degree.PhD.finised">
+        <label for="phdFinised">finised</label></td>
     </tr>
 </table>
 
@@ -74,19 +78,16 @@ You may retire at any point (even though we'd be happy if you stay with us until
 <div>
     <label for="assessProgrammingSkills">How do you assess your programming skills?</label>
 
-    <label ng-repeat="n in [0,1,2,3,4,5]">
+    <label ng-repeat="n in ['0 (novice)',1,2,3,4,'5 (expert)']">
         <input type="radio" name="assessProgrammingSkills" ng-model="user.assessProgrammingSkills" ng-value="n" /> {{n}}
     </label>
 </div>
 </br>
 <div>
     <label for="notFirstTime">I was already part in this experiment before
-        <input name="notFirstTime" type="checkbox" ng-model="user.notFirstTime">
+        <input id="notFirstTime" type="checkbox" ng-model="user.notFirstTime">
     </label>
 </div>
-
-
-
 
     <div>
         <button type="submit" ng-disabled="loginForm.$invalid" ng-click="startTheGame()">Let's start!</button>

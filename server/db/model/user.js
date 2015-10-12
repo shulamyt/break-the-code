@@ -1,21 +1,30 @@
 var db = require('../db');
 
 var userSchema = new db.Schema({
-    creationDate: { type: Date, required: true, default: Date.now },
-    age: { type: Number},
+    creationDate: {type: Date, required: true, default: Date.now },
+    age: {type: Number},
     gender: {type: String},
-    hasRelevantDegree: {type: Boolean},
+
+    selfTaught: {type: Boolean},
+
+    baFinised: {type: Boolean},
+    baStarted: {type: Number},
+    baStudied: {type: String},
+
+    maFinised: {type: Boolean},
+    maStarted: {type: Number},
+    maStudied: {type: String},
+
+    phdFinised: {type: Boolean},
+    phdStarted: {type: Number},
+    phdStudied: {type: String},
+
+    yearsOfExperience:{type: Number},
+    programmingLanguages: {type: Array},
+    assessSelfProgrammingSkills:{type: Number},
+    firstTime:{type: Boolean},
+
     testPlan: {type: Array, required: true}
-    //title:  String,
-    //author: String,
-    //body:   String,
-    //comments: [{ body: String, date: Date }],
-    //date: { type: Date, default: Date.now },
-    //hidden: Boolean,
-    //meta: {
-    //    votes: Number,
-    //    favs:  Number
-    //}
 });
 
 
