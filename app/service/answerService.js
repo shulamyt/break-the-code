@@ -12,13 +12,13 @@ angular.module('BreakTheCode')
                 currentAnswer = answer;
             };
 
-            AnswerService.getRightAnswer = function(questionId){
-                var deferred = $q.defer();
-                $http.get('/answer/'+ questionId)
-                    .success(function(data) {
-                        deferred.resolve(data);
-                    }).error(deferred.reject);
-                return deferred.promise;
+            AnswerService.getRightAnswer = function(questionMetadata){
+                var promise = new Promise(function(resolve, reject) {
+                    var answer = questionMetadata.answer;
+                    answer = answer.replace(/^134345234/, '');
+                    resolve(answer);
+                });
+                return promise;
             };
 
             AnswerService.saveAnswer = function(answer){

@@ -4,21 +4,9 @@ var questionService = require('./../services/questionService');
 module.exports = function (app) {
     app.get('/question/:questionId', function (req, res) {
         var questionId = req.params.questionId;
-        questionService.getQuestion(questionId).then(function(file) {
-            var questionMetadata;
-            try{
-                questionMetadata = JSON.parse(file.content);
-            }catch(err){
-                questionMetadata = {};
-                questionMetadata.code = file.content;
-            }
-
-            //catch(err){
-            //    alert("error caught");
-            //}
-            var beautifulCode = beautify_js(questionMetadata.code);
-            var question = questionMetadata;
-            delete question.answer;
+        questionService.getQuestion(questionId).then(function(question) {
+            var beautifulCode = beautify_js(question.code);
+            question.answer = "134345234" + question.answer;
             question.content = beautifulCode;
             res.status(201).json(question);
         }, function(error){

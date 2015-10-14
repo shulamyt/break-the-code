@@ -10,8 +10,18 @@ var QuestionService = function(){
                     if(err != null){
                         reject("problem");
                     }else{
-                        var name = questionPath.replace(/^.*[\\\/]/, '');
-                        resolve({name: name, content : file});
+                        var questionMetadata;
+                        try{
+                            questionMetadata = JSON.parse(file.content);
+                        }catch(err){
+                            questionMetadata = {};
+                            questionMetadata.id = questionIndex;
+                            questionMetadata.code = file;
+                            questionMetadata.name = questionPath.replace(/^.*[\\\/]/, '');
+                            questionMetadata.answer = "";
+                        }
+                        resolve(questionMetadata);
+
                     }
                 });
             });

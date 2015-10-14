@@ -19,8 +19,7 @@ angular.module('BreakTheCode')
 
             function getRightAnswer(){
                 var question = QuestionService.getCurrentQuestion();
-                var questionId = question.id;
-                var correctAnswer = AnswerService.getRightAnswer(questionId);
+                var correctAnswer = AnswerService.getRightAnswer(question);
                 return correctAnswer;
             }
 
