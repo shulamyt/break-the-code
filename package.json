@@ -25,6 +25,7 @@
     "jquery": "^2.1.4",
     "lambda-js": "^0.1.5",
     "mongoose": "^4.0.3",
+    "node-dir": "^0.1.10",
     "requirejs": "^2.1.17"
   },
   "devDependencies": {

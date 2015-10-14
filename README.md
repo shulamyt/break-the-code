@@ -23,6 +23,7 @@ https://github.com/kpdecker/jsdiff
 https://github.com/siddii/angular-timer
 https://github.com/EvanHahn/HumanizeDuration.js
 http://momentjs.com/
+https://github.com/fshost/node-dir
 
 --------------------------------------------------
 how to run:
