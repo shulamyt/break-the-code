@@ -47,9 +47,9 @@ TestPlanService.prototype.setTestPlanConfiguration = function(){
     return promise;
 };
 
-TestPlanService.prototype.getRandomQuestionID = function(availableQuestions){
-	var id = Math.floor(Math.random()*availableQuestions.length + 1);
-	return id;
+TestPlanService.prototype.getRandomQuestionIndex = function(availableQuestions){
+	var index = Math.floor(Math.random()*availableQuestions.length + 1);
+	return index;
 };
 
 TestPlanService.prototype.getTestPlan = function() {
@@ -66,9 +66,10 @@ TestPlanService.prototype.getTestPlan = function() {
 			testPlanConfiguration = configuration;
 			var numOfQuestions = configuration.numOfQuestions || 20;
 			while(testPlan.length < numOfQuestions) {
-				var questionID = self.getRandomQuestionID(availableQuestions);
-				if(testPlan.indexOf(questionID) == -1) {
-					testPlan.push(questionID);
+				var questionIndex = self.getRandomQuestionIndex(availableQuestions);
+				var questionPath = availableQuestions[questionIndex];
+				if(testPlan.indexOf(questionPath) == -1) {
+					testPlan.push(questionPath);
 				}
 			}
 			resolve(testPlan);
