@@ -75,7 +75,9 @@ angular.module('BreakTheCode')
                 })
                     .success(function(data) {
                         deferred.resolve(data);
-                    }).error(deferred.reject);
+                    }).error(function(data) {
+                        deferred.reject
+                    });
                 return deferred.promise;
             };
 

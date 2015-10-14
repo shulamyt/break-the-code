@@ -7,7 +7,7 @@ function TestPlanService(){
 	//}
 	this.availableQuestions = this.setAvailableQuestions();
 	this.testPlanConfiguration = this.setTestPlanConfiguration();
-}
+};
 
 TestPlanService.prototype.getAvailableQuestions = function(){
 	return this.availableQuestions;
@@ -51,6 +51,16 @@ TestPlanService.prototype.getRandomQuestionIndex = function(availableQuestions){
 	var index = Math.floor(Math.random()*availableQuestions.length + 1);
 	return index;
 };
+TestPlanService.prototype.getQuestionPath = function(questionIndex) {
+	var self = this;
+	var promise = new Promise(function(resolve, reject) {
+		self.getAvailableQuestions().then(function(questions){
+			var questionPath = questions[questionIndex];
+			resolve(questionPath);
+		})
+	});
+	return promise;
+};
 
 TestPlanService.prototype.getTestPlan = function() {
 	var self = this;
@@ -67,9 +77,8 @@ TestPlanService.prototype.getTestPlan = function() {
 			var numOfQuestions = configuration.numOfQuestions || 20;
 			while(testPlan.length < numOfQuestions) {
 				var questionIndex = self.getRandomQuestionIndex(availableQuestions);
-				var questionPath = availableQuestions[questionIndex];
-				if(testPlan.indexOf(questionPath) == -1) {
-					testPlan.push(questionPath);
+				if(testPlan.indexOf(questionIndex) == -1) {
+					testPlan.push(questionIndex);
 				}
 			}
 			resolve(testPlan);

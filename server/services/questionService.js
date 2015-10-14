@@ -1,11 +1,22 @@
-var readFile = require('fs-readfile-promise');
+var fs = require('fs');
+var testPlanService = require('./testPlanService');
 
 var QuestionService = function(){
 
-    this.getQuestion = function (questionId){
-        var filePath = __dirname + "/../../questions/" + questionId + ".json";
-        var file = readFile(filePath);
-        return file;
+    this.getQuestion = function (questionIndex){
+        var promise = new Promise(function(resolve, reject) {
+            testPlanService.getQuestionPath(questionIndex).then(function(questionPath){
+                fs.readFile(questionPath, 'utf8', function(err, file) {
+                    if(err != null){
+                        reject("problem");
+                    }else{
+                        var name = questionPath.replace(/^.*[\\\/]/, '');
+                        resolve({name: name, content : file});
+                    }
+                });
+            });
+        });
+        return promise;
     };
 };
 var questionService = new QuestionService();
