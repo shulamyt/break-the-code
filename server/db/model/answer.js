@@ -4,10 +4,10 @@ var answerSchema = new db.Schema({
     date: { type: Date, required: true, default: Date.now },
     //remaindedTime:
     //TODO - timer need to be more accurate
-    questionId: {type: String, required: true},
-    questionIndex: {type: Number, required: true},
-    rightAnswer: {type: String, required: true},
-    userId: {type: String, required: true},
+    questionId: {type: String},
+    questionIndex: {type: Number},
+    rightAnswer: {type: String},
+    userId: {type: String},
     userAnswer: {type: String},
     time: {type: Number}
 });
