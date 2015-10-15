@@ -37,3 +37,53 @@ how to run:
 
 # open browser
 # http://localhost:3000/#/login
+
+postgres
+psql.exe -U postgres
+--
+first time:
+https://wiki.postgresql.org/wiki/First_steps
+
+CREATE SCHEMA test;
+CREATE USER x PASSWORD y;
+GRANT ALL ON SCHEMA test TO x;
+GRANT ALL ON ALL TABLES IN SCHEMA test TO x;
+\q
+
+--
+psql.exe -U y -d postgres
+x
+--
+DROP TABLE Experimenter;
+CREATE TABLE Experimenter(
+	ID bigint PRIMARY KEY,
+	timestamp timestamp default current_timestamp,
+   age int,
+   gender text,
+   selfTaught boolean,
+   baFinised boolean,
+   baStarted int,
+   baStudied int,
+   maFinised boolean,
+   maStarted int,
+   maStudied int,
+   phdFinised boolean,
+   phdStarted int,
+   phdStudied int,
+   yearsOfExperience int,
+   programmingLanguages text ARRAY,
+   assessSelfProgrammingSkills int,
+   firstTime boolean,
+   testPlan text ARRAY
+);
+--
+DROP TABLE Answer;
+CREATE TABLE Answer(
+   userId bigint,
+   questionId text,
+   rightAnswer text,
+   userAnswer text,
+   serialNumber int,
+   duration double precision,
+   timestamp timestamp default current_timestamp
+);

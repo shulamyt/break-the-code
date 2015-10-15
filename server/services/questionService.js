@@ -43,9 +43,8 @@ var QuestionService = function(){
                             questionMetadata = JSON.parse(file.content);
                         }catch(err){
                             questionMetadata = {};
-                            questionMetadata.id = questionIndex;
+                            questionMetadata.id = questionPath.replace(/^.*[\\\/]/, '');
                             questionMetadata.code = file;
-                            questionMetadata.name = questionPath.replace(/^.*[\\\/]/, '');
                             questionMetadata.answer = "";
                         }
                         resolve(questionMetadata);

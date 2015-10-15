@@ -1,4 +1,4 @@
-var UserModel = require('../db/model/user');
+var userDao = require('../dao/userDao');
 var testPlanService = require('./../services/testPlanService');
 var questionService = require('./../services/questionService');
 
@@ -6,6 +6,7 @@ module.exports = function (app) {
     app.post('/user', function (req, res) {
         testPlanService.getTestPlan().then(function(testPlan){
             var user = {};
+            user.id = new Date().getTime();
             user.testPlan = testPlan;
             if(req && req.body){
                 user.age = req.body.age;
@@ -13,46 +14,55 @@ module.exports = function (app) {
 
                 user.yearsOfExperience = req.body.yearsOfExperience;
                 user.programmingLanguages = req.body.programmingLanguages;
-                user.assessSelfProgrammingSkills = req.body.assessProgrammingSkills;
+                if(req.body.assessProgrammingSkills == '0 (novice)'){
+                    user.assessSelfProgrammingSkills = 0;
+                }
+                else if(req.body.assessProgrammingSkills == '5 (expert)'){
+                        user.assessSelfProgrammingSkills = 5;
+                }else{
+                    user.assessSelfProgrammingSkills = req.body.assessProgrammingSkills;
+                }
                 user.firstTime = !req.body.notFirstTime;
 
                 if(req.body.degree){
-                    user.selfTaught = req.body.degree.selfTaught;
+                    user.selfTaught = req.body.degree.selfTaught||false;
                     if(req.body.degree.BA){
-                        user.baFinised = req.body.degree.BA.finised;
+                        user.baFinised = req.body.degree.BA.finised||false;
                         user.baStarted = req.body.degree.BA.started;
-                        user.baStudied = req.body.degree.BA.studied;
+                        if(req.body.degree.BA.studied == '5+'){
+                            user.baStudied = 6;
+                        }else {
+                            user.baStudied = req.body.degree.BA.studied;
+                        }
                     }
                     if(req.body.degree.MA){
-                        user.maFinised = req.body.degree.MA.finised;
+                        user.maFinised = req.body.degree.MA.finised||false;
                         user.maStarted = req.body.degree.MA.started;
-                        user.maStudied = req.body.degree.MA.studied;
+                        if(req.body.degree.MA.studied == '5+'){
+                            user.maStudied = 6;
+                        }else {
+                            user.maStudied = req.body.degree.MA.studied;
+                        }
                     }
                     if(req.body.degree.PhD) {
-                        user.phdFinised = req.body.degree.PhD.finised;
+                        user.phdFinised = req.body.degree.PhD.finised||false;
                         user.phdStarted = req.body.degree.PhD.started;
-                        user.phdStudied = req.body.degree.PhD.studied;
+                        if(req.body.degree.PhD.studied == '5+'){
+                            user.phdStudied = 6;
+                        }else {
+                            user.phdStudied = req.body.degree.PhD.studied;
+                        }
                     }
                 }
             }
-            var userModel = new UserModel(user);
-
-            userModel.save(function (err, userSaved) {
-                if (err) {
-                    return next(err);
-                }
-                else{
-                    questionService.getQuestions(user.testPlan).then(function(questions){
-                        var userSavedJson = JSON.parse(JSON.stringify(userSaved));
-                        var userJson = user;
-                        userJson.questions = questions;
-                        userJson._id = userSavedJson._id;
-                        res.status(201).json(userJson);
-                    });
-
-                }
-
+            
+            userDao.save(user).then(function(){
+                questionService.getQuestions(user.testPlan).then(function(questions){
+                    user.questions = questions;
+                    res.status(201).json(user);
+                });
             });
+
         });
     });
 };

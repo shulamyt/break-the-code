@@ -1,25 +1,19 @@
-var AnswerModel = require('../db/model/answer');
+var answerDao = require('../dao/answerDao');
 var questionService = require('./../services/questionService');
 
 module.exports = function (app) {
 
     app.post('/answer', function (req, res) {
-        var answer = new AnswerModel({
-            userId: req.body.userId,
-            questionId: req.body.questionId,
-            rightAnswer: req.body.rightAnswer,
-            userAnswer: req.body.userAnswer,
-            questionIndex: req.body.questionIndex,
-            time: req.body.time
-        });
+        var answer = {};
+        answer.userId = req.body.userId;
+        answer.questionId = req.body.questionId;
+        answer.rightAnswer = req.body.rightAnswer;
+        answer.userAnswer = req.body.userAnswer;
+        answer.serialNumber = req.body.questionIndex;
+        answer.duration = req.body.time;
 
-        answer.save(function (err, answer) {
-            if (err) {
-                return err;
-            }
+        answerDao.save(answer).then(function () {
             res.status(201).json(answer);
-        })
-
+        });
     });
-
-};
+}
