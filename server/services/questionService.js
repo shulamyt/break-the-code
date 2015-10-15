@@ -1,7 +1,35 @@
 var fs = require('fs');
 var testPlanService = require('./testPlanService');
+var Q = require('q');
 
 var QuestionService = function(){
+
+    this.getQuestions = function (testPlan){
+        var self = this;
+        var promise = new Promise(function(resolve, reject) {
+            var questions = [];
+            var promises = [];
+            for(var i = 0; i < testPlan.length; i++){
+                promises.push(self.addQuestionMetadata(i, testPlan, questions));
+            }
+            Q.all(promises).then(function(){
+                resolve(questions);
+            });
+        });
+        return promise;
+    };
+
+    this.addQuestionMetadata = function (indexInTestPlan, testPlan, questionsList){
+        var self = this;
+        var promise = new Promise(function(resolve, reject) {
+            var questionIndex = testPlan[indexInTestPlan];
+            self.getQuestion(questionIndex).then(function(questionMetadata){
+                questionsList[indexInTestPlan] = questionMetadata;
+                resolve();
+            });
+        });
+        return promise;
+    };
 
     this.getQuestion = function (questionIndex){
         var promise = new Promise(function(resolve, reject) {

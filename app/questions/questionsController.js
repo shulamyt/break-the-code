@@ -37,8 +37,9 @@ angular.module('BreakTheCode')
             function setQuestion(question){
                 this.currentQuestion = question;
                 $scope.correctAnswer = question.answer;
-                $scope.content = question.content;
+                $scope.content = question.code;
                 $scope.timeForQuestion = getTimeForQuestion(question);
+                $scope.$apply();
             }
 
             function getTimeForQuestion(question){

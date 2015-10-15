@@ -1,5 +1,6 @@
 var UserModel = require('../db/model/user');
 var testPlanService = require('./../services/testPlanService');
+var questionService = require('./../services/questionService');
 
 module.exports = function (app) {
     app.post('/user', function (req, res) {
@@ -36,11 +37,19 @@ module.exports = function (app) {
             }
             var userModel = new UserModel(user);
 
-            userModel.save(function (err, user) {
+            userModel.save(function (err, userSaved) {
                 if (err) {
                     return next(err);
                 }
-                res.status(201).json(user);
+                else{
+                    questionService.getQuestions(user.testPlan).then(function(questions){
+                        var userJson = user;
+                        userJson.questions = questions;
+                        res.status(201).json(userJson);
+                    });
+
+                }
+
             });
         });
     });

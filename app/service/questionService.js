@@ -53,18 +53,15 @@ angular.module('BreakTheCode')
             };
 
             questionService.getQuestion = function(){
-                var questionId = questionService.getNextQuestionId();
-                var deferred = $q.defer();
-                $http.get('/question/' + questionId)
-                    .success(function(data) {
-                        deferred.resolve(data);
-                    }).error(deferred.reject);
-
-                deferred.promise.then(function(question){
+                var promise = new Promise(function(resolve, reject) {
+                    var questionIndex = questionService.increaseQuestionIndex();
+                    var user = UserService.getCurrentUser();
+                    var questions = user.questions;
+                    var question = questions[questionIndex];
                     questionService.setCurrentQuestion(question);
+                    resolve(question);
                 });
-
-                return deferred.promise;
+                return promise;
             };
 
             questionService.saveQuestion = function(){
