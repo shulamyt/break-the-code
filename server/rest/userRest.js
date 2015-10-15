@@ -43,8 +43,10 @@ module.exports = function (app) {
                 }
                 else{
                     questionService.getQuestions(user.testPlan).then(function(questions){
+                        var userSavedJson = JSON.parse(JSON.stringify(userSaved));
                         var userJson = user;
                         userJson.questions = questions;
+                        userJson._id = userSavedJson._id;
                         res.status(201).json(userJson);
                     });
 
