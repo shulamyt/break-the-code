@@ -54,14 +54,13 @@ angular.module('BreakTheCode')
                 var answer =  $scope.answer;
                 if(this.currentQuestion) {
                     $scope.correctAnswer = this.currentQuestion.answer;
-                    $scope.$broadcast('checkAnswer');
+                    $scope.$emit('checkAnswer');
                 }
             }
 
             function finishQuestion() {
                 TimerService.stop();
                 stopTimer();
-                summarizeQuestion();
             }
 
             function gameOver(){

@@ -4,10 +4,10 @@ angular.module('BreakTheCode')
             restrict: 'E',
             templateUrl: 'questionSummary/summaryTemplate.html',
             controller : "SummaryController",
-            scope: {
-                answer: "@",
-                //correctAnswer1: "@"
-            },
+            //scope: {
+            //    answer: "@",
+            //    //correctAnswer1: "@"
+            //},
             link: function (scope, element) {
                 var popupEl = $(element).find('[data-point="popup"]');
                 popupEl.dialog({
