@@ -26,10 +26,6 @@ http://momentjs.com/
 https://github.com/fshost/node-dir
 
 --------------------------------------------------
-how to run:
-
-# open cmd
-# [run mongo]: mongod
 
 # open cmd
 # go to main folder
@@ -37,8 +33,9 @@ how to run:
 
 # open browser
 # http://localhost:3000/#/login
+--
+postgres:
 
-postgres
 psql.exe -U postgres
 --
 first time:

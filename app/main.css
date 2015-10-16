@@ -39,3 +39,98 @@
 .differences{
     text-align: center;
 }
+
+.login{
+    /*height: 100%;*/
+    /*background-image: url(image/hacker.jpg);*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: center;*/
+}
+
+.title{
+    background-image: url(image/getTheCode.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 200px;
+}
+
+.hacker{
+    background-image: url(image/hackerSmall.jpg);
+    background-repeat: no-repeat;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 499px;
+    right: 0;
+    width: 347px;
+    height: 289px;
+    top: 342px;
+
+}
+
+.loginContent{
+    z-index: 10;
+    position: absolute;
+    top: 156px;
+    width: 811px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    font-family: aaargh;
+    font-weight: bold;
+    text-align: justify;
+}
+
+.loginOpacity{
+/*    z-index: 5;
+    position: absolute;
+    top: 154px;
+    opacity: 0.6;
+    height: 781px;
+    background-color: #ffffff;
+    animation-name: loginOpacityAnimation;
+    animation-duration: 0.5s;
+    width: 849px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;*/
+}
+
+.introduction{
+    font-size: 13px;
+}
+
+@keyframes loginOpacityAnimation {
+    from {opacity: 0;}
+    to {opacity: 0.4;}
+}
+
+@font-face {
+    font-family: aaargh;
+    src: url(font/Aaargh.ttf);
+}
+
+.login button{
+    box-shadow: rgb(151, 196, 254) 0px 1px 0px 0px inset;
+    border-radius: 6px;
+    border: 1px solid rgb(51, 127, 237);
+    display: inline-block;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 16px 61px;
+    text-decoration: none;
+    text-shadow: rgb(21, 112, 205) 0px 1px 0px;
+    background: linear-gradient(rgb(61, 148, 246) 5%, rgb(30, 98, 208) 100%) rgb(61, 148, 246);
+    font-size: 38px;
+}
+
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
