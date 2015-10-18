@@ -1,4 +1,7 @@
-//http://localhost:3000/index.html#/login
+define([
+    'angular',
+    'app'
+], function(app) {
 angular.module('BreakTheCode')
     .controller('QuestionsController', ['$scope', '$location', '$http', '$sce', 'QuestionService', 'TimerService',
         function($scope, $location, $http, $sce, QuestionService, TimerService) {
@@ -86,3 +89,4 @@ angular.module('BreakTheCode')
             });
 
         }]);
+});

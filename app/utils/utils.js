@@ -1,3 +1,7 @@
+define([
+    'angular',
+    'app'
+], function(app) {
 angular.module('BreakTheCode').filter('range', function() {
   return function(input, min, max) {
     min = parseInt(min); //Make string input int
@@ -16,4 +20,5 @@ angular.module('BreakTheCode').filter('disRange', function() {
       input.push(i);
     return input;
   };
+});
 });

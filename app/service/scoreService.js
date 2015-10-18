@@ -1,3 +1,7 @@
+define([
+	'angular',
+    'app'
+], function(app) {
 angular.module('BreakTheCode')
     .service('ScoreService', ['$http',
         function($http) {
@@ -9,3 +13,4 @@ angular.module('BreakTheCode')
 
             return ScoreService;
         }]);
+    });

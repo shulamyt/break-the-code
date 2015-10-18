@@ -1,3 +1,7 @@
+define([
+    'angular',
+    'app'
+], function(app) {
 angular.module('BreakTheCode')
     .service('TimerService', ['$http', '$q',
         function($http, $q) {
@@ -48,3 +52,4 @@ angular.module('BreakTheCode')
 
             return TimerService;
         }]);
+});

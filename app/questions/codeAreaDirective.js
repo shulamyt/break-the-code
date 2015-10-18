@@ -1,3 +1,7 @@
+define([
+    'angular',
+    'app'
+], function(app) {
 angular.module('BreakTheCode')
     .directive('codeArea', function() {
         return {
@@ -18,4 +22,5 @@ angular.module('BreakTheCode')
 
             }
         };
+    });
     });

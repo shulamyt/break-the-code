@@ -1,3 +1,8 @@
+define([
+    'angular',
+    'app',
+    './summaryController'
+], function(app) {
 angular.module('BreakTheCode')
     .directive('summary', function() {
         return {
@@ -32,3 +37,4 @@ angular.module('BreakTheCode')
             }
         };
     });
+});

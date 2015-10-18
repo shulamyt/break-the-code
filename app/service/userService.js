@@ -1,3 +1,7 @@
+define([
+    'angular',
+    'app'
+], function(app) {
 angular.module('BreakTheCode')
     .service('UserService', ['$http', '$q',
         function($http, $q) {
@@ -40,3 +44,5 @@ angular.module('BreakTheCode')
 
             return UserService;
         }]);
+
+});

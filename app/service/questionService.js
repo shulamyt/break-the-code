@@ -1,3 +1,8 @@
+define([
+    'angular',
+    'app',
+    './userService'
+], function(app) {
 angular.module('BreakTheCode')
     .service('QuestionService', ['$http', '$q', 'UserService',
         function($http, $q, UserService) {
@@ -80,3 +85,5 @@ angular.module('BreakTheCode')
 
             return questionService;
         }]);
+
+});

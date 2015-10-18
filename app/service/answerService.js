@@ -1,3 +1,10 @@
+define([
+    'angular',
+    'app',
+    './questionService',
+    './userService',
+    './timerService'
+], function(app) {
 angular.module('BreakTheCode')
     .service('AnswerService', ['$http', '$q', 'QuestionService', 'UserService', 'TimerService',
         function($http, $q, QuestionService, UserService, TimerService) {
@@ -36,3 +43,4 @@ angular.module('BreakTheCode')
 
             return AnswerService;
         }]);
+});
