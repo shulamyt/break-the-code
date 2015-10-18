@@ -23,6 +23,7 @@
     "express": "^4.12.3",
     "fs-readfile-promise": "^2.0.0",
     "jquery": "^2.1.4",
+    "js-beautify": "^1.5.10",
     "lambda-js": "^0.1.5",
     "mongoose": "^4.0.3",
     "node-dir": "^0.1.10",
