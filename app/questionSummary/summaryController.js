@@ -2,7 +2,7 @@ define([
     'angular',
     'app',
     '../service/questionService',
-    '../service/userService'
+    '../service/answerService'
 ], function(app) {
 angular.module('BreakTheCode')
     .controller('SummaryController', ['$scope', '$rootScope', '$location', '$http', '$sce', 'QuestionService', 'AnswerService',

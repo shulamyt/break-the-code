@@ -1,6 +1,7 @@
 define([
     'angular',
-    'app'
+    'app',
+    './answerAreaController'
 ], function(app) {
 angular.module('BreakTheCode')
     .directive('answerArea', function() {

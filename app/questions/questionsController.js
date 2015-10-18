@@ -1,6 +1,8 @@
 define([
     'angular',
-    'app'
+    'app',
+    '../service/questionService',
+    '../service/timerService'
 ], function(app) {
 angular.module('BreakTheCode')
     .controller('QuestionsController', ['$scope', '$location', '$http', '$sce', 'QuestionService', 'TimerService',

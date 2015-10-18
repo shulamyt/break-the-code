@@ -2,7 +2,8 @@ define([
     'angular',
     'app',
     '../service/questionService',
-    '../service/userService'
+    '../service/userService',
+    '../utils/utils'
 ], function(app) {
 angular.module('BreakTheCode').
     controller('LoginController', ['$scope', '$location', 'UserService', 'QuestionService',
