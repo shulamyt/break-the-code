@@ -5,6 +5,8 @@ var aa = a.concat(a);
 
 var flag = false;
 
+var j = 1;
+
 for (var i = 0; i < aa.length; i++){
 	if (flag == true){
 		if(b[j] == aa[i]){

@@ -1,8 +1,8 @@
 define([
 	'angular',
 	'angularRoute',
-	'app',
-	'routes',
+	'./app',
+	'./routes',
 	
 	// '../login/loginController',
 	// 'questions/answerAreaController',
