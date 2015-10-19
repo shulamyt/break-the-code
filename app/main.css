@@ -69,6 +69,18 @@
 
 }
 
+.codeArea{
+    position: absolute;
+    top: 122px;
+    left: 319px;
+}
+
+.questions{
+    background-image: url(image/ofice.jpg);
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
 .loginContent{
     z-index: 10;
     position: absolute;
