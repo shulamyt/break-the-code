@@ -1,6 +1,6 @@
 define([
     'angular',
-    'app'
+    '../app'
 ], function(app) {
 angular.module('BreakTheCode')
     .service('UserService', ['$http', '$q',

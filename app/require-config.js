@@ -14,7 +14,8 @@ require.config({
 		'angularTimer': "lib/angular-timer.min",
 		'humanizeDuration': "lib/humanize-duration",
 		'momentWithLocales': "lib/moment-with-locales",
-		'checklistModel': "lib/checklist-model"
+		'checklistModel': "lib/checklist-model",
+		'text': "lib/require-text"
 	},
 	shim: {
 		'angular' : {'exports' : 'angular'},

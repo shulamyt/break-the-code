@@ -1,6 +1,6 @@
 define([
     'angular',
-    'app'
+    '../app'
 ], function(app) {
 angular.module('BreakTheCode').filter('range', function() {
   return function(input, min, max) {

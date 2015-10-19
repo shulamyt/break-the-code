@@ -1,6 +1,6 @@
 define([
     'angular',
-    'app',
+    '../app',
     '../service/questionService',
     '../service/answerService'
 ], function(app) {

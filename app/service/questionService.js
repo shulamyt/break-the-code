@@ -1,6 +1,6 @@
 define([
     'angular',
-    'app',
+    '../app',
     './userService'
 ], function(app) {
 angular.module('BreakTheCode')

@@ -1,7 +1,8 @@
 define([
     'angular',
-    'app',
-    './summaryController'
+    '../app',
+    './summaryController',
+    'text!./summaryTemplate.html'
 ], function(app) {
 angular.module('BreakTheCode')
     .directive('summary', function() {

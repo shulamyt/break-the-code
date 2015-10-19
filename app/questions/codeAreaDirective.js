@@ -1,6 +1,7 @@
 define([
     'angular',
-    'app'
+    '../app',
+    'text!./codeAreaTemplate.html'
 ], function(app) {
 angular.module('BreakTheCode')
     .directive('codeArea', function() {

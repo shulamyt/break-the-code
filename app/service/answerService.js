@@ -1,6 +1,6 @@
 define([
     'angular',
-    'app',
+    '../app',
     './questionService',
     './userService',
     './timerService'
