@@ -2,8 +2,8 @@ define([
 	'angular',
 	'angularRoute',
 	'./app',
-	'../login/loginController',
-	'../questions/questionsController'
+	'login/loginController',
+	'questions/questionsController'
 ], function(app) {
 	angular.module('BreakTheCode').config(function($routeProvider){
 	  $routeProvider

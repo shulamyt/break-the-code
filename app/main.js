@@ -25,5 +25,5 @@ define([
 	// 'momentWithLocales',
 	// 'checklistModel'
 ], function() {
-	console.log("shula");
+	console.log("app loaded!");
 });
