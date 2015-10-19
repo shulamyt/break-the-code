@@ -8,8 +8,8 @@ require.config({
 		'jqueryUi': "lib/jquery-ui",
 		'angularResource': "lib/angular-resource",
 		'angularCookies': "lib/angular-cookies",
-		'codemirror': "lib/codemirror/lib/codemirror",
-		'codemirrorJavascript': "lib/codemirror/mode/javascript/javascript",
+		// 'codemirror': "lib/codemirror/lib/codemirror",
+		'codemirror': "lib/codemirror/mode/javascript/javascript",
 		'diff':"lib/diff",
 		'angularTimer': "lib/angular-timer.min",
 		'humanizeDuration': "lib/humanize-duration",
@@ -23,8 +23,7 @@ require.config({
 		'angularRoute': ['angular'],
 		'angularResource': ['angular'],
 		'angularCookies': ['angular'],
-		'checklistModel' : ['angular'],
-		'angularTimer' : ['angular', 'humanizeDuration', 'momentWithLocales'],
+		'checklistModel' : ['angular']
 
 	},
 	priority: [

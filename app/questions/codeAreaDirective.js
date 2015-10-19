@@ -1,8 +1,10 @@
 define([
+    'jquery',
+    'codemirror',
     'angular',
     '../app',
     'text!./codeAreaTemplate.html'
-], function(app) {
+], function($, CodeMirror) {
 angular.module('BreakTheCode')
     .directive('codeArea', function() {
         return {
