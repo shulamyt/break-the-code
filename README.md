@@ -35,6 +35,8 @@ https://github.com/fshost/node-dir
 # http://localhost:3000/#/login
 --
 postgres:
+start:
+postgres -D 'C:\Program Files\PostgreSQL\9.5\data'
 
 psql.exe -U postgres
 --
@@ -42,14 +44,14 @@ first time:
 https://wiki.postgresql.org/wiki/First_steps
 
 CREATE SCHEMA test;
-CREATE USER x PASSWORD y;
+CREATE USER x PASSWORD 'y';
 GRANT ALL ON SCHEMA test TO x;
 GRANT ALL ON ALL TABLES IN SCHEMA test TO x;
 \q
 
 --
-psql.exe -U y -d postgres
-x
+psql.exe -U x -d postgres
+y
 --
 DROP TABLE Experimenter;
 CREATE TABLE Experimenter(
