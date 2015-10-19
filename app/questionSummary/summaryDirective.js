@@ -1,9 +1,11 @@
 define([
+    'jquery',
+    'jqueryUi',
     'angular',
     '../app',
     './summaryController',
     'text!./summaryTemplate.html'
-], function(app) {
+], function($, $$) {
 angular.module('BreakTheCode')
     .directive('summary', function() {
         return {

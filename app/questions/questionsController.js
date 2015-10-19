@@ -7,7 +7,8 @@ define([
     '../service/questionService',
     '../service/timerService',
     './answerAreaDirective',
-    './codeAreaDirective'
+    './codeAreaDirective',
+    '../questionSummary/summaryDirective'
 
 ], function() {
 angular.module('BreakTheCode')
