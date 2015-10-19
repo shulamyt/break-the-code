@@ -10,7 +10,7 @@ require.config({
 		'angularCookies': "lib/angular-cookies",
 		// 'codemirror': "lib/codemirror/lib/codemirror",
 		'codemirror': "lib/codemirror/mode/javascript/javascript",
-		'diff':"lib/diff",
+		'JsDiff':"lib/JsDiff",
 		'angularTimer': "lib/angular-timer.min",
 		'humanizeDuration': "lib/humanize-duration",
 		'momentWithLocales': "lib/moment-with-locales",

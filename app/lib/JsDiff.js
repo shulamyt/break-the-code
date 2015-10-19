@@ -616,4 +616,5 @@
   } else if (typeof global.JsDiff === 'undefined') {
     global.JsDiff = JsDiff;
   }
+  return JsDiff;
 }(this));
