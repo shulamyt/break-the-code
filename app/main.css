@@ -71,6 +71,7 @@
 .timer{
     background-color: white;
     width: 22px;
+    font-family: digital;
 }
 
 .codeArea{
@@ -128,6 +129,11 @@
 @font-face {
     font-family: aaargh;
     src: url(font/Aaargh.ttf);
+}
+
+@font-face {
+    font-family: digital;
+    src: url(font/digital-7.ttf);
 }
 
 .login button{
