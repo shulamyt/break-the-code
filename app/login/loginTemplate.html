@@ -12,6 +12,7 @@
         <p>Good luck!</p>
     </div>
         <form name="loginForm" novalidate>
+        <div style="width: 224px;">
             <div>
                 <label for="age">Age:</label>
                 <input id="age" ng-type="number" ng-model="user.age"/>
@@ -26,6 +27,7 @@
                     <option value="female">Female</option>
                 </select>
             </div>
+        </div>
         <h3>How did you learn to program:</h3>
         <div><label for="selfTaught">self taught<input type="checkbox" id="selfTaught" ng-model="user.degree.selfTaught"></label></div>
         <table>
@@ -70,26 +72,27 @@
             </tr>
         </table>
 
-        <h3>With which programming languages do you have a good familiarity:</h3><div>
+        <div class="question" style="margin-top: 23px;">
+            <div>With which programming languages do you have a good familiarity:</div>
             <label ng-repeat="programmingLanguage in programmingLanguagesOptions">
               <input type="checkbox" checklist-model="user.programmingLanguages" checklist-value="programmingLanguage"> {{programmingLanguage}}
             </label>
         </div>
 
-        <div>
+        <div class="question">
             <label for="yearsOfExperience">How many years work experience do you have in programming?</label>
             <select ng-model="user.yearsOfExperience" ng-options="n for n in {{[] | range:0:20}}"></select>
         </div>
 
-        <div>
+        <div class="question">
             <label for="assessProgrammingSkills">How do you assess your programming skills?</label>
 
             <label ng-repeat="n in ['0 (novice)',1,2,3,4,'5 (expert)']">
                 <input type="radio" name="assessProgrammingSkills" ng-model="user.assessProgrammingSkills" ng-value="n" /> {{n}}
             </label>
         </div>
-        </br>
-        <div>
+        
+        <div class="question">
             <label for="notFirstTime">I was already part in this experiment before
                 <input id="notFirstTime" type="checkbox" ng-model="user.notFirstTime">
             </label>

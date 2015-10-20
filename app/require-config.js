@@ -34,7 +34,7 @@ require.config({
 require([
 	'angular',
 	 'main'
-	], function(angular, main) {
+	], function() {
 		var $html = angular.element(document.getElementsByTagName('html')[0]);
 		angular.element().ready(function() {
 			// bootstrap the app manually

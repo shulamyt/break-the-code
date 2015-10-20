@@ -142,6 +142,10 @@
     src: url(font/digital-7.ttf);
 }
 
+.login .question{
+    margin-bottom: 9px;
+}
+
 .login button{
     box-shadow: rgb(151, 196, 254) 0px 1px 0px 0px inset;
     border-radius: 6px;
