@@ -1,7 +1,8 @@
 <div class="questions">
 
-	<div class="timer">
-		<timer interval="1000">{{countdown}}</timer>
+	<div class="timer">    
+  
+  <timer interval="1000" countdown="timeForQuestion" autostart="false">{{millis | date:'mm:ss'}}</timer>
 	</div>
 
 	<code-area></code-area>
