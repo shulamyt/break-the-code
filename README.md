@@ -26,7 +26,7 @@ http://momentjs.com/
 https://github.com/fshost/node-dir
 --------------------------------------------------
 build
-r.js -o build.js
+node r.js -o build.js
 
 
 --------------------------------------------------
