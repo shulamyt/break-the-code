@@ -55,14 +55,11 @@ module.exports = function (app) {
                     }
                 }
             }
-            
-            userDao.save(user).then(function(){
-                questionService.getQuestions(user.testPlan).then(function(questions){
+            questionService.getQuestions(user.testPlan).then(function(questions){
                     user.questions = questions;
                     res.status(201).json(user);
-                });
+                    userDao.save(user);      
             });
-
         });
     });
 };
