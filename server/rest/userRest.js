@@ -57,7 +57,7 @@ module.exports = function (app) {
         }
         if(user.id != undefined) {
             userDao.update(user);
-            console.log('update');
+            console.log('update user.id = ' + user.id);
         }
     });
     //create
@@ -68,6 +68,7 @@ module.exports = function (app) {
             user.testPlan = testPlan;
             questionService.getQuestions(user.testPlan).then(function(questions){
                     userDao.save(user);
+                    console.log('create user.id = ' + user.id);
                     user.questions = questions;
                     res.status(201).json(user);
             });
