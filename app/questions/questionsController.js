@@ -1,18 +1,15 @@
 define([
+    '../app',
     'angular',
     'angularTimer',
-    // 'humanizeDuration',
-    // 'momentWithLocales',
-    '../app',
     '../service/questionService',
     '../service/timerService',
     './answerAreaDirective',
     './codeAreaDirective',
     '../questionSummary/summaryDirective'
 
-], function() {
-angular.module('BreakTheCode')
-    .controller('QuestionsController', ['$scope', '$location', '$http', '$sce', 'QuestionService', 'TimerService',
+], function(app) {
+    app.controller('QuestionsController', ['$scope', '$location', '$http', '$sce', 'QuestionService', 'TimerService',
         function($scope, $location, $http, $sce, QuestionService, TimerService) {
 
             $scope.finishQuestion = finishQuestion;

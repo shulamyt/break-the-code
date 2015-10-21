@@ -1,9 +1,8 @@
 define([
-    'angular',
-    '../app'
+    '../app',
+    'angular'    
 ], function(app) {
-angular.module('BreakTheCode')
-    .service('UserService', ['$http', '$q',
+    app.service('UserService', ['$http', '$q',
         function($http, $q) {
             var UserService = {};
             var currentUser;

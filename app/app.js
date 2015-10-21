@@ -5,6 +5,6 @@ define([
 	'angularCookies',
 	'checklistModel'
 ], function() {
-	angular.module('BreakTheCode', ['ngRoute','ngResource', 'ngCookies', 'timer', 'checklist-model']);
+	return angular.module('BreakTheCode', ['ngRoute','ngResource', 'ngCookies', 'timer', 'checklist-model']);
 });
 

@@ -1,11 +1,10 @@
 define([
-    'angular',
     '../app',
+    'angular',
     './answerAreaController',
     'text!./answerAreaTemplate.html'
 ], function(app) {
-angular.module('BreakTheCode')
-    .directive('answerArea', function() {
+    app.directive('answerArea', function() {
         return {
             restrict: 'E',
             templateUrl: 'questions/answerAreaTemplate.html',
@@ -17,4 +16,4 @@ angular.module('BreakTheCode')
             }
         };
     });
-    });
+});

@@ -1,13 +1,12 @@
 define([
-    'angular',
     '../app',
+    'angular',
     '../service/questionService',
     '../service/userService',
     '../utils/utils',
     'text!./loginTemplate.html'
 ], function(app) {
-angular.module('BreakTheCode').
-    controller('LoginController', ['$scope', '$location', 'UserService', 'QuestionService',
+    app.controller('LoginController', ['$scope', '$location', 'UserService', 'QuestionService',
     function($scope, $location, UserService, QuestionService) {
     var self = this;
     $scope.user = {};

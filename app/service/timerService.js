@@ -1,9 +1,8 @@
 define([
-    'angular',
-    '../app'
+    '../app',
+    'angular'    
 ], function(app) {
-angular.module('BreakTheCode')
-    .service('TimerService', ['$http', '$q',
+    app.service('TimerService', ['$http', '$q',
         function($http, $q) {
             var TimerService = {};
             var stopWatch;

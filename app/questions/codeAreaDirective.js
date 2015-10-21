@@ -1,12 +1,11 @@
 define([
+    '../app',
     'jquery',
     'codemirror',
-    'angular',
-    '../app',
+    'angular', 
     'text!./codeAreaTemplate.html'
-], function($, CodeMirror) {
-angular.module('BreakTheCode')
-    .directive('codeArea', function() {
+], function(app, $, CodeMirror) {
+    app.directive('codeArea', function() {
         return {
             restrict: 'E',
             templateUrl: 'questions/codeAreaTemplate.html',
@@ -26,4 +25,4 @@ angular.module('BreakTheCode')
             }
         };
     });
-    });
+});

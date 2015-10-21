@@ -1,11 +1,11 @@
 define([
+	'./app',
 	'angular',
 	'angularRoute',
-	'./app',
 	'login/loginController',
 	'questions/questionsController'
 ], function(app) {
-	angular.module('BreakTheCode').config(function($routeProvider){
+	app.config(function($routeProvider){
 	  $routeProvider
 	  .when('/', {
 	    templateUrl: "/login/loginTemplate.html",

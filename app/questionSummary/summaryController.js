@@ -1,12 +1,11 @@
 define([
+    '../app',
     'JsDiff',
     'angular',
-    '../app',
     '../service/questionService',
     '../service/answerService'
-], function(JsDiff) {
-angular.module('BreakTheCode')
-    .controller('SummaryController', ['$scope', '$rootScope', '$location', '$http', '$sce', 'QuestionService', 'AnswerService',
+], function(app, JsDiff) {
+    app.controller('SummaryController', ['$scope', '$rootScope', '$location', '$http', '$sce', 'QuestionService', 'AnswerService',
         function($scope, $rootScope, $location, $http, $sce, QuestionService, AnswerService) {
 
             $scope.$on('checkAnswer', function (event, args) {

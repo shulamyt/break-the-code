@@ -1,13 +1,12 @@
 define([
+    '../app',
     'jquery',
     'jqueryUi',
     'angular',
-    '../app',
     './summaryController',
     'text!./summaryTemplate.html'
-], function($, $$) {
-angular.module('BreakTheCode')
-    .directive('summary', function() {
+], function(app, $, $$) {
+app.directive('summary', function() {
         return {
             restrict: 'E',
             templateUrl: 'questionSummary/summaryTemplate.html',

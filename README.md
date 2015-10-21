@@ -90,3 +90,7 @@ CREATE TABLE Answer(
    duration double precision,
    timestamp timestamp default current_timestamp
 );
+--------------------------------
+restart in server:
+pm2 list
+pm2 restart start_server
