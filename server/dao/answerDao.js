@@ -1,6 +1,9 @@
 var pg = require('pg');
 var dbUtils = require('../db/dbUtils');
-var conString = "postgres://x:y@localhost/postgres";
+//server:
+var conString = "postgres://root:shulamyt@localhost/postgres";
+//localhost:
+//var conString = "postgres://x:y@localhost/postgres";
 
 function AnswerDao(){
 

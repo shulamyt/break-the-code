@@ -103,9 +103,22 @@ kill -9 [PM2]
 pm2 start start_server.js
 sudo service nginx restart
 
+pm2 logs
+
 or
 
 pm2 list
 pm2 restart start_server
 sudo service nginx restart
 --------------------------------
+
+
+CREATE SCHEMA test;
+CREATE USER root PASSWORD 'pass';
+GRANT ALL ON SCHEMA test TO root;
+GRANT ALL ON ALL TABLES IN SCHEMA test TO root;
+\q
+su - root
+psql -d postgres
+
+select * from Experimenter;
