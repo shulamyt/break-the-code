@@ -2,13 +2,12 @@
 
 require.config({
 	paths: {
-		'angular': 'lib/angular',
-		'angularRoute': 'lib/angular-route',
+		'angular': 'lib/angular/1.3.9/angular.min',
+		'angularRoute': 'lib/angular/1.3.9/angular-route.min',
+		'angularResource': "lib/angular/1.3.9/angular-resource.min",
+		'angularCookies': "lib/angular/1.3.9/angular-cookies.min",
 		'jquery' :"lib/jquery-2.1.3",
 		'jqueryUi': "lib/jquery-ui",
-		'angularResource': "lib/angular-resource",
-		'angularCookies': "lib/angular-cookies",
-		// 'codemirror': "lib/codemirror/lib/codemirror",
 		'codemirror': "lib/codemirror/mode/javascript/javascript",
 		'JsDiff':"lib/JsDiff",
 		'angularTimer': "lib/angular-timer.min",

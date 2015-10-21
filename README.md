@@ -91,6 +91,20 @@ CREATE TABLE Answer(
    timestamp timestamp default current_timestamp
 );
 --------------------------------
+url:
+http://getthecodes.com/#/login
+
 restart in server:
+cd ~
+cd break-the-code
+ps -ef
+kill -9 [PM2]
+pm2 start start_server.js
+sudo service nginx restart
+
+or
+
 pm2 list
 pm2 restart start_server
+sudo service nginx restart
+--------------------------------

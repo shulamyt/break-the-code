@@ -2,11 +2,12 @@ var express = require('express');
 var bodyParser = require('body-parser');
 
 var app = express();
-app.use(express.static('app'));
+app.use(express.static('target'));
 app.use(bodyParser.json());
 
-
+//for local host:
 var server = app.listen(3000, function () {
+//for server:
 // var server = app.listen(8080, 'getTheCodes', function () {
 
   var host = server.address().address;

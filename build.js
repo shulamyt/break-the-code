@@ -12,5 +12,15 @@
     // "uglify2"
 
     // modules to be optimized
-    name: "main"
+    modules: [
+        {
+            name: 'main',
+            exclude: ['questions/questionsController']
+        },
+        {
+            name: 'questions/questionsController',
+            exclude: ['app']
+        },
+
+    ]
 })

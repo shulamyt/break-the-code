@@ -4,10 +4,13 @@ define([
     'angular',
     '../service/questionService',
     '../service/answerService'
-], function(app, JsDiff) {
+], function(app) {
     app.controller('SummaryController', ['$scope', '$rootScope', '$location', '$http', '$sce', 'QuestionService', 'AnswerService',
         function($scope, $rootScope, $location, $http, $sce, QuestionService, AnswerService) {
-
+            var JsDiff;
+            require(['JsDiff'], function(jsDiff) {
+                JsDiff = jsDiff;
+            });
             $scope.$on('checkAnswer', function (event, args) {
                 openPopup();
                 getRightAnswer().then(function(rightAnswer){

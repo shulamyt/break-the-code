@@ -7,11 +7,12 @@ define([
     './answerAreaDirective',
     './codeAreaDirective',
     '../questionSummary/summaryDirective'
-
 ], function(app) {
     app.controller('QuestionsController', ['$scope', '$location', '$http', '$sce', 'QuestionService', 'TimerService',
         function($scope, $location, $http, $sce, QuestionService, TimerService) {
-
+            require(['angularTimer'], function() {
+                
+            });
             $scope.finishQuestion = finishQuestion;
             $scope.gameOver = false;
             $scope.startNewQuestion = startNewQuestion;

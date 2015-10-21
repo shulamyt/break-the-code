@@ -1,21 +1,21 @@
 define([
     '../app',
     'angular',
+     'text!./loginTemplate.html',
     '../service/questionService',
     '../service/userService',
-    '../utils/utils',
-    'text!./loginTemplate.html'
+    '../utils/utils'
 ], function(app) {
     app.controller('LoginController', ['$scope', '$location', 'UserService', 'QuestionService',
     function($scope, $location, UserService, QuestionService) {
-    var self = this;
-    $scope.user = {};
+        var self = this;
+        $scope.user = {};
 
-    $scope.programmingLanguagesOptions = [
-    'C', 'C ++', 'C#', 'java', 'JavaScript', 'python',
-    'perl', 'PHP', 'Fortran', '.NET', 'SQL', 'Ruby',
-    'Matlab', 'Scala', 'Haskell'
-    ];
+        $scope.programmingLanguagesOptions = [
+        'C', 'C ++', 'C#', 'java', 'JavaScript', 'python',
+        'perl', 'PHP', 'Fortran', '.NET', 'SQL', 'Ruby',
+        'Matlab', 'Scala', 'Haskell'
+        ];
 
         $scope.startTheGame = function (){
             UserService.createUser($scope.user)
