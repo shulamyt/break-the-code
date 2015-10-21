@@ -12,7 +12,7 @@ UserDao.prototype.save = function(user){
             if(err) {
                 return console.error('error fetching client from pool', err);
             }
-            var query = dbUtils.jsonToInsertQuery(user, "Experimenter", ['gender'], ['testPlan'], ['programmingLanguages']);
+            var query = dbUtils.jsonToInsertQuery(user, "Experimenter", ['gender'], ['testPlan'], ['programmingLanguages'], ['questions']);
             client.query(query, function(err, result) {
                 done();
                 if(err) {

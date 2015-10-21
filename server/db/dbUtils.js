@@ -2,18 +2,18 @@ function DBUtils(){
 
 };
 
-DBUtils.prototype.jsonToInsertQuery = function(json, tableName, propertiesTypeText, propertiesTypeArray, propertiesTypeTextArray){
+DBUtils.prototype.jsonToInsertQuery = function(json, tableName, propertiesTypeText, propertiesTypeArray, propertiesTypeTextArray, ignore){
     var queryPart1 = "INSERT INTO "+ tableName + " (";
     var queryPart2 = " VALUES (";
     for(var prop in json) {
-        if(json[prop] == undefined || json[prop] == null){
+        if(ignore && ignore.indexOf(prop) != -1 || json[prop] == undefined || json[prop] == null || json[prop] == undefined){
             continue;
         }
         queryPart1 = queryPart1 + prop+", ";
         if(propertiesTypeText && propertiesTypeText.indexOf(prop)!= -1){
             queryPart2 = queryPart2 + "'"+ json[prop] + "'";
         }
-        else if(propertiesTypeArray && propertiesTypeArray.indexOf(prop)!= -1){
+        else if(json[prop].prop && json[prop].prop.constructor === Array || propertiesTypeArray && propertiesTypeArray.indexOf(prop)!= -1){
             queryPart2 = queryPart2 + "'{";
             for(var item of json[prop]){
                 queryPart2 = queryPart2 + item + ", ";

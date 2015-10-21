@@ -56,9 +56,9 @@ module.exports = function (app) {
                 }
             }
             questionService.getQuestions(user.testPlan).then(function(questions){
+                    userDao.save(user);
                     user.questions = questions;
                     res.status(201).json(user);
-                    userDao.save(user);      
             });
         });
     });
