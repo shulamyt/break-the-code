@@ -80,16 +80,16 @@
         </div>
 
         <div class="question">
-            <label for="yearsOfExperience">How many years work experience do you have in programming?</label>
-            <select ng-model="user.yearsOfExperience" ng-options="n for n in {{[] | range:0:20}}"></select>
-        </div>
-
-        <div class="question">
             <label for="assessProgrammingSkills">How do you assess your programming skills?</label>
 
             <label ng-repeat="n in ['0 (novice)',1,2,3,4,'5 (expert)']">
                 <input type="radio" name="assessProgrammingSkills" ng-model="user.assessProgrammingSkills" ng-value="n" /> {{n}}
             </label>
+        </div>
+
+        <div class="question">
+            <label for="yearsOfExperience">How many years work experience do you have in programming?</label>
+            <select ng-model="user.yearsOfExperience" ng-options="n for n in {{[] | range:0:20}}"></select>
         </div>
         
         <div class="question">
@@ -98,7 +98,7 @@
             </label>
         </div>
 
-            <div class="center">
+            <div class="loginButton">
                 <button type="submit" ng-disabled="loginForm.$invalid" ng-click="startTheGame()">Let's start!</button>
             </div>
         </form>
