@@ -12,7 +12,7 @@ AnswerDao.prototype.save = function(answer){
             if(err) {
                 return console.error('error fetching client from pool', err);
             }
-            var query = dbUtils.jsonToInsertQuery(answer, "Answer", ['questionId', 'rightAnswer', 'userAnswer'], null, null);
+            var query = dbUtils.jsonToInsertQuery(answer, "Answer");
             client.query(query, function(err, result) {
                 done();
                 if(err) {

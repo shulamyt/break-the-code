@@ -60,6 +60,7 @@ y
 DROP TABLE Experimenter;
 CREATE TABLE Experimenter(
 	ID bigint PRIMARY KEY,
+   start boolean,
 	timestamp timestamp default current_timestamp,
    age int,
    gender text,

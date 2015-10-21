@@ -10,7 +10,9 @@ define([
     function($scope, $location, UserService, QuestionService) {
         var self = this;
         $scope.user = {};
-
+        var createUser = UserService.createUser($scope.user).then(function(user){
+            $scope.user.id = user.id;
+        });
         $scope.programmingLanguagesOptions = [
         'C', 'C ++', 'C#', 'java', 'JavaScript', 'python',
         'perl', 'PHP', 'Fortran', '.NET', 'SQL', 'Ruby',
@@ -18,16 +20,11 @@ define([
         ];
 
         $scope.startTheGame = function (){
-            UserService.createUser($scope.user)
-                .then(function(user){
-                    $location.path('questions');
-                    QuestionService.restartQuestionIndex();
-                });
-
-            //.error(function(data, status, headers, config) {
-            //    console.log("we have a problem..");
-            //    //TODO : error handling
-            //});
+            createUser.then(function(user){
+                 UserService.updateUser($scope.user);
+                 $location.path('questions');
+                 QuestionService.restartQuestionIndex();
+            });
         };
     }]);
 });

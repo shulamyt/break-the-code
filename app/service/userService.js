@@ -8,15 +8,30 @@ define([
             var currentUser;
 
             UserService.createUser = function(userData){
-                var deferred = $q.defer();
-                $http.post('/user', userData)
-                    .success(function(data) {
-                        deferred.resolve(data);
-                    }).error(deferred.reject);
-                deferred.promise.then(function(user){
-                    UserService.setCurrentUser(user);
+                var promise = new Promise(function(resolve, reject) {
+                    $http.post('/user', userData)
+                    .success(function(user) {
+                        resolve(user);
+                        UserService.setCurrentUser(user);
+                    })
+                    .error(function(err) {
+                        reject(err);
+                    });
                 });
-                return deferred.promise;
+                return promise;
+            };
+
+            UserService.updateUser = function(userData){
+                var promise = new Promise(function(resolve, reject) {
+                    $http.put('/user', userData)
+                    .success(function(data) {
+                        resolve(data);
+                    })
+                    .error(function(err) {
+                        reject(err);
+                    });
+                });
+                return promise;
             };
 
             UserService.getUserTestPlan = function(){
