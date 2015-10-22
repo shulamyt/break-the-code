@@ -14,6 +14,12 @@ define([
                         theme: 'default',
                         lineNumbers: true
                     });
+
+                    var content = scope.content;
+                    if(content){
+                        editor.setValue(content);
+                    }
+                    
                     scope.$watch('content', function() {
                         var content = scope.content;
                         if(content){
