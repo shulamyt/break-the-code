@@ -60,7 +60,7 @@
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    left: 499px;
+    left: 670px;
     right: 0;
     width: 347px;
     height: 289px;
@@ -106,6 +106,17 @@
     text-align: justify;
 }
 
+.gotItButton{
+    position: absolute;
+    bottom: 46px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0px;
+    right: 0px;
+    width: 281px;
+    z-index: 100;
+}
+
 .loginOpacity{
 /*    z-index: 5;
     position: absolute;
@@ -123,7 +134,7 @@
 }
 
 .introduction{
-    font-size: 13px;
+    font-size: 25px;
 }
 
 @keyframes loginOpacityAnimation {

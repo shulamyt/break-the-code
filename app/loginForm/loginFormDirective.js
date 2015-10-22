@@ -16,7 +16,7 @@ app.directive('loginform', function() {
                 popupEl.dialog({
                     resizable: false,
                     height:600,
-                    width: 400,
+                    width: 1000,
                     modal: true,
                     autoOpen: false,
                     closeOnEscape: false,
