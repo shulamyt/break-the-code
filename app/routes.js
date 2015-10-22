@@ -7,19 +7,24 @@ define([
 	'text!questions/questionsTemplate.html',
 	'questions/questionsController'
 ], function(app) {
-	app.config(function($routeProvider){
-	  $routeProvider
-	  .when('/', {
-	    templateUrl: "login/loginTemplate.html",
-	    controller: "LoginController"
-	  })
-	  .when('/login', {
-	    templateUrl: "login/loginTemplate.html",
-	    controller: "LoginController"
-	  })
-	  .when('/questions', {
-	    templateUrl: "questions/questionsTemplate.html",
-	    controller: "QuestionsController"
-	  })
+	app.config(function($routeProvider, $locationProvider){
+		$locationProvider.html5Mode(true);
+		$routeProvider
+		.when('/', {
+			templateUrl: "login/loginTemplate.html",
+			controller: "LoginController"
+		})
+		.when('/login', {
+			templateUrl: "login/loginTemplate.html",
+			controller: "LoginController"
+		})
+		.when('/questions', {
+			templateUrl: "questions/questionsTemplate.html",
+			controller: "QuestionsController"
+		})
+		.otherwise({
+			templateUrl: "login/loginTemplate.html",
+			controller: "LoginController"
+		});
 	});
 });
