@@ -1,59 +1,20 @@
 var fs = require('fs');
 var dir = require('node-dir');
+var Chance = require('chance');
+var testPlanConfiguration = require('../../questions/testPlanConfiguration');
 
 function TestPlanService(){
 	//if(this=== window || this.undefind){
 	//	throw new Exception("must call as constructor!");
 	//}
-	this.availableQuestions = this.setAvailableQuestions();
-	this.testPlanConfiguration = this.setTestPlanConfiguration();
 };
 
-TestPlanService.prototype.getAvailableQuestions = function(){
-	return this.availableQuestions;
-};
 
 TestPlanService.prototype.getTestPlanConfiguration = function(){
-	return this.testPlanConfiguration;
+	var configuration = testPlanConfiguration.getConfiguration();
+	return configuration;
 };
 
-TestPlanService.prototype.setAvailableQuestions = function(){
-	var promise = new Promise(function(resolve, reject) {
-		var questionsDirPath = __dirname + "/../../questions/";
-		dir.files(questionsDirPath, function(err, files) {
-			if (err){
-				reject("problem");
-			}else{
-				resolve(files);
-			}
-		});
-    });
-    return promise;
-};
-
-TestPlanService.prototype.setTestPlanConfiguration = function(){
-	var promise = new Promise(function(resolve, reject) {
-		var testPlanConfigurationPath = __dirname + "/../../questions/testPlanConfiguration.js";
-		fs.readFile(testPlanConfigurationPath, 'utf8', function(err, file){
-			if(err != null){
-				reject("problem");
-			}else{
-				var configuration = JSON.parse(file);
-				resolve(configuration);	
-			}
-			
-		});
-    });
-    return promise;
-};
-
-TestPlanService.prototype.getRandomIndex = function(availableQuestions){
-	var index = Math.floor(Math.random()*availableQuestions.length + 1) - 1;
-	if(index < 0){
-		index  = 0;
-	}
-	return index;
-};
 TestPlanService.prototype.getQuestionPath = function(questionIndex) {
 	var self = this;
 	var promise = new Promise(function(resolve, reject) {
@@ -68,24 +29,12 @@ TestPlanService.prototype.getQuestionPath = function(questionIndex) {
 TestPlanService.prototype.getTestPlan = function() {
 	var self = this;
 	var promise = new Promise(function(resolve, reject) {
-		var questionID;
-		var testPlan = [];
-		var availableQuestions;
-		var testPlanConfiguration;
-		self.getAvailableQuestions().then(function(questions){
-			availableQuestions = questions;
-			return self.getTestPlanConfiguration();
-		}).then(function(configuration){
-			testPlanConfiguration = configuration;
-			var numOfQuestions = configuration.numOfQuestions || 20;
-			while(testPlan.length < numOfQuestions && testPlan.length < availableQuestions.length) {
-				var i = self.getRandomIndex(availableQuestions);
-				if(testPlan.indexOf(i) == -1) {
-					testPlan.push(i);
-				}
-			}
-			resolve(testPlan);
-		});
+		var configuration = self.getTestPlanConfiguration();
+		var numOfQuestionsForPlan = configuration.numOfQuestionsForPlan;
+		var questionsInfo = configuration.questionsInfo;
+		var chance = new Chance();
+		var testPlan = chance.pick(questionsInfo, numOfQuestionsForPlan);
+		resolve(testPlan);
 	});
 	return promise;
 };

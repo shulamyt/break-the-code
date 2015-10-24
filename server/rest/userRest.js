@@ -66,10 +66,14 @@ module.exports = function (app) {
             var user = {};
             user.id = new Date().getTime();
             user.testPlan = testPlan;
-            questionService.getQuestions(user.testPlan).then(function(questions){
+            var testPlanId = [];
+            for(var test in testPlan){
+                testPlanId.push(test.id);
+            }
+            user.testPlanId = testPlanId;
+            questionService.addQuestions(user.testPlan).then(function(){
                     userDao.save(user);
                     console.log('create user.id = ' + user.id);
-                    user.questions = questions;
                     res.status(201).json(user);
             });
         });

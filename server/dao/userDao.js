@@ -15,7 +15,7 @@ UserDao.prototype.update = function(user){
             if(err) {
                 return console.error('error fetching client from pool', err);
             }
-            var query = dbUtils.jsonToUpdateQuery(user, "Experimenter", ["questions"]);
+            var query = dbUtils.jsonToUpdateQuery(user, "Experimenter", ["questions", "testPlan"]);
             client.query(query, function(err, result) {
                 done();
                 if(err) {

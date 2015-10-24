@@ -4,53 +4,30 @@ var Q = require('q');
 
 var QuestionService = function(){
 
-    this.getQuestions = function (testPlan){
+    this.addQuestion =  function (questionInfo) {
+        var promise = new Promise(function(resolve, reject) {
+            var questionPath = __dirname + "/../../questions/" + questionInfo.path;
+            fs.readFile(questionPath, 'utf8', function(err, file) {
+                if(err != null){
+                    reject("problem");
+                }else{
+                    questionInfo.code = file;
+                    resolve();
+                }
+            });
+        });
+        return promise;
+    };
+
+    this.addQuestions = function (testPlan) {
         var self = this;
         var promise = new Promise(function(resolve, reject) {
-            var questions = [];
             var promises = [];
-            for(var i = 0; i < testPlan.length; i++){
-                promises.push(self.addQuestionMetadata(i, testPlan, questions));
+            for(var questionInfo of testPlan){
+                promises.push(self.addQuestion(questionInfo));
             }
             Q.all(promises).then(function(){
-                resolve(questions);
-            });
-        });
-        return promise;
-    };
-
-    this.addQuestionMetadata = function (indexInTestPlan, testPlan, questionsList){
-        var self = this;
-        var promise = new Promise(function(resolve, reject) {
-            var questionIndex = testPlan[indexInTestPlan];
-            self.getQuestion(questionIndex).then(function(questionMetadata){
-                questionsList[indexInTestPlan] = questionMetadata;
-                resolve();
-            });
-        });
-        return promise;
-    };
-
-    this.getQuestion = function (questionIndex){
-        var promise = new Promise(function(resolve, reject) {
-            testPlanService.getQuestionPath(questionIndex).then(function(questionPath){
-                fs.readFile(questionPath, 'utf8', function(err, file) {
-                    if(err != null){
-                        reject("problem");
-                    }else{
-                        var questionMetadata;
-                        try{
-                            questionMetadata = JSON.parse(file.content);
-                        }catch(err){
-                            questionMetadata = {};
-                            questionMetadata.id = questionPath.replace(/^.*[\\\/]/, '');
-                            questionMetadata.code = file;
-                            questionMetadata.answer = "";
-                        }
-                        resolve(questionMetadata);
-
-                    }
-                });
+                resolve(testPlan);
             });
         });
         return promise;

@@ -60,7 +60,7 @@ define([
                 var promise = new Promise(function(resolve, reject) {
                     var questionIndex = questionService.increaseQuestionIndex();
                     var user = UserService.getCurrentUser();
-                    var questions = user.questions;
+                    var questions = user.testPlan;
                     var question = questions[questionIndex];
                     questionService.setCurrentQuestion(question);
                     resolve(question);
