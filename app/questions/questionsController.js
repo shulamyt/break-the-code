@@ -1,5 +1,6 @@
 define([
     '../app',
+    'jquery',
     'angular',
     'angularTimer',
     '../service/questionService',
@@ -7,12 +8,10 @@ define([
     './answerAreaDirective',
     './codeAreaDirective',
     '../questionSummary/summaryDirective'
-], function(app) {
+], function(app, $) {
     app.controller('QuestionsController', ['$scope', '$location', '$http', '$sce', 'QuestionService', 'TimerService',
         function($scope, $location, $http, $sce, QuestionService, TimerService) {
-            require(['angularTimer'], function() {
-                
-            });
+            $('body').addClass("pic");
             $scope.finishQuestion = finishQuestion;
             $scope.gameOver = false;
             $scope.startNewQuestion = startNewQuestion;

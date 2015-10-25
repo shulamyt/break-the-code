@@ -11,5 +11,6 @@ define([
     app.controller('LoginController', ['$scope', '$location', 'UserService', 'QuestionService',
     function($scope, $location, UserService, QuestionService) {
         $('body').find(".welcome").show();
+        $('body').removeClass("pic");
     }]);
 });

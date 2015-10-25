@@ -1,9 +1,24 @@
+.main{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1248px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+.pic{
+    background: #363435;
+}
+
 .CodeMirror {
     border: 1px solid #ccc;
     font-size: 90%;
     margin-bottom: 6px;
     background: white;
-    height: 246px;
+    height: 254px;
 }
 
 .added{
@@ -22,12 +37,13 @@
 
 .answerArea{
     position: absolute;
-    top: 87px;
-    left: 699px;
+    top: 55px;
+    left: 711px;
     background: black;
     color: white;
-    width: 462px;
-    height: 248px;
+    width: 477px;
+    height: 257px;
+    font-size: 18px;
 }
 .answerArea .mark{
     float: left;
@@ -97,15 +113,16 @@
     font-family: digital;
     font-size: 63px;
     position: absolute;
-    top: 426px;
+    top: 408px;
     left: 226px;
 }
 
 .codeArea{
     position: absolute;
-    top: 87px;
-    left: 70px;
-    width: 462px;
+    top: 55px;
+    left: 66px;
+    width: 475px;
+    font-size: 18px;
 }
 
 .questions{
