@@ -1,1 +1,5 @@
-<textarea ng-model="answer"></textarea>
+<div class="answerArea">
+	<div>type here your answer, press enter when finish!</div>
+	<div class="mark">></div>
+	<textarea ng-model="answer" ng-enter="finishQuestion()"></textarea>
+</div>

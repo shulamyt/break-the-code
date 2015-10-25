@@ -3,6 +3,7 @@
     font-size: 90%;
     margin-bottom: 6px;
     background: white;
+    height: 246px;
 }
 
 .added{
@@ -17,6 +18,30 @@
 
 .ui-button.ui-dialog-titlebar-close{
     display: none;
+}
+
+.answerArea{
+    position: absolute;
+    top: 87px;
+    left: 699px;
+    background: black;
+    color: white;
+    width: 462px;
+    height: 248px;
+}
+.answerArea .mark{
+    float: left;
+}
+.answerArea textarea{
+    width: 451px;
+    height: 228px;
+    background: black;
+    color: white;
+    border: none;
+}
+
+.answerArea textarea:focus {
+  border: none;
 }
 
 .your-answer{
@@ -68,20 +93,23 @@
 }
 
 .timer{
-    background-color: white;
     width: 40px;
     font-family: digital;
+    font-size: 63px;
+    position: absolute;
+    top: 426px;
+    left: 226px;
 }
 
 .codeArea{
     position: absolute;
-    top: 66px;
-    left: 305px;
-    width: 369px;
+    top: 87px;
+    left: 70px;
+    width: 462px;
 }
 
 .questions{
-    background-image: url(image/office_2_scren.jpg);
+    background-image: url(image/office_2_scren_resize.jpg);
     background-repeat: no-repeat;
     height: 100%;
     background-color: #363533;

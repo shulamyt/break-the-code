@@ -29,7 +29,8 @@
     "node-dir": "^0.1.10",
     "pg": "^4.4.2",
     "q": "^1.4.1",
-    "requirejs": "^2.1.17"
+    "requirejs": "^2.1.17",
+    "chance" : "^0.8.0"
   },
   "devDependencies": {
     "babel-core": "^5.2.17"
