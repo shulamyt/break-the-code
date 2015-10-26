@@ -5,7 +5,7 @@ if (l1.length !== l2.length) {
     return false;
 }
 for (i = 0; i < l1.length; i += 1) {
-    if (l1[i] != l2[i])) {
+    if (l1[i] != l2[i]) {
         return false;
     }
 }
