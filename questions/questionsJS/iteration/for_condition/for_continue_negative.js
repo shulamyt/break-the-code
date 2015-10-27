@@ -1,7 +1,7 @@
 var array = ['a', 'b', 'c', 'e', 'f', 'g'];
 print("1");
 for(var i = 0; i++; i < array.length){
-    if(array[i] != 'c'{
+    if(array[i] != 'c'){
     	continue;
     }
     print(array[i]);

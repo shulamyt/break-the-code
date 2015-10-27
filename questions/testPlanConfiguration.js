@@ -575,222 +575,223 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 				score: 999
 			},*/
 
+			/*id starting from here*/
+			//{
+			//	id: 71,
+			//	path: "questionsJS/iteration/for/for_end_1.js",
+			//	answer: "13", // NOT SURE ABOUT MY ANSWER - LAST ITERATION
+			//	timeForQuestion: 37, // took me 35:75 - I WAS WRONG (WROTE 1202122233)
+			//	score: 999
+			//},
+
+			//{
+			//	id: 73,
+			//	path: "questionsJS/iteration/for/for_end_2.js",
+			//	answer: "13", // NOT SURE ABOUT MY ANSWER
+			//	timeForQuestion: 15, // took me 13:62
+			//	score: 999
+			//},
+
+			//{
+			//	id: 74,
+			//	path: "questionsJS/iteration/for/for_end_3.js",
+			//	answer: "120213", // NOT SURE ABOUT MY ANSWER
+			//	timeForQuestion: 24, // took me 22:57
+			//	score: 999
+			//},
+
+			//{
+			//	id: 75,
+			//	path: "questionsJS/iteration/for/for_end_4.js",
+			//	answer: "12021223", // NOT SURE ABOUT MY ANSWER
+			//	timeForQuestion: 15, // took me 12:28
+			//	score: 999
+			//},
+
+			//{
+			//	id: 76,
+			//	path: "questionsJS/iteration/for/for_end_5.js",
+			//	answer: "1202122233", // NOT SURE ABOUT MY ANSWER
+			//	timeForQuestion: 19, // took me 17:91
+			//	score: 999
+			//},
+
+			//{
+			//	id: 77,
+			//	path: "questionsJS/iteration/for/for_regular.js",
+			//	answer: "12021223",
+			//	timeForQuestion: 16, // took me 14:49
+			//	score: 999
+			//},
+
+			//{
+			//	id: 78,
+			//	path: "questionsJS/iteration/for/for_start_from_1.js",
+			//	answer: "121223",
+			//	timeForQuestion: 15, // took me 13:00
+			//	score: 999
+			//},
+
+			//{
+			//	id: 79,
+			//	path: "questionsJS/iteration/for_condition/for.js",
+			//	answer: "1c4", // NOT SURE ABOUT MY ANSWER
+			//	timeForQuestion: 20, // took me 18:25
+			//	score: 999
+			//},
+
+			//{
+			//	id: 80,
+			//	path: "questionsJS/iteration/for_condition/for_break.js",
+			//	answer: "1ab4",
+			//	timeForQuestion: 22, // took me 22:69
+			//	score: 999
+			//},
+
+			//{
+			//	id: 81,
+			//	path: "questionsJS/iteration/for_condition/for_break_nagtive.js",
+			//	answer: "14",
+			//	timeForQuestion: 14, // took me 11:94
+			//	score: 999
+			//},
+
+			//{
+			//	id: 82,
+			//	path: "questionsJS/iteration/for_condition/for_continue_negative.js",
+			//	answer: "1c4",
+			//	timeForQuestion: 30, // took me 33:84
+			//	score: 999
+			//},
+
+			//{
+			//	id: 83,
+			//	path: "questionsJS/iteration/for_condition/for_negative.js",
+			//	answer: "1abefg4",
+			//	timeForQuestion: 24, // took me 22:46
+			//	score: 999
+			//},
+
+			//{
+			//	id: 84,
+			//	path: "questionsJS/iteration/for_in/for_regular.js",
+			//	answer: "12a2b2c3",
+			//	timeForQuestion: 18, // took me 16:69
+			//	score: 999
+			//},
+
+			//{
+			//	id: 85,
+			//	path: "questionsJS/iteration/for_odd/for_odd_locations.js",
+			//	answer: "1acf4",
+			//	timeForQuestion: 24, // took me 22:56
+			//	score: 999
+			//},
+
+			//{
+			//	id: 86,
+			//	path: "questionsJS/iteration/for_odd/for_odd_locations_break.js",
+			//	answer: "14",
+			//	timeForQuestion: 11, // took me 9:56
+			//	score: 999
+			//},
+
+			//{
+			//	id: 87,
+			//	path: "questionsJS/iteration/for_odd/for_odd_locations_break_negative.js",
+			//	answer: "1a4",
+			//	timeForQuestion: 14, // took me 12:56
+			//	score: 999
+			//},
+
+			//{
+			//	id: 88,
+			//	path: "questionsJS/iteration/for_odd/for_odd_locations_continue.js",
+			//	answer: "1beg4",
+			//	timeForQuestion: 18, // took me 16:87
+			//	score: 999
+			//},
+
+			//{
+			//	id: 89,
+			//	path: "questionsJS/iteration/for_odd/for_odd_locations_continue_negative.js",
+			//	answer: "1acf4",
+			//	timeForQuestion: 23, // took me 20:97
+			//	score: 999
+			//},
+
+			//{
+			//	id: 90,
+			//	path: "questionsJS/iteration/for_odd/for_odd_locations_negative.js",
+			//	answer: "1beg4",
+			//	timeForQuestion: 17, // took me 15:75
+			//	score: 999
+			//},
+
+			//{
+			//	id: 91,
+			//	path: "questionsJS/iteration/iterator/for_regular.js", // SHOULD WRITE CONTAINER AND NOT CONTINER ???
+			//	answer: "12a2b2c3",
+			//	timeForQuestion: 28, // took me 26:50
+			//	score: 999
+			//},
+
+			//{
+			//	id: 92,
+			//	path: "questionsJS/iteration/while/while.js",
+			//	answer: "12a2b2c34",
+			//	timeForQuestion: 40, // took me 38:87
+			//	score: 999
+			//},
+
+			//{
+			//	id: 93,
+			//	path: "questionsJS/iteration/while/while_odd_locations.js",
+			//	answer: "12acf34",
+			//	timeForQuestion: 37, // took me 35:19
+			//	score: 999
+			//},
+
+			//{
+			//	id: 94,
+			//	path: "questionsJS/list/concatenate.js",
+			//	answer: "ydhaws",
+			//	timeForQuestion: 56, // took me 54:47
+			//	score: 999
+			//},
+
+			//{
+			//	id: 95,
+			//	path: "questionsJS/list/deepCopy.js",
+			//	answer: "ydh",
+			//	timeForQuestion: 82, // took me 1:20 min
+			//	score: 999
+			//},
+
+			//{
+			//	id: 96,
+			//	path: "questionsJS/list/equals.js",
+			//	answer: "false", // RETURNS, NOT PRINTED
+			//	timeForQuestion: 19, // took me 17:19
+			//	score: 999
+			//},
+
+			//{
+			//	id: 97,
+			//	path: "questionsJS/list/findMiddle.js",
+			//	answer: "false", // RETURNS, NOT PRINTED
+			//	timeForQuestion: 19, // took me 13:09
+			//	score: 999
+			//},
+
 			{
-				id: 71,
-				path: "questionsJS/iteration/for/for_end_1.js",
+				id: 98,
+				path: "questionsJS/list/frequency.js",
 				answer: "gibberish",
 				timeForQuestion: 999,
 				score: 999
 			},
 
-			//{
-			//	id: 73,
-			//	path: "questionsJS/iteration/for/for_end_2.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 74,
-			//	path: "questionsJS/iteration/for/for_end_3.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 75,
-			//	path: "questionsJS/iteration/for/for_end_4.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 76,
-			//	path: "questionsJS/iteration/for/for_end_5.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 77,
-			//	path: "questionsJS/iteration/for/for_regular.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 78,
-			//	path: "questionsJS/iteration/for/for_start_from_1.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 79,
-			//	path: "questionsJS/iteration/for_condition/for.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 80,
-			//	path: "questionsJS/iteration/for_condition/for_break.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 81,
-			//	path: "questionsJS/iteration/for_condition/for_break_nagtive.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 82,
-			//	path: "questionsJS/iteration/for_condition/for_continue_negative.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 83,
-			//	path: "questionsJS/iteration/for_condition/for_negative.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 84,
-			//	path: "questionsJS/iteration/for_in/for_regular.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 85,
-			//	path: "questionsJS/iteration/for_odd/for_odd_locations.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 86,
-			//	path: "questionsJS/iteration/for_odd/for_odd_locations_break.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 87,
-			//	path: "questionsJS/iteration/for_odd/for_odd_locations_break_nagtive.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 88,
-			//	path: "questionsJS/iteration/for_odd/for_odd_locations_continue.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 89,
-			//	path: "questionsJS/iteration/for_odd/for_odd_locations_continue_negative.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 90,
-			//	path: "questionsJS/iteration/for_odd/for_odd_locations_negative.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 91,
-			//	path: "questionsJS/iteration/iterator/for_regular.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 92,
-			//	path: "questionsJS/iteration/while/while.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 93,
-			//	path: "questionsJS/iteration/while/while_odd_locations.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 94,
-			//	path: "questionsJS/list/concatenate.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 95,
-			//	path: "questionsJS/list/deepCopy.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 96,
-			//	path: "questionsJS/list/equals.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 97,
-			//	path: "questionsJS/list/findMiddle.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 98,
-			//	path: "questionsJS/list/frequency.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
 			//{
 			//	id: 99,
 			//	path: "questionsJS/list/indexOf.js",
