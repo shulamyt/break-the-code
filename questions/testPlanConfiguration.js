@@ -4,7 +4,6 @@ function TestPlanConfiguration(){
 
 TestPlanConfiguration.prototype.getConfiguration = function(){
 	var configuration = {
-		// the following are temporary data !
 		numOfQuestionsForPlan: 2, // how many questions we want the experimenter to solve
 		questionsInfo : [
 			//{
@@ -488,93 +487,101 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//	score: 999
 			//},
 
-		//	{
-		//		id: 61,
-		//		path: "questionsJS/elseif/depth/5/if_and_separate.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 62,
-		//		path: "questionsJS/elseif/depth/5/if_and_separate_all_negative.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 63,
-		//		path: "questionsJS/elseif/depth/5/if_and_separate_one_negative.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 64,
-		//		path: "questionsJS/elseif/depth/5/if_or.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 65,
-		//		path: "questionsJS/elseif/depth/5/if_or_all_negative.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 66,
-		//		path: "questionsJS/elseif/depth/5/if_or_one_negative.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 67,
-		//		path: "questionsJS/elseif/depth/5/if_or_separate.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 68,
-		//		path: "questionsJS/elseif/depth/5/if_or_separate_all_negative.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 69,
-		//		path: "questionsJS/elseif/depth/5/if_or_separate_one_negative.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 70,
-		//		path: "questionsJS/elseif/depth/options.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 71,
-		//		path: "questionsJS/heap/add.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
+			//{
+			//	id: 61,
+			//	path: "questionsJS/elseif/depth/5/if_and_separate.js",
+			//	answer: "12345",
+			//	timeForQuestion: 18, // took me 25:40
+			//	score: 999
+			//},
+
+			//{
+			//	id: 62,
+			//	path: "questionsJS/elseif/depth/5/if_and_separate_all_negative.js",
+			//	answer: "",
+			//	timeForQuestion: 10, // took me 9:78
+			//	score: 999
+			//},
+
+			//{
+			//	id: 63,
+			//	path: "questionsJS/elseif/depth/5/if_and_separate_one_negative.js",
+			//	answer: "12",
+			//	timeForQuestion: 14, // took me 12:72
+			//	score: 999
+			//},
+
+			//{
+			//	id: 64,
+			//	path: "questionsJS/elseif/depth/5/if_or.js",
+			//	answer: "1",
+			//	timeForQuestion: 6, // took me 4:28
+			//	score: 999
+			//},
+
+			//{
+			//	id: 65,
+			//	path: "questionsJS/elseif/depth/5/if_or_all_negative.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 7, // took me 5:94
+			//	score: 999
+			//},
+
+			//{
+			//	id: 66,
+			//	path: "questionsJS/elseif/depth/5/if_or_one_negative.js",
+			//	answer: "1",
+			//	timeForQuestion: 6, // took me 4:18
+			//	score: 999
+			//},
+
+			//{
+			//	id: 67,
+			//	path: "questionsJS/elseif/depth/5/if_or_separate.js",
+			//	answer: "12345",
+			//	timeForQuestion: 11, // took me 10:09
+			//	score: 999
+			//},
+
+			//{
+			//	id: 68,
+			//	path: "questionsJS/elseif/depth/5/if_or_separate_all_negative.js",
+			//	answer: "",
+			//	timeForQuestion: 10, // took me 7:75
+			//	score: 999
+			//},
+
+			//{
+			//	id: 69,
+			//	path: "questionsJS/elseif/depth/5/if_or_separate_one_negative.js",
+			//	answer: "12",
+			//	timeForQuestion: 12, // took me 10:22
+			//	score: 999
+			//},
+
+			/*{
+				id: 70,
+				path: "questionsJS/elseif/depth/options.js", - NOT CODE !!!
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},*/
+
+			/*{
+				id: 71,
+				path: "questionsJS/heap/add.js", - NOT CODE !!!
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},*/
+
+			{
+				id: 72,
+				path: "questionsJS/array/equals.js",
+				answer: "false",
+				timeForQuestion: 15, // took me 24:50, and I was wrong
+				score: 999
+			},
 
 		]
 	};
