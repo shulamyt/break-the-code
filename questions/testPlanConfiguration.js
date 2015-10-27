@@ -855,6 +855,173 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 				score: 999
 			},
 
+			{
+				id: 107,
+				path: "questionsJS/queue/addAndPop.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 108,
+				path: "questionsJS/set/add.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 109,
+				path: "questionsJS/set/contains.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 110,
+				path: "questionsJS/set/intersection.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 111,
+				path: "questionsJS/set/isSubsetOf.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 112,
+				path: "questionsJS/set/union.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 113,
+				path: "questionsJS/simpleUnderstanding/1/findPopular.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 114,
+				path: "questionsJS/simpleUnderstanding/1/isRotated.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 115,
+				path: "questionsJS/simpleUnderstanding/1/pairsSum.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 116,
+				path: "questionsJS/simpleUnderstanding/1/palindrome.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 117,
+				path: "questionsJS/simpleUnderstanding/1/topTwoMaxNumber.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 118,
+				path: "questionsJS/simpleUnderstanding/arithmeticProgression.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 119,
+				path: "questionsJS/simpleUnderstanding/div.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 120,
+				path: "questionsJS/simpleUnderstanding/foreignNumbers.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 121,
+				path: "questionsJS/simpleUnderstanding/hasSameDigit.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 122,
+				path: "questionsJS/simpleUnderstanding/inCycle.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 123,
+				path: "questionsJS/simpleUnderstanding/line.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 124,
+				path: "questionsJS/simpleUnderstanding/max.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 125,
+				path: "questionsJS/simpleUnderstanding/powerof.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 126,
+				path: "questionsJS/simpleUnderstanding/primeNumber.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 127,
+				path: "questionsJS/simpleUnderstanding/primeNumberSq.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
 
 		]
 	};
