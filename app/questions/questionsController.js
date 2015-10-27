@@ -7,7 +7,8 @@ define([
     '../service/timerService',
     './answerAreaDirective',
     './codeAreaDirective',
-    '../questionSummary/summaryDirective'
+    '../questionSummary/summaryDirective',
+    '../gameOver/gameOverDirective'
 ], function(app, $) {
     app.controller('QuestionsController', ['$scope', '$location', '$http', '$sce', 'QuestionService', 'TimerService',
         function($scope, $location, $http, $sce, QuestionService, TimerService) {
@@ -73,9 +74,8 @@ define([
             }
 
             function gameOver(){
-                //TODO
                 $scope.gameOver = true;
-                console.log("gameOver");
+                $scope.$emit("gameOver");
             }
 
             function startTimer(){

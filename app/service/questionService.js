@@ -52,7 +52,7 @@ define([
             questionService.isThereMoreQuestions = function(){
                 var futureQuestionIndex = questionService.getCurrentQuestionIndex() + 1;
                 var testPlan = UserService.getUserTestPlan();
-                var isThereMoreQuestions = futureQuestionIndex < testPlan.length - 1;
+                var isThereMoreQuestions = futureQuestionIndex <= testPlan.length - 1;
                 return isThereMoreQuestions;
             };
 
