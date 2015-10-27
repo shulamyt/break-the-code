@@ -168,326 +168,326 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//	score: 999
 			//},
 
-			{
-				id: 22,
-				path: "questionsJS/elseif/6/if_else_or_true_true.js",
-				answer: "124",
-				timeForQuestion: 6, // took me 4:84
-				score: 999
-			},
+			//{
+			//	id: 22,
+			//	path: "questionsJS/elseif/6/if_else_or_true_true.js",
+			//	answer: "124",
+			//	timeForQuestion: 6, // took me 4:84
+			//	score: 999
+			//},
 
-		//	{
-		//		id: 23,
-		//		path: "questionsJS/elseif/7/if_else_or_var_false_false.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 24,
-		//		path: "questionsJS/elseif/7/if_else_or_var_false_true.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 24,
-		//		path: "questionsJS/elseif/7/if_else_or_var_true_true.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 25,
-		//		path: "questionsJS/elseif/8/if_elseif_else_var_false_false.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 26,
-		//		path: "questionsJS/elseif/8/if_elseif_else_var_false_true.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 27,
-		//		path: "questionsJS/elseif/8/if_elseif_else_var_true_true.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 28,
-		//		path: "questionsJS/elseif/9/if_else_and_var_false_negative_false.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 29,
-		//		path: "questionsJS/elseif/9/if_else_and_var_false_negative_true.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 30,
-		//		path: "questionsJS/elseif/9/if_else_and_var_negative_false_false.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 31,
-		//		path: "questionsJS/elseif/9/if_else_and_var_negative_false_negative_false.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 32,
-		//		path: "questionsJS/elseif/9/if_else_and_var_negative_false_negative_true.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 33,
-		//		path: "questionsJS/elseif/9/if_else_and_var_negative_false_true.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 34,
-		//		path: "questionsJS/elseif/9/if_else_and_var_negative_true_negative_true.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 35,
-		//		path: "questionsJS/elseif/9/if_else_and_var_negative_true_true.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 36,
-		//		path: "questionsJS/elseif/9/if_else_and_var_true_negative_true.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 37,
-		//		path: "questionsJS/elseif/9/if_else_or_var_false_negative_false.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 38,
-		//		path: "questionsJS/elseif/9/if_else_or_var_false_negative_true.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 39,
-		//		path: "questionsJS/elseif/9/if_else_or_var_negative_false_false.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 40,
-		//		path: "questionsJS/elseif/9/if_else_or_var_negative_false_negative_false.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 41,
-		//		path: "questionsJS/elseif/9/if_else_or_var_negative_false_negative_true.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 42,
-		//		path: "questionsJS/elseif/9/if_else_or_var_negative_false_true.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 43,
-		//		path: "questionsJS/elseif/9/if_else_or_var_negative_true_negative_true.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 44,
-		//		path: "questionsJS/elseif/9/if_else_or_var_negative_true_true.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 45,
-		//		path: "questionsJS/elseif/9/if_else_or_var_true_negative_true.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 46,
-		//		path: "questionsJS/elseif/depth/3/if_and.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 47,
-		//		path: "questionsJS/elseif/depth/3/if_and_all_negative.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 48,
-		//		path: "questionsJS/elseif/depth/3/if_and_one_negative.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 49,
-		//		path: "questionsJS/elseif/depth/3/if_and_separate.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 50,
-		//		path: "questionsJS/elseif/depth/3/if_and_separate_all_negative.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 51,
-		//		path: "questionsJS/elseif/depth/3/if_and_separate_one_negative.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 52,
-		//		path: "questionsJS/elseif/depth/3/if_or.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 53,
-		//		path: "questionsJS/elseif/depth/3/if_or_all_negative.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 54,
-		//		path: "questionsJS/elseif/depth/3/if_or_one_negative.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 55,
-		//		path: "questionsJS/elseif/depth/3/if_or_separate.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 56,
-		//		path: "questionsJS/elseif/depth/3/if_or_separate_all_negative.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 57,
-		//		path: "questionsJS/elseif/depth/3/if_or_separate_one_negative.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 58,
-		//		path: "questionsJS/elseif/depth/5/if_and.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 59,
-		//		path: "questionsJS/elseif/depth/5/if_and_all_negative.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
-		//	{
-		//		id: 60,
-		//		path: "questionsJS/elseif/depth/5/if_and_one_negative.js",
-		//		answer: "gibberish",
-		//		timeForQuestion: 999,
-		//		score: 999
-		//	},
-        //
+			//{
+			//	id: 23,
+			//	path: "questionsJS/elseif/7/if_else_or_var_false_false.js",
+			//	answer: "134",
+			//	timeForQuestion: 9, // took me 8:16
+			//	score: 999
+			//},
+
+			//{
+			//	id: 24,
+			//	path: "questionsJS/elseif/7/if_else_or_var_false_true.js",
+			//	answer: "124",
+			//	timeForQuestion: 6, // took me 5:19
+			//	score: 999
+			//},
+
+			//{
+			//	id: 24,
+			//	path: "questionsJS/elseif/7/if_else_or_var_true_true.js",
+			//	answer: "124", // how to write this output ???
+			//	timeForQuestion: 6, // took me 5:71
+			//	score: 999
+			//},
+
+			//{
+			//	id: 25,
+			//	path: "questionsJS/elseif/8/if_elseif_else_var_false_false.js",
+			//	answer: "145", // how to write this output ???
+			//	timeForQuestion: 9, // took me 8:09
+			//	score: 999
+			//},
+
+			//{
+			//	id: 26,
+			//	path: "questionsJS/elseif/8/if_elseif_else_var_false_true.js",
+			//	answer: "125", // how to write this output ???
+			//	timeForQuestion: 7, // took me 5:50
+			//	score: 999
+			//},
+
+			//{
+			//	id: 27,
+			//	path: "questionsJS/elseif/8/if_elseif_else_var_true_true.js",
+			//	answer: "125",
+			//	timeForQuestion: 7, // took me 5:72
+			//	score: 999
+			//},
+
+			//{
+			//	id: 28,
+			//	path: "questionsJS/elseif/9/if_else_and_var_false_negative_false.js",
+			//	answer: "134",
+			//	timeForQuestion: 10, // took me 8:35
+			//	score: 999
+			//},
+
+			//{
+			//	id: 29,
+			//	path: "questionsJS/elseif/9/if_else_and_var_false_negative_true.js",
+			//	answer: "124",
+			//	timeForQuestion: 9, // took me 7:69
+			//	score: 999
+			//},
+
+			//{
+			//	id: 30,
+			//	path: "questionsJS/elseif/9/if_else_and_var_negative_false_false.js",
+			//	answer: "134",
+			//	timeForQuestion: 8, // took me 7:00
+			//	score: 999
+			//},
+
+			//{
+			//	id: 31,
+			//	path: "questionsJS/elseif/9/if_else_and_var_negative_false_negative_false.js",
+			//	answer: "124",
+			//	timeForQuestion: 8, // took me 6:91
+			//	score: 999
+			//},
+
+			//{
+			//	id: 32,
+			//	path: "questionsJS/elseif/9/if_else_and_var_negative_false_negative_true.js",
+			//	answer: "134",
+			//	timeForQuestion: 10, // took me 12:91
+			//	score: 999
+			//},
+
+			//{
+			//	id: 33,
+			//	path: "questionsJS/elseif/9/if_else_and_var_negative_false_true.js",
+			//	answer: "134",
+			//	timeForQuestion: 10, // took me 8:25
+			//	score: 999
+			//},
+
+			//{
+			//	id: 34,
+			//	path: "questionsJS/elseif/9/if_else_and_var_negative_true_negative_true.js",
+			//	answer: "134",
+			//	timeForQuestion: 10, // took me 4:47
+			//	score: 999
+			//},
+
+			//{
+			//	id: 35,
+			//	path: "questionsJS/elseif/9/if_else_and_var_negative_true_true.js",
+			//	answer: "134",
+			//	timeForQuestion: 9, // took me 5:53
+			//	score: 999
+			//},
+
+			//{
+			//	id: 36,
+			//	path: "questionsJS/elseif/9/if_else_and_var_true_negative_true.js",
+			//	answer: "134",
+			//	timeForQuestion: 9, // took me 7:51
+			//	score: 999
+			//},
+
+			//{
+			//	id: 37,
+			//	path: "questionsJS/elseif/9/if_else_or_var_false_negative_false.js",
+			//	answer: "124",
+			//	timeForQuestion: 9, // took me 7:16
+			//	score: 999
+			//},
+
+			//{
+			//	id: 38,
+			//	path: "questionsJS/elseif/9/if_else_or_var_false_negative_true.js",
+			//	answer: "124",
+			//	timeForQuestion: 8, // took me 5:59
+			//	score: 999
+			//},
+
+			//{
+			//	id: 39,
+			//	path: "questionsJS/elseif/9/if_else_or_var_negative_false_false.js",
+			//	answer: "124",
+			//	timeForQuestion: 8, // took me 6:42
+			//	score: 999
+			//},
+
+			//{
+			//	id: 40,
+			//	path: "questionsJS/elseif/9/if_else_or_var_negative_false_negative_false.js",
+			//	answer: "124",
+			//	timeForQuestion: 8, // took me 5:25
+			//	score: 999
+			//},
+
+			//{
+			//	id: 41,
+			//	path: "questionsJS/elseif/9/if_else_or_var_negative_false_negative_true.js",
+			//	answer: "124",
+			//	timeForQuestion: 9, // took me 7:22
+			//	score: 999
+			//},
+
+			//{
+			//	id: 42,
+			//	path: "questionsJS/elseif/9/if_else_or_var_negative_false_true.js",
+			//	answer: "134",
+			//	timeForQuestion: 8, // took me 6:15
+			//	score: 999
+			//},
+
+			//{
+			//	id: 43,
+			//	path: "questionsJS/elseif/9/if_else_or_var_negative_true_negative_true.js",
+			//	answer: "134",
+			//	timeForQuestion: 9, // took me 7:22
+			//	score: 999
+			//},
+
+			//{
+			//	id: 44,
+			//	path: "questionsJS/elseif/9/if_else_or_var_negative_true_true.js",
+			//	answer: "124",
+			//	timeForQuestion: 8, // took me 5:59
+			//	score: 999
+			//},
+
+			//{
+			//	id: 45,
+			//	path: "questionsJS/elseif/9/if_else_or_var_true_negative_true.js",
+			//	answer: "124",
+			//	timeForQuestion: 7, // took me 4:34
+			//	score: 999
+			//},
+
+			//{
+			//	id: 46,
+			//	path: "questionsJS/elseif/depth/3/if_and.js",
+			//	answer: "1",
+			//	timeForQuestion: 7, // took me 5:72
+			//	score: 999
+			//},
+
+			//{
+			//	id: 47,
+			//	path: "questionsJS/elseif/depth/3/if_and_all_negative.js",
+			//	answer: "",
+			//	timeForQuestion: 6, // took me 4:32
+			//	score: 999
+			//},
+
+			//{
+			//	id: 48,
+			//	path: "questionsJS/elseif/depth/3/if_and_one_negative.js",
+			//	answer: "",
+			//	timeForQuestion: 7, // took me 5:75
+			//	score: 999
+			//},
+
+			//{
+			//	id: 49,
+			//	path: "questionsJS/elseif/depth/3/if_and_separate.js",
+			//	answer: "1",
+			//	timeForQuestion: 7, // took me 5:72
+			//	score: 999
+			//},
+
+			//{
+			//	id: 50,
+			//	path: "questionsJS/elseif/depth/3/if_and_separate_all_negative.js",
+			//	answer: "",
+			//	timeForQuestion: 7, // took me 4:94
+			//	score: 999
+			//},
+
+			//{
+			//	id: 51,
+			//	path: "questionsJS/elseif/depth/3/if_and_separate_one_negative.js",
+			//	answer: "1",
+			//	timeForQuestion: 8, // took me 6:03
+			//	score: 999
+			//},
+
+			//{
+			//	id: 52,
+			//	path: "questionsJS/elseif/depth/3/if_or.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 7, // took me 5:56
+			//	score: 999
+			//},
+
+			//{
+			//	id: 53,
+			//	path: "questionsJS/elseif/depth/3/if_or_all_negative.js",
+			//	answer: "",
+			//	timeForQuestion: 7, // took me 4:50
+			//	score: 999
+			//},
+
+			//{
+			//	id: 54,
+			//	path: "questionsJS/elseif/depth/3/if_or_one_negative.js",
+			//	answer: "1",
+			//	timeForQuestion: 6, // took me 4:09
+			//	score: 999
+			//},
+
+			//{
+			//	id: 55,
+			//	path: "questionsJS/elseif/depth/3/if_or_separate.js",
+			//	answer: "111",
+			//	timeForQuestion: 9, // took me 7:28
+			//	score: 999
+			//},
+
+			//{
+			//	id: 56,
+			//	path: "questionsJS/elseif/depth/3/if_or_separate_all_negative.js",
+			//	answer: "",
+			//	timeForQuestion: 7, // took me 4:78
+			//	score: 999
+			//},
+
+			//{
+			//	id: 57,
+			//	path: "questionsJS/elseif/depth/3/if_or_separate_one_negative.js",
+			//	answer: "13",
+			//	timeForQuestion: 7, // took me 4:72
+			//	score: 999
+			//},
+
+			//{
+			//	id: 58,
+			//	path: "questionsJS/elseif/depth/5/if_and.js",
+			//	answer: "1",
+			//	timeForQuestion: 8, // took me 6:71
+			//	score: 999
+			//},
+
+			//{
+			//	id: 59,
+			//	path: "questionsJS/elseif/depth/5/if_and_all_negative.js",
+			//	answer: "",
+			//	timeForQuestion: 7, // took me 5:10
+			//	score: 999
+			//},
+
+			//{
+			//	id: 60,
+			//	path: "questionsJS/elseif/depth/5/if_and_one_negative.js",
+			//	answer: "",
+			//	timeForQuestion: 7, // took me 4:34
+			//	score: 999
+			//},
+
 		//	{
 		//		id: 61,
 		//		path: "questionsJS/elseif/depth/5/if_and_separate.js",

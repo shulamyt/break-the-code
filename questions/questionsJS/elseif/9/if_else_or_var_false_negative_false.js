@@ -8,7 +8,3 @@ else{
     print("3");
 }
 print("4");
-
-
-//compare to null or 0
-//a>b
