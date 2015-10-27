@@ -577,11 +577,284 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 72,
-				path: "questionsJS/array/equals.js",
-				answer: "false",
-				timeForQuestion: 15, // took me 24:50, and I was wrong
+				path: "questionsJS/iteration/for/for_end_1.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
 				score: 999
 			},
+
+			{
+				id: 73,
+				path: "questionsJS/iteration/for/for_end_2.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 74,
+				path: "questionsJS/iteration/for/for_end_3.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 75,
+				path: "questionsJS/iteration/for/for_end_4.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 76,
+				path: "questionsJS/iteration/for/for_end_5.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 77,
+				path: "questionsJS/iteration/for/for_regular.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 78,
+				path: "questionsJS/iteration/for/for_start_from_1.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 79,
+				path: "questionsJS/iteration/for_condition/for.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 80,
+				path: "questionsJS/iteration/for_condition/for_break.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 81,
+				path: "questionsJS/iteration/for_condition/for_break_nagtive.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 82,
+				path: "questionsJS/iteration/for_condition/for_continue_negative.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 83,
+				path: "questionsJS/iteration/for_condition/for_negative.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 84,
+				path: "questionsJS/iteration/for_in/for_regular.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 85,
+				path: "questionsJS/iteration/for_odd/for_odd_locations.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 86,
+				path: "questionsJS/iteration/for_odd/for_odd_locations_break.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 87,
+				path: "questionsJS/iteration/for_odd/for_odd_locations_break_nagtive.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 88,
+				path: "questionsJS/iteration/for_odd/for_odd_locations_continue.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 89,
+				path: "questionsJS/iteration/for_odd/for_odd_locations_continue_negative.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 90,
+				path: "questionsJS/iteration/for_odd/for_odd_locations_negative.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 91,
+				path: "questionsJS/iteration/iterator/for_regular.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 92,
+				path: "questionsJS/iteration/while/while.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 93,
+				path: "questionsJS/iteration/while/while_odd_locations.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 94,
+				path: "questionsJS/list/concatenate.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 95,
+				path: "questionsJS/list/deepCopy.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 96,
+				path: "questionsJS/list/equals.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 97,
+				path: "questionsJS/list/findMiddle.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 98,
+				path: "questionsJS/list/frequency.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 99,
+				path: "questionsJS/list/indexOf.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 100,
+				path: "questionsJS/list/inList.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 101,
+				path: "questionsJS/list/merge.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 102,
+				path: "questionsJS/list/printList.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 103,
+				path: "questionsJS/list/reverse.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 104,
+				path: "questionsJS/list/split.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 105,
+				path: "questionsJS/list/subset.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
+			{
+				id: 106,
+				path: "questionsJS/map/insert.js",
+				answer: "gibberish",
+				timeForQuestion: 999,
+				score: 999
+			},
+
 
 		]
 	};
