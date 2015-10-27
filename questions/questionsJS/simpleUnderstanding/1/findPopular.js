@@ -12,7 +12,7 @@ for (var i = 0; i < arr.length; i++){
             tempCount++;
         }
     }
-    if (tempCount > count){
+    if (tempCount > count){ // HOW IS COUNT ????????
       p = temp;
       count = tempCount;
     }

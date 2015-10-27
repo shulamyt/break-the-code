@@ -15,11 +15,12 @@ for (var i = 0; i < aa.length; i++){
 			}
 			else{
 				j = j + 1;
+				// SHOULD NOT WE INCREASE I HERE ???? I = I + 1 ????
 			}
 		}
 		else{
 			j = 1;
-			flag == false;
+			flag = false;
 		}
 	}
 	else{

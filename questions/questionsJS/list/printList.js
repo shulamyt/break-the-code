@@ -6,9 +6,3 @@ while(p1 != null){
 	print(p1.value);
 	p1 = p1.next;
 }
-
-
-// while(p1.next != null){
-// 	p1 = p1.next;
-// 	print(p1.value);
-// }

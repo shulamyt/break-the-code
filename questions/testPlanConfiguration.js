@@ -784,398 +784,397 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//	score: 999
 			//},
 
-			{
-				id: 98,
-				path: "questionsJS/list/frequency.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
+			//{
+			//	id: 98,
+			//	path: "questionsJS/list/frequency.js",
+			//	answer: "2",
+			//	timeForQuestion: 23, // took me 21:35
+			//	score: 999
+			//},
 
 			//{
 			//	id: 99,
 			//	path: "questionsJS/list/indexOf.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
+			//	answer: "3",
+			//	timeForQuestion: 28, // took me 27:75
 			//	score: 999
 			//},
-            //
+
 			//{
 			//	id: 100,
 			//	path: "questionsJS/list/inList.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
+			//	answer: "true",
+			//	timeForQuestion: 15, // took me 13:72
 			//	score: 999
 			//},
-            //
+
 			//{
 			//	id: 101,
 			//	path: "questionsJS/list/merge.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
+			//	answer: "349158",
+			//	timeForQuestion: 205, // took me 3:20 min
 			//	score: 999
 			//},
-            //
+
 			//{
 			//	id: 102,
 			//	path: "questionsJS/list/printList.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
+			//	answer: "ydhaws",
+			//	timeForQuestion: 21, // took me 20:15
 			//	score: 999
 			//},
-            //
+
 			//{
 			//	id: 103,
-			//	path: "questionsJS/list/reverse.js",
-			//	answer: "gibberish",
+			//	path: "questionsJS/list/reverse.js", // THIS SNIPPET DOES NOT OUTPUT ANYTHING - WHAT'S THE OUTPUT ???
+			//	answer: "?????????????????",
 			//	timeForQuestion: 999,
 			//	score: 999
 			//},
-            //
+
 			//{
 			//	id: 104,
-			//	path: "questionsJS/list/split.js",
-			//	answer: "gibberish",
+			//	path: "questionsJS/list/split.js", // THIS SNIPPET DOES NOT OUTPUT ANYTHING - WHAT'S THE OUTPUT ???
+			//	answer: "?????????????????",
 			//	timeForQuestion: 999,
 			//	score: 999
 			//},
-            //
+
 			//{
 			//	id: 105,
-			//	path: "questionsJS/list/subset.js",
-			//	answer: "gibberish",
+			//	path: "questionsJS/list/subset.js", // THIS SNIPPET DOES NOT OUTPUT ANYTHING - WHAT'S THE OUTPUT ???
+			//	answer: "?????????????????",
 			//	timeForQuestion: 999,
 			//	score: 999
 			//},
-            //
+
 			//{
 			//	id: 106,
-			//	path: "questionsJS/map/insert.js",
-			//	answer: "gibberish",
+			//	path: "questionsJS/map/insert.js", // THIS FILE IS EMPTY ????????????
+			//	answer: "?????????????????",
 			//	timeForQuestion: 999,
 			//	score: 999
 			//},
-            //
+
 			//{
 			//	id: 107,
-			//	path: "questionsJS/queue/addAndPop.js",
-			//	answer: "gibberish",
+			//	path: "questionsJS/queue/addAndPop.js", // THIS SNIPPET DOES NOT OUTPUT ANYTHING - WHAT'S THE OUTPUT ???
+			//	answer: "?????????????????",
 			//	timeForQuestion: 999,
 			//	score: 999
 			//},
-            //
+
 			//{
 			//	id: 108,
 			//	path: "questionsJS/set/add.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
+			//	answer: "xbrpqr",
+			//	timeForQuestion: 48, // took me 47:94
 			//	score: 999
 			//},
-            //
+
 			//{
 			//	id: 109,
 			//	path: "questionsJS/set/contains.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
+			//	answer: "true",
+			//	timeForQuestion: 13, // took me 11:94
 			//	score: 999
 			//},
-            //
+
 			//{
 			//	id: 110,
-			//	path: "questionsJS/set/intersection.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 111,
-			//	path: "questionsJS/set/isSubsetOf.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 112,
-			//	path: "questionsJS/set/union.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 113,
-			//	path: "questionsJS/simpleUnderstanding/1/findPopular.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 114,
-			//	path: "questionsJS/simpleUnderstanding/1/isRotated.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 115,
-			//	path: "questionsJS/simpleUnderstanding/1/pairsSum.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 116,
-			//	path: "questionsJS/simpleUnderstanding/1/palindrome.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 117,
-			//	path: "questionsJS/simpleUnderstanding/1/topTwoMaxNumber.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 118,
-			//	path: "questionsJS/simpleUnderstanding/arithmeticProgression.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 119,
-			//	path: "questionsJS/simpleUnderstanding/div.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 120,
-			//	path: "questionsJS/simpleUnderstanding/foreignNumbers.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 121,
-			//	path: "questionsJS/simpleUnderstanding/hasSameDigit.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 122,
-			//	path: "questionsJS/simpleUnderstanding/inCycle.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 123,
-			//	path: "questionsJS/simpleUnderstanding/line.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 124,
-			//	path: "questionsJS/simpleUnderstanding/max.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 125,
-			//	path: "questionsJS/simpleUnderstanding/powerof.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 126,
-			//	path: "questionsJS/simpleUnderstanding/primeNumber.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 127,
-			//	path: "questionsJS/simpleUnderstanding/primeNumberSq.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 128,
-			//	path: "questionsJS/stack/addAndPop.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 129,
-			//	path: "questionsJS/stack/equals.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 130,
-			//	path: "questionsJS/tree/find.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 131,
-			//	path: "questionsJS/tree/print.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 132,
-			//	path: "questionsJS/tree/remove.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 133,
-			//	path: "questionsJS/weird/for_if_return_boolean.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 134,
-			//	path: "questionsJS/weird/if_else_and_false_true.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 135,
-			//	path: "questionsJS/weird/if_else_and_var_false_true.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 136,
-			//	path: "questionsJS/weird/if_else_and_var_negative_false_negative_true.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 137,
-			//	path: "questionsJS/weird/if_else_negative_false.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 138,
-			//	path: "questionsJS/weird/if_else_negative_true.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 139,
-			//	path: "questionsJS/weird/if_else_negative_var_false.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 140,
-			//	path: "questionsJS/weird/if_else_negative_var_true.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 141,
-			//	path: "questionsJS/weird/if_else_or_var_negative_false_negative_true.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 142,
-			//	path: "questionsJS/weird/if_elseif_else_var_true_false.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 143,
-			//	path: "questionsJS/weird/if_if_false.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 144,
-			//	path: "questionsJS/x_dimension/2_dimension.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 145,
-			//	path: "questionsJS/x_dimension/changeColorPixel.js",
-			//	answer: "gibberish",
-			//	timeForQuestion: 999,
-			//	score: 999
-			//},
-            //
-			//{
-			//	id: 146,
-			//	path: "questionsJS/x_dimension/printFloydTriangle.js",
+			//	path: "questionsJS/set/intersection.js", // TOOK ME MORE THAN 4 MINUTES AND I STILL DO NOT KNOW THE ANSWER ???
 			//	answer: "gibberish",
 			//	timeForQuestion: 999,
 			//	score: 999
 			//},
 
+			//{
+			//	id: 111,
+			//	path: "questionsJS/set/isSubsetOf.js",
+			//	answer: "true",
+			//	timeForQuestion: 68, // took me 69 seconds
+			//	score: 999
+			//},
+
+			//{
+			//	id: 112,
+			//	path: "questionsJS/set/union.js", // UNCLEAR SNIPPET !!! ???
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+
+			//{
+			//	id: 113,
+			//	path: "questionsJS/simpleUnderstanding/1/findPopular.js", // UNCLEAR SNIPPET !!! ???
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+
+			//{
+			//	id: 114,
+			//	path: "questionsJS/simpleUnderstanding/1/isRotated.js", // UNCLEAR SNIPPET !!! ???
+			//	answer: "gibberish",
+			//	timeForQuestion: 999, // took very very long
+			//	score: 999
+			//},
+
+			//{
+			//	id: 115,
+			//	path: "questionsJS/simpleUnderstanding/1/pairsSum.js",
+			//	answer: "1+4 2+3 3+2 4+1 5+0", // HOW DOES THE OUTPUT ACTUALLY LOOK ???
+			//	timeForQuestion: 120, // took me almost 2 minutes
+			//	score: 999
+			//},
+
+			//{
+			//	id: 116,
+			//	path: "questionsJS/simpleUnderstanding/1/palindrome.js",
+			//	answer: "true",
+			//	timeForQuestion: 35, // took me 32:27
+			//	score: 999
+			//},
+
+			//{
+			//	id: 117,
+			//	path: "questionsJS/simpleUnderstanding/1/topTwoMaxNumber.js",
+			//	answer: "9",
+			//	timeForQuestion: 111, // took me 1:50 mins
+			//	score: 999
+			//},
+
+			//{
+			//	id: 118,
+			//	path: "questionsJS/simpleUnderstanding/arithmeticProgression.js",
+			//	answer: "true",
+			//	timeForQuestion: 36, // took me 35:69
+			//	score: 999
+			//},
+
+			//{
+			//	id: 119,
+			//	path: "questionsJS/simpleUnderstanding/div.js",
+			//	answer: "false",
+			//	timeForQuestion: 42, // took me 41:70
+			//	score: 999
+			//},
+
+			//{
+			//	id: 120,
+			//	path: "questionsJS/simpleUnderstanding/coprimeNumbers.js",
+			//	answer: "false",
+			//	timeForQuestion: 34, // took me 32:86
+			//	score: 999
+			//},
+
+			//{
+			//	id: 121,
+			//	path: "questionsJS/simpleUnderstanding/hasSameDigit.js",
+			//	answer: "false",
+			//	timeForQuestion: 20, // took me 18:46
+			//	score: 999
+			//},
+
+			//{
+			//	id: 122,
+			//	path: "questionsJS/simpleUnderstanding/inCycle.js", //NOT WRITTEN COMPLETELY !!! ???
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+
+			//{
+			//	id: 123,
+			//	path: "questionsJS/simpleUnderstanding/line.js", //NOT WRITTEN COMPLETELY !!! ???
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+
+			//{
+			//	id: 124,
+			//	path: "questionsJS/simpleUnderstanding/max.js",
+			//	answer: "7",
+			//	timeForQuestion: 12, // took me 10:51
+			//	score: 999
+			//},
+
+			//{
+			//	id: 125,
+			//	path: "questionsJS/simpleUnderstanding/powerof.js",
+			//	answer: "64",
+			//	timeForQuestion: 17, // took me 15:92
+			//	score: 999
+			//},
+
+			//{
+			//	id: 126,
+			//	path: "questionsJS/simpleUnderstanding/primeNumber.js",
+			//	answer: "true",
+			//	timeForQuestion: 23, // took me 21:81
+			//	score: 999
+			//},
+
+			//{
+			//	id: 127,
+			//	path: "questionsJS/simpleUnderstanding/primeNumberSq.js",
+			//	answer: "true",
+			//	timeForQuestion: 17, // took me 13:59
+			//	score: 999
+			//},
+
+			//{
+			//	id: 128,
+			//	path: "questionsJS/stack/addAndPop.js", // EMPTY SNIPPET !!! ???
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+
+			//{
+			//	id: 129,
+			//	path: "questionsJS/stack/equals.js", // EMPTY SNIPPET !!! ???
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+
+			//{
+			//	id: 130,
+			//	path: "questionsJS/tree/find.js", //NOT WRITTEN COMPLETELY !!! ???
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+
+			//{
+			//	id: 131,
+			//	path: "questionsJS/tree/print.js", // it should be clear who is t !!! ???
+			//	answer: "32137684",
+			//	timeForQuestion: 53, // TOOK ME 52:34
+			//	score: 999
+			//},
+
+			//{
+			//	id: 132,
+			//	path: "questionsJS/tree/remove.js", /NOT WRITTEN COMPLETELY !!! ???
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+
+			//{
+			//	id: 133,
+			//	path: "questionsJS/weird/for_if_return_boolean.js",
+			//	answer: "1223",
+			//	timeForQuestion: 31, // took me 30
+			//	score: 999
+			//},
+
+			//{
+			//	id: 134,
+			//	path: "questionsJS/weird/if_else_and_false_true.js",
+			//	answer: "134",
+			//	timeForQuestion: 8, // took me 6:28
+			//	score: 999
+			//},
+
+			//{
+			//	id: 135,
+			//	path: "questionsJS/weird/if_else_and_var_false_true.js",
+			//	answer: "134",
+			//	timeForQuestion: 8, // took me 6:45
+			//	score: 999
+			//},
+
+			//{
+			//	id: 136,
+			//	path: "questionsJS/weird/if_else_and_var_negative_false_negative_true.js",
+			//	answer: "134",
+			//	timeForQuestion: 8, // took me 7:17
+			//	score: 999
+			//},
+
+			//{
+			//	id: 137,
+			//	path: "questionsJS/weird/if_else_negative_false.js",
+			//	answer: "124",
+			//	timeForQuestion: 6, // took me 4:73
+			//	score: 999
+			//},
+
+			//{
+			//	id: 138,
+			//	path: "questionsJS/weird/if_else_negative_true.js",
+			//	answer: "134",
+			//	timeForQuestion: 6, // took me 5:30
+			//	score: 999
+			//},
+
+			//{
+			//	id: 139,
+			//	path: "questionsJS/weird/if_else_negative_var_false.js",
+			//	answer: "124",
+			//	timeForQuestion: 8, // took me 6:57
+			//	score: 999
+			//},
+
+			//{
+			//	id: 140,
+			//	path: "questionsJS/weird/if_else_negative_var_true.js",
+			//	answer: "134",
+			//	timeForQuestion: 8, // took me 6:01
+			//	score: 999
+			//},
+
+			//{
+			//	id: 141,
+			//	path: "questionsJS/weird/if_else_or_var_negative_false_negative_true.js",
+			//	answer: "124",
+			//	timeForQuestion: 9, // took me 7:03
+			//	score: 999
+			//},
+
+			//{
+			//	id: 142,
+			//	path: "questionsJS/weird/if_elseif_else_var_true_false.js",
+			//	answer: "125",
+			//	timeForQuestion: 14, // took me 12:20
+			//	score: 999
+			//},
+
+			//{
+			//	id: 143,
+			//	path: "questionsJS/weird/if_if_false.js",
+			//	answer: "134",
+			//	timeForQuestion: 7, // took me 5:59
+			//	score: 999
+			//},
+
+			//{
+			//	id: 144,
+			//	path: "questionsJS/x_dimension/2_dimension.js", // EMPTY SNIPPET !!! ???
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+
+			//{
+			//	id: 145,
+			//	path: "questionsJS/x_dimension/changeColorPixel.js", // NO OUTPUT COMMAND !!! ???
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+
+			//{
+			//	id: 146,
+			//	path: "questionsJS/x_dimension/printFloydTriangle.js",
+			//	answer: "1\n23\n456",
+			//	timeForQuestion: 50, // took me 50:81
+			//	score: 999
+			//},
 		]
 	};
 	return configuration;

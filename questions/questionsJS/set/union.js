@@ -10,6 +10,7 @@ while (p2 != null){
 	        ok = false;
 	        break;
 	    }
+		// SHOULD ADD : P1 = P1.NEXT ??? WHAT IS THE GOAL HERE ?
 	}
 	if(ok){
 		var n = new Node();
