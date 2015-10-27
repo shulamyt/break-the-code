@@ -192,7 +192,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 24,
+			//	id: 25,
 			//	path: "questionsJS/elseif/7/if_else_or_var_true_true.js",
 			//	answer: "124", // how to write this output ???
 			//	timeForQuestion: 6, // took me 5:71
@@ -200,7 +200,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 25,
+			//	id: 26,
 			//	path: "questionsJS/elseif/8/if_elseif_else_var_false_false.js",
 			//	answer: "145", // how to write this output ???
 			//	timeForQuestion: 9, // took me 8:09
@@ -208,7 +208,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 26,
+			//	id: 27,
 			//	path: "questionsJS/elseif/8/if_elseif_else_var_false_true.js",
 			//	answer: "125", // how to write this output ???
 			//	timeForQuestion: 7, // took me 5:50
@@ -216,7 +216,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 27,
+			//	id: 28,
 			//	path: "questionsJS/elseif/8/if_elseif_else_var_true_true.js",
 			//	answer: "125",
 			//	timeForQuestion: 7, // took me 5:72
@@ -224,7 +224,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 28,
+			//	id: 29,
 			//	path: "questionsJS/elseif/9/if_else_and_var_false_negative_false.js",
 			//	answer: "134",
 			//	timeForQuestion: 10, // took me 8:35
@@ -232,7 +232,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 29,
+			//	id: 30,
 			//	path: "questionsJS/elseif/9/if_else_and_var_false_negative_true.js",
 			//	answer: "124",
 			//	timeForQuestion: 9, // took me 7:69
@@ -240,7 +240,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 30,
+			//	id: 31,
 			//	path: "questionsJS/elseif/9/if_else_and_var_negative_false_false.js",
 			//	answer: "134",
 			//	timeForQuestion: 8, // took me 7:00
@@ -248,7 +248,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 31,
+			//	id: 32,
 			//	path: "questionsJS/elseif/9/if_else_and_var_negative_false_negative_false.js",
 			//	answer: "124",
 			//	timeForQuestion: 8, // took me 6:91
@@ -256,7 +256,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 32,
+			//	id: 33,
 			//	path: "questionsJS/elseif/9/if_else_and_var_negative_false_negative_true.js",
 			//	answer: "134",
 			//	timeForQuestion: 10, // took me 12:91
@@ -264,7 +264,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 33,
+			//	id: 34,
 			//	path: "questionsJS/elseif/9/if_else_and_var_negative_false_true.js",
 			//	answer: "134",
 			//	timeForQuestion: 10, // took me 8:25
@@ -272,7 +272,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 34,
+			//	id: 35,
 			//	path: "questionsJS/elseif/9/if_else_and_var_negative_true_negative_true.js",
 			//	answer: "134",
 			//	timeForQuestion: 10, // took me 4:47
@@ -280,7 +280,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 35,
+			//	id: 36,
 			//	path: "questionsJS/elseif/9/if_else_and_var_negative_true_true.js",
 			//	answer: "134",
 			//	timeForQuestion: 9, // took me 5:53
@@ -288,7 +288,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 36,
+			//	id: 37,
 			//	path: "questionsJS/elseif/9/if_else_and_var_true_negative_true.js",
 			//	answer: "134",
 			//	timeForQuestion: 9, // took me 7:51
@@ -296,7 +296,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 37,
+			//	id: 38,
 			//	path: "questionsJS/elseif/9/if_else_or_var_false_negative_false.js",
 			//	answer: "124",
 			//	timeForQuestion: 9, // took me 7:16
@@ -304,7 +304,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 38,
+			//	id: 39,
 			//	path: "questionsJS/elseif/9/if_else_or_var_false_negative_true.js",
 			//	answer: "124",
 			//	timeForQuestion: 8, // took me 5:59
@@ -312,7 +312,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 39,
+			//	id: 40,
 			//	path: "questionsJS/elseif/9/if_else_or_var_negative_false_false.js",
 			//	answer: "124",
 			//	timeForQuestion: 8, // took me 6:42
@@ -320,7 +320,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 40,
+			//	id: 41,
 			//	path: "questionsJS/elseif/9/if_else_or_var_negative_false_negative_false.js",
 			//	answer: "124",
 			//	timeForQuestion: 8, // took me 5:25
@@ -328,7 +328,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 41,
+			//	id: 42,
 			//	path: "questionsJS/elseif/9/if_else_or_var_negative_false_negative_true.js",
 			//	answer: "124",
 			//	timeForQuestion: 9, // took me 7:22
@@ -336,7 +336,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 42,
+			//	id: 43,
 			//	path: "questionsJS/elseif/9/if_else_or_var_negative_false_true.js",
 			//	answer: "134",
 			//	timeForQuestion: 8, // took me 6:15
@@ -344,7 +344,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 43,
+			//	id: 44,
 			//	path: "questionsJS/elseif/9/if_else_or_var_negative_true_negative_true.js",
 			//	answer: "134",
 			//	timeForQuestion: 9, // took me 7:22
@@ -352,7 +352,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 44,
+			//	id: 45,
 			//	path: "questionsJS/elseif/9/if_else_or_var_negative_true_true.js",
 			//	answer: "124",
 			//	timeForQuestion: 8, // took me 5:59
@@ -360,7 +360,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 45,
+			//	id: 46,
 			//	path: "questionsJS/elseif/9/if_else_or_var_true_negative_true.js",
 			//	answer: "124",
 			//	timeForQuestion: 7, // took me 4:34
@@ -368,7 +368,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 46,
+			//	id: 47,
 			//	path: "questionsJS/elseif/depth/3/if_and.js",
 			//	answer: "1",
 			//	timeForQuestion: 7, // took me 5:72
@@ -376,7 +376,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 47,
+			//	id: 48,
 			//	path: "questionsJS/elseif/depth/3/if_and_all_negative.js",
 			//	answer: "",
 			//	timeForQuestion: 6, // took me 4:32
@@ -384,7 +384,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 48,
+			//	id: 49,
 			//	path: "questionsJS/elseif/depth/3/if_and_one_negative.js",
 			//	answer: "",
 			//	timeForQuestion: 7, // took me 5:75
@@ -392,7 +392,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 49,
+			//	id: 50,
 			//	path: "questionsJS/elseif/depth/3/if_and_separate.js",
 			//	answer: "1",
 			//	timeForQuestion: 7, // took me 5:72
@@ -400,7 +400,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 50,
+			//	id: 51,
 			//	path: "questionsJS/elseif/depth/3/if_and_separate_all_negative.js",
 			//	answer: "",
 			//	timeForQuestion: 7, // took me 4:94
@@ -408,7 +408,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 51,
+			//	id: 52,
 			//	path: "questionsJS/elseif/depth/3/if_and_separate_one_negative.js",
 			//	answer: "1",
 			//	timeForQuestion: 8, // took me 6:03
@@ -416,7 +416,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 52,
+			//	id: 53,
 			//	path: "questionsJS/elseif/depth/3/if_or.js",
 			//	answer: "gibberish",
 			//	timeForQuestion: 7, // took me 5:56
@@ -424,7 +424,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 53,
+			//	id: 54,
 			//	path: "questionsJS/elseif/depth/3/if_or_all_negative.js",
 			//	answer: "",
 			//	timeForQuestion: 7, // took me 4:50
@@ -432,7 +432,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 54,
+			//	id: 55,
 			//	path: "questionsJS/elseif/depth/3/if_or_one_negative.js",
 			//	answer: "1",
 			//	timeForQuestion: 6, // took me 4:09
@@ -440,7 +440,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 55,
+			//	id: 56,
 			//	path: "questionsJS/elseif/depth/3/if_or_separate.js",
 			//	answer: "111",
 			//	timeForQuestion: 9, // took me 7:28
@@ -448,7 +448,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 56,
+			//	id: 57,
 			//	path: "questionsJS/elseif/depth/3/if_or_separate_all_negative.js",
 			//	answer: "",
 			//	timeForQuestion: 7, // took me 4:78
@@ -456,7 +456,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 57,
+			//	id: 58,
 			//	path: "questionsJS/elseif/depth/3/if_or_separate_one_negative.js",
 			//	answer: "13",
 			//	timeForQuestion: 7, // took me 4:72
@@ -464,7 +464,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 58,
+			//	id: 59,
 			//	path: "questionsJS/elseif/depth/5/if_and.js",
 			//	answer: "1",
 			//	timeForQuestion: 8, // took me 6:71
@@ -472,7 +472,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 59,
+			//	id: 60,
 			//	path: "questionsJS/elseif/depth/5/if_and_all_negative.js",
 			//	answer: "",
 			//	timeForQuestion: 7, // took me 5:10
@@ -480,7 +480,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 60,
+			//	id: 61,
 			//	path: "questionsJS/elseif/depth/5/if_and_one_negative.js",
 			//	answer: "",
 			//	timeForQuestion: 7, // took me 4:34
@@ -488,7 +488,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 61,
+			//	id: 62,
 			//	path: "questionsJS/elseif/depth/5/if_and_separate.js",
 			//	answer: "12345",
 			//	timeForQuestion: 18, // took me 25:40
@@ -496,7 +496,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 62,
+			//	id: 63,
 			//	path: "questionsJS/elseif/depth/5/if_and_separate_all_negative.js",
 			//	answer: "",
 			//	timeForQuestion: 10, // took me 9:78
@@ -504,7 +504,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 63,
+			//	id: 64,
 			//	path: "questionsJS/elseif/depth/5/if_and_separate_one_negative.js",
 			//	answer: "12",
 			//	timeForQuestion: 14, // took me 12:72
@@ -512,7 +512,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 64,
+			//	id: 65,
 			//	path: "questionsJS/elseif/depth/5/if_or.js",
 			//	answer: "1",
 			//	timeForQuestion: 6, // took me 4:28
@@ -520,7 +520,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 65,
+			//	id: 66,
 			//	path: "questionsJS/elseif/depth/5/if_or_all_negative.js",
 			//	answer: "gibberish",
 			//	timeForQuestion: 7, // took me 5:94
@@ -528,7 +528,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 66,
+			//	id: 67,
 			//	path: "questionsJS/elseif/depth/5/if_or_one_negative.js",
 			//	answer: "1",
 			//	timeForQuestion: 6, // took me 4:18
@@ -536,7 +536,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 67,
+			//	id: 68,
 			//	path: "questionsJS/elseif/depth/5/if_or_separate.js",
 			//	answer: "12345",
 			//	timeForQuestion: 11, // took me 10:09
@@ -544,7 +544,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 68,
+			//	id: 69,
 			//	path: "questionsJS/elseif/depth/5/if_or_separate_all_negative.js",
 			//	answer: "",
 			//	timeForQuestion: 10, // took me 7:75
@@ -552,7 +552,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			//},
 
 			//{
-			//	id: 69,
+			//	id: 70,
 			//	path: "questionsJS/elseif/depth/5/if_or_separate_one_negative.js",
 			//	answer: "12",
 			//	timeForQuestion: 12, // took me 10:22
@@ -576,452 +576,604 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			},*/
 
 			{
-				id: 72,
+				id: 71,
 				path: "questionsJS/iteration/for/for_end_1.js",
 				answer: "gibberish",
 				timeForQuestion: 999,
 				score: 999
 			},
 
-			{
-				id: 73,
-				path: "questionsJS/iteration/for/for_end_2.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 74,
-				path: "questionsJS/iteration/for/for_end_3.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 75,
-				path: "questionsJS/iteration/for/for_end_4.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 76,
-				path: "questionsJS/iteration/for/for_end_5.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 77,
-				path: "questionsJS/iteration/for/for_regular.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 78,
-				path: "questionsJS/iteration/for/for_start_from_1.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 79,
-				path: "questionsJS/iteration/for_condition/for.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 80,
-				path: "questionsJS/iteration/for_condition/for_break.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 81,
-				path: "questionsJS/iteration/for_condition/for_break_nagtive.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 82,
-				path: "questionsJS/iteration/for_condition/for_continue_negative.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 83,
-				path: "questionsJS/iteration/for_condition/for_negative.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 84,
-				path: "questionsJS/iteration/for_in/for_regular.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 85,
-				path: "questionsJS/iteration/for_odd/for_odd_locations.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 86,
-				path: "questionsJS/iteration/for_odd/for_odd_locations_break.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 87,
-				path: "questionsJS/iteration/for_odd/for_odd_locations_break_nagtive.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 88,
-				path: "questionsJS/iteration/for_odd/for_odd_locations_continue.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 89,
-				path: "questionsJS/iteration/for_odd/for_odd_locations_continue_negative.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 90,
-				path: "questionsJS/iteration/for_odd/for_odd_locations_negative.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 91,
-				path: "questionsJS/iteration/iterator/for_regular.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 92,
-				path: "questionsJS/iteration/while/while.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 93,
-				path: "questionsJS/iteration/while/while_odd_locations.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 94,
-				path: "questionsJS/list/concatenate.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 95,
-				path: "questionsJS/list/deepCopy.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 96,
-				path: "questionsJS/list/equals.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 97,
-				path: "questionsJS/list/findMiddle.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 98,
-				path: "questionsJS/list/frequency.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 99,
-				path: "questionsJS/list/indexOf.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 100,
-				path: "questionsJS/list/inList.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 101,
-				path: "questionsJS/list/merge.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 102,
-				path: "questionsJS/list/printList.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 103,
-				path: "questionsJS/list/reverse.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 104,
-				path: "questionsJS/list/split.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 105,
-				path: "questionsJS/list/subset.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 106,
-				path: "questionsJS/map/insert.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 107,
-				path: "questionsJS/queue/addAndPop.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 108,
-				path: "questionsJS/set/add.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 109,
-				path: "questionsJS/set/contains.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 110,
-				path: "questionsJS/set/intersection.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 111,
-				path: "questionsJS/set/isSubsetOf.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 112,
-				path: "questionsJS/set/union.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 113,
-				path: "questionsJS/simpleUnderstanding/1/findPopular.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 114,
-				path: "questionsJS/simpleUnderstanding/1/isRotated.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 115,
-				path: "questionsJS/simpleUnderstanding/1/pairsSum.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 116,
-				path: "questionsJS/simpleUnderstanding/1/palindrome.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 117,
-				path: "questionsJS/simpleUnderstanding/1/topTwoMaxNumber.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 118,
-				path: "questionsJS/simpleUnderstanding/arithmeticProgression.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 119,
-				path: "questionsJS/simpleUnderstanding/div.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 120,
-				path: "questionsJS/simpleUnderstanding/foreignNumbers.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 121,
-				path: "questionsJS/simpleUnderstanding/hasSameDigit.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 122,
-				path: "questionsJS/simpleUnderstanding/inCycle.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 123,
-				path: "questionsJS/simpleUnderstanding/line.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 124,
-				path: "questionsJS/simpleUnderstanding/max.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 125,
-				path: "questionsJS/simpleUnderstanding/powerof.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 126,
-				path: "questionsJS/simpleUnderstanding/primeNumber.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
-
-			{
-				id: 127,
-				path: "questionsJS/simpleUnderstanding/primeNumberSq.js",
-				answer: "gibberish",
-				timeForQuestion: 999,
-				score: 999
-			},
+			//{
+			//	id: 73,
+			//	path: "questionsJS/iteration/for/for_end_2.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 74,
+			//	path: "questionsJS/iteration/for/for_end_3.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 75,
+			//	path: "questionsJS/iteration/for/for_end_4.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 76,
+			//	path: "questionsJS/iteration/for/for_end_5.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 77,
+			//	path: "questionsJS/iteration/for/for_regular.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 78,
+			//	path: "questionsJS/iteration/for/for_start_from_1.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 79,
+			//	path: "questionsJS/iteration/for_condition/for.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 80,
+			//	path: "questionsJS/iteration/for_condition/for_break.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 81,
+			//	path: "questionsJS/iteration/for_condition/for_break_nagtive.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 82,
+			//	path: "questionsJS/iteration/for_condition/for_continue_negative.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 83,
+			//	path: "questionsJS/iteration/for_condition/for_negative.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 84,
+			//	path: "questionsJS/iteration/for_in/for_regular.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 85,
+			//	path: "questionsJS/iteration/for_odd/for_odd_locations.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 86,
+			//	path: "questionsJS/iteration/for_odd/for_odd_locations_break.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 87,
+			//	path: "questionsJS/iteration/for_odd/for_odd_locations_break_nagtive.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 88,
+			//	path: "questionsJS/iteration/for_odd/for_odd_locations_continue.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 89,
+			//	path: "questionsJS/iteration/for_odd/for_odd_locations_continue_negative.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 90,
+			//	path: "questionsJS/iteration/for_odd/for_odd_locations_negative.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 91,
+			//	path: "questionsJS/iteration/iterator/for_regular.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 92,
+			//	path: "questionsJS/iteration/while/while.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 93,
+			//	path: "questionsJS/iteration/while/while_odd_locations.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 94,
+			//	path: "questionsJS/list/concatenate.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 95,
+			//	path: "questionsJS/list/deepCopy.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 96,
+			//	path: "questionsJS/list/equals.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 97,
+			//	path: "questionsJS/list/findMiddle.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 98,
+			//	path: "questionsJS/list/frequency.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 99,
+			//	path: "questionsJS/list/indexOf.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 100,
+			//	path: "questionsJS/list/inList.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 101,
+			//	path: "questionsJS/list/merge.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 102,
+			//	path: "questionsJS/list/printList.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 103,
+			//	path: "questionsJS/list/reverse.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 104,
+			//	path: "questionsJS/list/split.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 105,
+			//	path: "questionsJS/list/subset.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 106,
+			//	path: "questionsJS/map/insert.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 107,
+			//	path: "questionsJS/queue/addAndPop.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 108,
+			//	path: "questionsJS/set/add.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 109,
+			//	path: "questionsJS/set/contains.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 110,
+			//	path: "questionsJS/set/intersection.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 111,
+			//	path: "questionsJS/set/isSubsetOf.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 112,
+			//	path: "questionsJS/set/union.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 113,
+			//	path: "questionsJS/simpleUnderstanding/1/findPopular.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 114,
+			//	path: "questionsJS/simpleUnderstanding/1/isRotated.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 115,
+			//	path: "questionsJS/simpleUnderstanding/1/pairsSum.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 116,
+			//	path: "questionsJS/simpleUnderstanding/1/palindrome.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 117,
+			//	path: "questionsJS/simpleUnderstanding/1/topTwoMaxNumber.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 118,
+			//	path: "questionsJS/simpleUnderstanding/arithmeticProgression.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 119,
+			//	path: "questionsJS/simpleUnderstanding/div.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 120,
+			//	path: "questionsJS/simpleUnderstanding/foreignNumbers.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 121,
+			//	path: "questionsJS/simpleUnderstanding/hasSameDigit.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 122,
+			//	path: "questionsJS/simpleUnderstanding/inCycle.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 123,
+			//	path: "questionsJS/simpleUnderstanding/line.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 124,
+			//	path: "questionsJS/simpleUnderstanding/max.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 125,
+			//	path: "questionsJS/simpleUnderstanding/powerof.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 126,
+			//	path: "questionsJS/simpleUnderstanding/primeNumber.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 127,
+			//	path: "questionsJS/simpleUnderstanding/primeNumberSq.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 128,
+			//	path: "questionsJS/stack/addAndPop.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 129,
+			//	path: "questionsJS/stack/equals.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 130,
+			//	path: "questionsJS/tree/find.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 131,
+			//	path: "questionsJS/tree/print.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 132,
+			//	path: "questionsJS/tree/remove.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 133,
+			//	path: "questionsJS/weird/for_if_return_boolean.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 134,
+			//	path: "questionsJS/weird/if_else_and_false_true.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 135,
+			//	path: "questionsJS/weird/if_else_and_var_false_true.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 136,
+			//	path: "questionsJS/weird/if_else_and_var_negative_false_negative_true.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 137,
+			//	path: "questionsJS/weird/if_else_negative_false.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 138,
+			//	path: "questionsJS/weird/if_else_negative_true.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 139,
+			//	path: "questionsJS/weird/if_else_negative_var_false.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 140,
+			//	path: "questionsJS/weird/if_else_negative_var_true.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 141,
+			//	path: "questionsJS/weird/if_else_or_var_negative_false_negative_true.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 142,
+			//	path: "questionsJS/weird/if_elseif_else_var_true_false.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 143,
+			//	path: "questionsJS/weird/if_if_false.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 144,
+			//	path: "questionsJS/x_dimension/2_dimension.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 145,
+			//	path: "questionsJS/x_dimension/changeColorPixel.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
+            //
+			//{
+			//	id: 146,
+			//	path: "questionsJS/x_dimension/printFloydTriangle.js",
+			//	answer: "gibberish",
+			//	timeForQuestion: 999,
+			//	score: 999
+			//},
 
 		]
 	};
