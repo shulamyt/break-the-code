@@ -78,7 +78,7 @@ CREATE TABLE Experimenter(
    programmingLanguages text ARRAY,
    assessSelfProgrammingSkills int,
    firstTime boolean,
-   testPlan text ARRAY
+   testPlanId text ARRAY
 );
 --
 DROP TABLE Answer;
@@ -100,10 +100,12 @@ cd ~
 cd break-the-code
 ps -ef
 kill -9 [PM2]
-pm2 start start_server.js
+pm2 start start_server.js --node-args="--debug=5858"
 sudo service nginx restart
 
 pm2 logs
+//clear logs
+pm2 flush
 
 or
 
@@ -122,3 +124,4 @@ su - root
 psql -d postgres
 
 select * from Experimenter;
+
