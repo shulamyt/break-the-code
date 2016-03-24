@@ -67,8 +67,8 @@ module.exports = function (app) {
             user.id = new Date().getTime();
             user.testPlan = testPlan;
             var testPlanId = [];
-            for(var test in testPlan){
-                testPlanId.push(test.id);
+            for(var i in testPlan){
+                testPlanId.push(testPlan[i].id);
             }
             user.testPlanId = testPlanId;
             questionService.addQuestions(user.testPlan).then(function(){
