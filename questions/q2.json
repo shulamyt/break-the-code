@@ -1,8 +1,0 @@
-{
-    "id": "q2",
-    "explain": "",
-    "code" :"var b = false;if(b){print \"b\";}",
-    "answer":"222",
-    "timeForQuestion": 20,
-    "maxScore": 25
-}
