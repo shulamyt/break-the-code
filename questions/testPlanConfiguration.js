@@ -225,7 +225,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 29,
-				path: "questionsJS/elseif/9/if_else_and_var_false_negative_false.js",
+				path: "questionsJS/logic/and_var_false_negative_false.js",
 				answer: "134",
 				timeForQuestion: 10, // took me 8:35
 				score: 999
@@ -233,7 +233,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 30,
-				path: "questionsJS/elseif/9/if_else_and_var_false_negative_true.js",
+				path: "questionsJS/logic/and_var_false_negative_true.js",
 				answer: "124",
 				timeForQuestion: 9, // took me 7:69
 				score: 999
@@ -241,7 +241,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 31,
-				path: "questionsJS/elseif/9/if_else_and_var_negative_false_false.js",
+				path: "questionsJS/logic/and_var_negative_false_false.js",
 				answer: "134",
 				timeForQuestion: 8, // took me 7:00
 				score: 999
@@ -249,7 +249,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 32,
-				path: "questionsJS/elseif/9/if_else_and_var_negative_false_negative_false.js",
+				path: "questionsJS/logic/and_var_negative_false_negative_false.js",
 				answer: "124",
 				timeForQuestion: 8, // took me 6:91
 				score: 999
@@ -257,7 +257,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 33,
-				path: "questionsJS/elseif/9/if_else_and_var_negative_false_negative_true.js",
+				path: "questionsJS/logic/and_var_negative_false_negative_true.js",
 				answer: "134",
 				timeForQuestion: 10, // took me 12:91
 				score: 999
@@ -265,7 +265,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 34,
-				path: "questionsJS/elseif/9/if_else_and_var_negative_false_true.js",
+				path: "questionsJS/logic/and_var_negative_false_true.js",
 				answer: "134",
 				timeForQuestion: 10, // took me 8:25
 				score: 999
@@ -273,7 +273,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 35,
-				path: "questionsJS/elseif/9/if_else_and_var_negative_true_negative_true.js",
+				path: "questionsJS/logic/and_var_negative_true_negative_true.js",
 				answer: "134",
 				timeForQuestion: 10, // took me 4:47
 				score: 999
@@ -281,7 +281,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 36,
-				path: "questionsJS/elseif/9/if_else_and_var_negative_true_true.js",
+				path: "questionsJS/logic/and_var_negative_true_true.js",
 				answer: "134",
 				timeForQuestion: 9, // took me 5:53
 				score: 999
@@ -289,7 +289,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 37,
-				path: "questionsJS/elseif/9/if_else_and_var_true_negative_true.js",
+				path: "questionsJS/logic/and_var_true_negative_true.js",
 				answer: "134",
 				timeForQuestion: 9, // took me 7:51
 				score: 999
@@ -297,7 +297,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 38,
-				path: "questionsJS/elseif/9/if_else_or_var_false_negative_false.js",
+				path: "questionsJS/logic/or_var_false_negative_false.js",
 				answer: "124",
 				timeForQuestion: 9, // took me 7:16
 				score: 999
@@ -305,7 +305,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 39,
-				path: "questionsJS/elseif/9/if_else_or_var_false_negative_true.js",
+				path: "questionsJS/logic/or_var_false_negative_true.js",
 				answer: "124",
 				timeForQuestion: 8, // took me 5:59
 				score: 999
@@ -313,7 +313,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 40,
-				path: "questionsJS/elseif/9/if_else_or_var_negative_false_false.js",
+				path: "questionsJS/logic/or_var_negative_false_false.js",
 				answer: "124",
 				timeForQuestion: 8, // took me 6:42
 				score: 999
@@ -321,7 +321,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 41,
-				path: "questionsJS/elseif/9/if_else_or_var_negative_false_negative_false.js",
+				path: "questionsJS/logic/or_var_negative_false_negative_false.js",
 				answer: "124",
 				timeForQuestion: 8, // took me 5:25
 				score: 999
@@ -329,7 +329,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 42,
-				path: "questionsJS/elseif/9/if_else_or_var_negative_false_negative_true.js",
+				path: "questionsJS/logic/or_var_negative_false_negative_true.js",
 				answer: "124",
 				timeForQuestion: 9, // took me 7:22
 				score: 999
@@ -337,7 +337,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 43,
-				path: "questionsJS/elseif/9/if_else_or_var_negative_false_true.js",
+				path: "questionsJS/logic/or_var_negative_false_true.js",
 				answer: "134",
 				timeForQuestion: 8, // took me 6:15
 				score: 999
@@ -345,7 +345,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 44,
-				path: "questionsJS/elseif/9/if_else_or_var_negative_true_negative_true.js",
+				path: "questionsJS/logic/or_var_negative_true_negative_true.js",
 				answer: "134",
 				timeForQuestion: 9, // took me 7:22
 				score: 999
@@ -353,7 +353,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 45,
-				path: "questionsJS/elseif/9/if_else_or_var_negative_true_true.js",
+				path: "questionsJS/logic/or_var_negative_true_true.js",
 				answer: "124",
 				timeForQuestion: 8, // took me 5:59
 				score: 999
@@ -361,7 +361,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 46,
-				path: "questionsJS/elseif/9/if_else_or_var_true_negative_true.js",
+				path: "questionsJS/logic/or_var_true_negative_true.js",
 				answer: "124",
 				timeForQuestion: 7, // took me 4:34
 				score: 999
