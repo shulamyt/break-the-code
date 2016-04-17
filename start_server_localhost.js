@@ -20,3 +20,4 @@ var server = app.listen(3000, function () {
 require('./server/rest/userRest')(app);
 require('./server/rest/answerRest')(app);
 require('./server/rest/questionRest')(app);
+require('./server/rest/commentRest')(app);

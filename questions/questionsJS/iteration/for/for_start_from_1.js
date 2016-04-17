@@ -1,6 +1,6 @@
 var array = ['a', 'b', 'c'];
 print("1");
-for(var i=1; i++; i<array.length){
+for(var i=1; i<array.length; i++){
     print("2");
     print(i);
 }
