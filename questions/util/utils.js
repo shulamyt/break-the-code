@@ -10,13 +10,12 @@ var appendToRoot = function (element){
 
 var print = function(text){
 	var element = document.createElement("div");
-	if(text == "T"){
+	if(text == "IN"){
 		element.style.cssText = "color:green;";
-		element.innerHTML = "IN";
 	}
-	else if(text == "F"){
+	else if(text == "OUT"){
 		element.style.cssText = "color:red;";
-		element.innerHTML = "OUT";
 	}
+	element.innerHTML = text;
 	appendToRoot(element);
 };

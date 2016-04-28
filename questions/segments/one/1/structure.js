@@ -1,12 +1,24 @@
 var x = 13;
 if(x > 10){
 	if(x < 20){
-		print ("T");
+		print ("IN");
 	}
 	else { // redundancy .. but if the sruct of if is "if/else", we nned it
-		print ("F");	
+		print ("OUT");	
 	}
 }
 else{
-	print ("F");	
+	print ("OUT");	
+}
+
+-----------------------
+
+var x = 13;
+if(x > 10){
+	if(x < 20){
+		print ("IN");
+	}
+}
+else{
+	print ("OUT");	
 }
