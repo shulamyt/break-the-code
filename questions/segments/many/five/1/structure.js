@@ -1,6 +1,6 @@
 var x = 33;
-if (x > 0) {
-	if (x < 10) {
+if (x > 40) {
+	if (x < 50) {
 		print ("IN");
 	}
 	else {
@@ -15,8 +15,8 @@ else if (x > 20) {
 		print ("OUT");	
 	}
 }
-else if (x > 40) {
-	if (x < 50) {
+else if (x > 0) {
+	if (x < 10) {
 		print ("IN");
 	}
 	else {
