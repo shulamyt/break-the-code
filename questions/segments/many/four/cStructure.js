@@ -1,35 +1,36 @@
+var x = 1;
 if (x>40) {
 	if (x<50) {
-		print ("IN");
+		print ("1");
 	}
 	else if (x>60) {
 		if (x<70) {
-			print ("IN");
+			print ("2");
 		}
 		else {
-			print ("OUT");
+			print ("3");
 		}
 	}
 	else {
-		print ("OUT");
+		print ("4");
 	}
 }
 else if (x<30) {
 	if (x>20) {
-		print ("IN");
+		print ("5");
 	}
 	else if (x<10) {
 		if (x>0) {
-			print ("IN");
+			print ("6");
 		}
 		else {
-			print ("OUT");
+			print ("7");
 		}
 	}
 	else {
-		print ("OUT");
+		print ("8");
 	}
 }
 else {
-	print ("OUT");
+	print ("9");
 }
