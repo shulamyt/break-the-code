@@ -85,6 +85,30 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 				answer: "1",
 				timeForQuestion: 60,
 				score: 999
+			},
+
+			{
+				id: 11,
+				path: "segments/two/following/1/logic.js",
+				answer: "1",
+				timeForQuestion: 60,
+				score: 999
+			},
+
+			{
+				id: 12,
+				path: "segments/two/following/1/structure.js",
+				answer: "4",
+				timeForQuestion: 60,
+				score: 999
+			},
+
+			{
+				id: 13,
+				path: "segments/two/following/2/logic.js",
+				answer: "2",
+				timeForQuestion: 60,
+				score: 999
 			}
 
 		]

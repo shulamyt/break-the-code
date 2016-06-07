@@ -1,20 +1,20 @@
-var x = 33;
-if ( x>10 ) {
-	if ( x<20 ) {
-		print ("IN");
+var x = 22;
+if (x>30) {
+	if (x<40) {
+		print ("1");
 	}
 	else {
-		print ("OUT");	
+		print ("2");	
 	}
 }
-else if ( x>30 ) {
-	if ( x<40 ) {
-		print ("IN");
+else if (x>10) {
+	if (x<20) {
+		print ("3");
 	}
 	else {
-		print ("OUT");	
+		print ("4");	
 	}
 }
 else {
-	print ("OUT");
+	print ("5");
 }
