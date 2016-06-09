@@ -120,9 +120,18 @@ CREATE SCHEMA test;
 CREATE USER root PASSWORD 'pass';
 GRANT ALL ON SCHEMA test TO root;
 GRANT ALL ON ALL TABLES IN SCHEMA test TO root;
+
+
 \q
 su - root
+
+
+------------------------------------
+******BEFORE START WORKING WITH DB******:
+pg_dump -d postgres > backup.sql
+
 psql -d postgres
 
 select * from Experimenter;
+select * from Answer;
 
