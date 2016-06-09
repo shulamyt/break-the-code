@@ -16,6 +16,7 @@ define([
                     answer.skip = $scope.skip;
                     if(answer.userAnswer == answer.rightAnswer){
                         $scope.compliment = getCompliment();
+                        $scope.numOfRightQuestions ++;
                     }
                     //answer.differences = createDifferences(answer.rightAnswer, answer.userAnswer);
                     //countDifferences(answer.differences);

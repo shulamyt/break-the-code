@@ -15,6 +15,8 @@ define([
             $('body').addClass("pic");
             $scope.thinkIMadeIt = thinkIMadeIt;
             $scope.skipQuestion = skipQuestion;
+            $scope.numOfRightQuestions = 0;
+            $scope.numOfQuestions = 0;
             $scope.gameOver = false;
             $scope.startNewQuestion = startNewQuestion;
             startNewQuestion();
@@ -30,6 +32,7 @@ define([
                 }
                 cleanAnswerArea();
                 QuestionService.getQuestion().then(function(question, status, headers, config) {
+                    $scope.numOfQuestions ++;
                     setQuestion(question);
                     TimerService.start();
                     setTimer($scope.timeForQuestion);

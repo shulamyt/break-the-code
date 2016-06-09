@@ -17,6 +17,7 @@ app.directive('gameover', function() {
                 popupEl.dialog({
                     resizable: false,
                     height:400,
+                    width: 450,
                     modal: true,
                     autoOpen: false,
                     closeOnEscape: false,
