@@ -9,7 +9,7 @@ require.config({
 		'jquery' :"lib/jquery-2.1.3",
 		'jqueryUi': "lib/jquery-ui",
 		'codemirror': "lib/codemirror/mode/javascript/javascript",
-		'JsDiff':"lib/JsDiff",
+		//'JsDiff':"lib/JsDiff",
 		'angularTimer': "lib/angular-timer.min",
 		'humanizeDuration': "lib/humanize-duration",
 		'momentWithLocales': "lib/moment-with-locales",

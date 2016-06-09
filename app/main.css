@@ -62,10 +62,19 @@
 
 .your-answer{
     float: left;
+    width: 50%;
+    text-align: center;
 }
 
 .right-answer{
     float: right;
+    width: 50%;
+    text-align: center;
+}
+
+.compliment{
+    width: 100%;
+    text-align: center;
 }
 
 .vs{

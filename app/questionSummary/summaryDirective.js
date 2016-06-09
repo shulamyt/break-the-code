@@ -19,7 +19,7 @@ app.directive('summary', function() {
                 var popupEl = $(element).find('[data-point="popup"]');
                 popupEl.dialog({
                     resizable: false,
-                    height:400,
+                    height:220,
                     modal: true,
                     autoOpen: false,
                     closeOnEscape: false,

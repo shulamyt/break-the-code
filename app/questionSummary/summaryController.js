@@ -1,29 +1,38 @@
 define([
     '../app',
-    'JsDiff',
+    //'JsDiff',
     'angular',
     '../service/questionService',
     '../service/answerService'
 ], function(app) {
     app.controller('SummaryController', ['$scope', '$rootScope', '$location', '$http', '$sce', 'QuestionService', 'AnswerService',
         function($scope, $rootScope, $location, $http, $sce, QuestionService, AnswerService) {
-            var JsDiff;
-            require(['JsDiff'], function(jsDiff) {
-                JsDiff = jsDiff;
-            });
             $scope.$on('checkAnswer', function (event, args) {
                 openPopup();
                 getRightAnswer().then(function(rightAnswer){
                     var answer = {};
                     answer.userAnswer = $scope.answer;
                     answer.rightAnswer = $scope.rightAnswer = rightAnswer;
-                    answer.differences = createDifferences(answer.rightAnswer, answer.userAnswer);
-                    countDifferences(answer.differences);
-                    calcScore();
-                    $scope.differences = answer.differences;
+                    if(answer.userAnswer == answer.rightAnswer){
+                        $scope.compliment = getCompliment();
+                    }
+                    //answer.differences = createDifferences(answer.rightAnswer, answer.userAnswer);
+                    //countDifferences(answer.differences);
+                    //calcScore();
+                    //$scope.differences = answer.differences;
                     AnswerService.saveAnswer(answer);
                 });
             });
+
+            function getCompliment(){
+                var compliments = ["Good!", "Good :)", "Nice :)", "Nice!", "Wow!", "Wow :)", "Right :)", "Right!"];
+
+                return compliments[getRandomInt(0, compliments.length-1)];
+            };
+
+            function getRandomInt(min, max) {
+              return Math.floor(Math.random() * (max - min)) + min;
+            }
 
             function getRightAnswer(){
                 var question = QuestionService.getCurrentQuestion();
@@ -66,10 +75,15 @@ define([
             });
 
             function openPopup(){
+                $scope.compliment = '';
                 $scope.$emit('openPopup');
             }
 
             function createDifferences(rightAnswer, answer){
+                var JsDiff;
+                require(['JsDiff'], function(jsDiff) {
+                    JsDiff = jsDiff;
+                });
                 var differences = JsDiff.diffChars(rightAnswer, answer);
                 return differences;
             }
