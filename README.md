@@ -89,6 +89,7 @@ CREATE TABLE Answer(
    userAnswer text,
    serialNumber int,
    duration double precision,
+   skip boolean,
    timestamp timestamp default current_timestamp
 );
 --------------------------------

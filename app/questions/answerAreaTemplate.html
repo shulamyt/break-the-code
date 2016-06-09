@@ -1,5 +1,6 @@
 <div class="answerArea">
 	<div>type here your answer, press enter when finish!</div>
 	<div class="mark">></div>
-	<textarea ng-model="answer" ng-enter="finishQuestion()"></textarea>
+	<textarea ng-model="answer" ng-enter="thinkIMadeIt()"></textarea>
+	<button ng-click="thinkIMadeIt()" ng-disabled="gameOver">Think I made it!</button>
 </div>

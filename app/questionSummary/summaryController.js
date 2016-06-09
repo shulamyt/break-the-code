@@ -13,6 +13,7 @@ define([
                     var answer = {};
                     answer.userAnswer = $scope.answer;
                     answer.rightAnswer = $scope.rightAnswer = rightAnswer;
+                    answer.skip = $scope.skip;
                     if(answer.userAnswer == answer.rightAnswer){
                         $scope.compliment = getCompliment();
                     }

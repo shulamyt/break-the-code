@@ -13,7 +13,8 @@ define([
     app.controller('QuestionsController', ['$scope', '$location', '$http', '$sce', 'QuestionService', 'TimerService',
         function($scope, $location, $http, $sce, QuestionService, TimerService) {
             $('body').addClass("pic");
-            $scope.finishQuestion = finishQuestion;
+            $scope.thinkIMadeIt = thinkIMadeIt;
+            $scope.skipQuestion = skipQuestion;
             $scope.gameOver = false;
             $scope.startNewQuestion = startNewQuestion;
             startNewQuestion();
@@ -67,8 +68,17 @@ define([
                     $scope.$emit('checkAnswer');
                 }
             }
+            
+            function thinkIMadeIt() {
+                finishQuestion(false);
+            }
 
-            function finishQuestion() {
+            function skipQuestion() {
+                finishQuestion(true);
+            }
+
+            function finishQuestion(skip) {
+                $scope.skip = skip;
                 TimerService.stop();
                 stopTimer();
             }

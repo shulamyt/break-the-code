@@ -11,6 +11,7 @@ module.exports = function (app) {
         answer.userAnswer = req.body.userAnswer;
         answer.serialNumber = req.body.questionIndex;
         answer.duration = req.body.time;
+        answer.skip = req.body.skip;
 
         answerDao.save(answer).then(function () {
             res.status(201).json(answer);
