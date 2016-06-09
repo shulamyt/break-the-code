@@ -4,7 +4,7 @@ function TestPlanConfiguration(){
 
 TestPlanConfiguration.prototype.getConfiguration = function(){
 	var configuration = {
-		numOfQuestionsForPlan: 13, // how many questions we want the experimenter to solve
+		numOfQuestionsForPlan: 10, // how many questions we want the experimenter to solve
 		questionsInfo : [
 			{
 				id: 1,

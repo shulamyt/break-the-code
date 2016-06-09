@@ -22,7 +22,6 @@ app.directive('gameover', function() {
                     closeOnEscape: false,
                     buttons: {
                         "Goodbye": function() {
-                            scope.saveComment();
                             window.open('location', '_self', '');
                             window.close();
                         }

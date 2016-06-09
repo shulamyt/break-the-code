@@ -57,9 +57,6 @@ GRANT ALL ON ALL TABLES IN SCHEMA test TO x;
 psql.exe -U x -d postgres
 y
 --
-TRUNCATE TABLE Experimenter;
-TRUNCATE TABLE Answer;
---
 DROP TABLE Experimenter;
 CREATE TABLE Experimenter(
 	ID bigint PRIMARY KEY,
@@ -103,7 +100,7 @@ cd ~
 cd break-the-code
 ps -ef
 kill -9 [PM2]
-pm2 start start_server.js --node-args="--debug=5851"
+pm2 start start_server.js --node-args="--debug=5858"
 sudo service nginx restart
 
 pm2 logs
@@ -127,3 +124,4 @@ su - root
 psql -d postgres
 
 select * from Experimenter;
+

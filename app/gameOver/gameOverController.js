@@ -1,15 +1,11 @@
 define([
     '../app',
     'angular',
-    '../service/commentService'
+    '../service/questionService',
+    '../service/answerService'
 ], function(app) {
-    app.controller('gameOverController', ['$scope', '$rootScope', '$location', '$http', '$sce', 'CommentService',
-        function($scope, $rootScope, $location, $http, $sce, CommentService) {
-            $scope.comment = {};
-
-            $scope.saveComment = function (){
-                CommentService.saveComment($scope.comment);
-            };
-
+    app.controller('gameOverController', ['$scope', '$rootScope', '$location', '$http', '$sce', 'QuestionService', 'AnswerService',
+        function($scope, $rootScope, $location, $http, $sce, QuestionService, AnswerService) {
+            
         }]);
 });
