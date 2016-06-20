@@ -135,3 +135,88 @@ psql -d postgres
 select * from Experimenter;
 select * from Answer;
 
+-----------------------------------------------------------
+-----------------------------------------------------------
+CREATE TABLE Answer1506(
+   userId bigint,
+   questionId text,
+   rightAnswer text,
+   userAnswer text,
+   serialNumber int,
+   duration double precision,
+   skip boolean,
+   timestamp timestamp default current_timestamp
+);
+
+
+CREATE TABLE Experimenter1506(
+   ID bigint PRIMARY KEY,
+   start boolean,
+   timestamp timestamp default current_timestamp,
+   age int,
+   gender text,
+   selfTaught boolean,
+   baFinised boolean,
+   baStarted int,
+   baStudied int,
+   maFinised boolean,
+   maStarted int,
+   maStudied int,
+   phdFinised boolean,
+   phdStarted int,
+   phdStudied int,
+   yearsOfExperience int,
+   programmingLanguages text ARRAY,
+   assessSelfProgrammingSkills int,
+   firstTime boolean,
+   testPlanId text ARRAY
+);
+
+insert into Answer1506(userId, questionId, rightAnswer, userAnswer, serialNumber, duration, skip, timestamp) select userId, questionId, rightAnswer, userAnswer, serialNumber, duration, skip, timestamp  from Answer;
+
+insert into Experimenter1506(ID, start, timestamp, age, gender, selfTaught, baFinised, baStarted, baStudied, maFinised, maStarted, maStudied, phdFinised, phdStarted, phdStudied, yearsOfExperience,  programmingLanguages, assessSelfProgrammingSkills, firstTime, testPlanId) select ID, start, timestamp, age, gender, selfTaught, baFinised, baStarted, baStudied, maFinised, maStarted, maStudied, phdFinised, phdStarted, phdStudied, yearsOfExperience,  programmingLanguages, assessSelfProgrammingSkills, firstTime, testPlanId from Experimenter;
+
+CREATE TABLE realExperimenter1506(
+   ID bigint PRIMARY KEY,
+   start boolean,
+   timestamp timestamp default current_timestamp,
+   age int,
+   gender text,
+   selfTaught boolean,
+   baFinised boolean,
+   baStarted int,
+   baStudied int,
+   maFinised boolean,
+   maStarted int,
+   maStudied int,
+   phdFinised boolean,
+   phdStarted int,
+   phdStudied int,
+   yearsOfExperience int,
+   programmingLanguages text ARRAY,
+   assessSelfProgrammingSkills int,
+   firstTime boolean,
+   testPlanId text ARRAY
+);
+
+insert into realExperimenter1506(ID, start, timestamp, age, gender, selfTaught, baFinised, baStarted, baStudied, maFinised, maStarted, maStudied, phdFinised, phdStarted, phdStudied, yearsOfExperience,  programmingLanguages, assessSelfProgrammingSkills, firstTime, testPlanId) select ID, start, timestamp, age, gender, selfTaught, baFinised, baStarted, baStudied, maFinised, maStarted, maStudied, phdFinised, phdStarted, phdStudied, yearsOfExperience,  programmingLanguages, assessSelfProgrammingSkills, firstTime, testPlanId from Experimenter1506 where id in (select userId from Answer1506) and age IS NOT NULL and age < 99;
+
+CREATE TABLE realAnswer1506(
+   userId bigint,
+   questionId text,
+   rightAnswer text,
+   userAnswer text,
+   serialNumber int,
+   duration double precision,
+   skip boolean,
+   timestamp timestamp default current_timestamp
+);
+
+insert into realAnswer1506(userId, questionId, rightAnswer, userAnswer, serialNumber, duration, skip, timestamp) select userId, questionId, rightAnswer, userAnswer, serialNumber, duration, skip, timestamp  from Answer1506 where userId in (select id from realExperimenter1506);
+
+pg_dump -d postgres -t realAnswer1506 > backup12271506.sql
+
+
+select count(*) FROM realAnswer1506 where rightAnswer = userAnswer and questionId = '1';
+
+
