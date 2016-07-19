@@ -1,5 +1,5 @@
 var fs = require('fs');
-var testPlanService = require('./testPlanService');
+var testPlanService = require('./testPlanServiceSpecial');
 var Q = require('q');
 
 var QuestionService = function(){

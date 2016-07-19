@@ -1,5 +1,5 @@
 var userDao = require('../dao/userDao');
-var testPlanService = require('./../services/testPlanService');
+var testPlanService = require('./../services/testPlanServiceSpecial');
 var questionService = require('./../services/questionService');
 
 module.exports = function (app) {
