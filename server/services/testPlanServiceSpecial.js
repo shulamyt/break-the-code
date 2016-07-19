@@ -21,7 +21,7 @@ TestPlanService.prototype.getTestPlan = function() {
 };
 
 TestPlanService.prototype.addMainQuestions = function(testPlan){
-	for(var i = 0 ; i < 8 ; i ++){
+	for(var i = 0 ; i < 6 ; i ++){
 		var nextQuestion = this.getNextQuestion(testPlan);
 		if(nextQuestion){
 			testPlan.push(nextQuestion);
@@ -51,8 +51,16 @@ TestPlanService.prototype.getNextQuestion = function(testPlan){
 					var nextQuestionId = this.getRandom(nextQuestions);
 					nextQuestion = this.findInConfig({attribute: 'id', value: nextQuestionId});
 				}
-				if (!this.isInTestPlan(testPlan, nextQuestion)) {
+				if (!this.isInTestPlan(testPlan, nextQuestion.id)) {
 					break;
+				}
+			}
+			if(!nextQuestion){
+				while(true){
+					nextQuestion = this.getRandomQuestionFromConfig();
+					if (!this.isInTestPlan(testPlan, nextQuestion.id)) {
+						break;
+					}
 				}
 			}
 		}
@@ -60,21 +68,26 @@ TestPlanService.prototype.getNextQuestion = function(testPlan){
 	return nextQuestion;
 };
 
-TestPlanService.prototype.getQuestionsThatAreNotInTestPlanYet = function(questions, testPlan){
-	var self = this;
-	var filtered = questions.filter(function(q){
-		return !self.isInTestPlan(testPlan, q);
-	});
-	return filtered;
+TestPlanService.prototype.getQuestionsThatAreNotInTestPlanYet = function(questionIds, testPlan){
+	var arr = [];
+	for(questionId of questionIds){
+		var inTestPlan = this.isInTestPlan(testPlan, questionId);
+		if(!inTestPlan){
+			arr.push(questionId);
+		}
+	}
+	return arr;
 };
 
-TestPlanService.prototype.isInTestPlan = function(testPlan, question){
-	testPlan.forEach(function(q){
-		if(q.id == question.id){
-			return true;
+TestPlanService.prototype.isInTestPlan = function(testPlan, questionId){
+	var inTestPlan = false;
+	for(q of testPlan){
+		if(q.id == questionId){
+			inTestPlan = true;
+			break;
 		}
-	});
-	return false;
+	}
+	return inTestPlan;
 };
 
 TestPlanService.prototype.getRandomQuestionFromConfig = function(){
