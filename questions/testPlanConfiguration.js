@@ -6,6 +6,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 	var configuration = {
 		numOfQuestionsForPlan: 10, // how many questions we want the experimenter to solve
 		mainQuestions : [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],
+		specialQuestions : [102, 103, 104, 105, 106],
 		questionsInfo : [
 			{
 				id: 1,
@@ -305,9 +306,63 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 				nextQuestions: [32, 29, 25],
 				timeForQuestion: 90,
 				score: 999
+			},
+//******************************special*******************************************		
+			{
+				id: 100,
+				path: "special/forArr0.js",
+				answer: "abcde",
+				timeForQuestion: 60,
+				score: 999
+			},
+
+			{
+				id: 101,
+				path: "special/forArr1.js",
+				answer: "abcde",
+				timeForQuestion: 60,
+				score: 999
+			},
+
+			{
+				id: 102,
+				path: "special/forArr2.js",
+				answer: "abcd",
+				timeForQuestion: 60,
+				score: 999
+			},
+
+			{
+				id: 103,
+				path: "special/forArr3.js",
+				answer: "bcde",
+				timeForQuestion: 60,
+				score: 999
+			},
+
+			{
+				id: 104,
+				path: "special/forArr4.js",
+				answer: "bcd",
+				timeForQuestion: 60,
+				score: 999
+			},
+
+			{
+				id: 105,
+				path: "special/forArr5.js",
+				answer: "edcba",
+				timeForQuestion: 60,
+				score: 999
+			},
+
+			{
+				id: 106,
+				path: "special/forArr6.js",
+				answer: "edcb",
+				timeForQuestion: 60,
+				score: 999
 			}
-
-
 		]
 	};
 	return configuration;
