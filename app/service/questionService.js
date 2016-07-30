@@ -56,6 +56,15 @@ define([
                 return isThereMoreQuestions;
             };
 
+            questionService.getTestPlan = function(){
+                var promise = new Promise(function(resolve, reject) {
+                    var user = UserService.getCurrentUser();
+                    var testPlan = user.testPlan;
+                    resolve(testPlan);
+                });
+                return promise;
+            };
+
             questionService.getQuestion = function(){
                 var promise = new Promise(function(resolve, reject) {
                     var questionIndex = questionService.increaseQuestionIndex();

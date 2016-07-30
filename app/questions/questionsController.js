@@ -19,11 +19,18 @@ define([
             $scope.numOfQuestions = 0;
             $scope.gameOver = false;
             $scope.startNewQuestion = startNewQuestion;
+            setTotalNumOfQuestions();
             startNewQuestion();
 
             $scope.$on('nextQuestion', function (event, args) {
                 startNewQuestion();
             });
+
+            function setTotalNumOfQuestions(){
+                QuestionService.getTestPlan().then(function(testPlan){
+                    $scope.totalNumOfQuestions = testPlan.length;
+                });
+            }
 
             function startNewQuestion(){
                 if (!QuestionService.isThereMoreQuestions()) {

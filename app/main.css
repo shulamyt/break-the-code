@@ -239,3 +239,8 @@
     bottom: 0px;
     right: 26px;
 }
+
+.questionsCounter{
+    position: absolute;
+    bottom: 12px;
+}
