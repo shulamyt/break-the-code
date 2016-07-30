@@ -60,11 +60,6 @@
   border: none;
 }
 
-.thinkIMadeIt {
-    margin-right: 30px;
-    margin-left: 142px;
-}
-
 .your-answer{
     float: left;
     width: 50%;
@@ -241,6 +236,5 @@
 }
 
 .questionsCounter{
-    position: absolute;
-    bottom: 12px;
+    float: right;
 }

@@ -2,9 +2,10 @@
 	<div>type here your answer, press enter when finish!</div>
 	<div class="mark">></div>
 	<textarea ng-model="answer" ng-enter="thinkIMadeIt()"></textarea>
-	<div class="questionsCounter">
-		You finish {{numOfQuestions}} from {{totalNumOfQuestions}} questions !
-	</div>
+	
 	<button class="thinkIMadeIt" ng-click="thinkIMadeIt()" ng-disabled="gameOver">Think I made it!</button>
 	<button ng-click="skipQuestion()" ng-disabled="gameOver">Skip</button>
+	<div class="questionsCounter">
+		Question number {{numOfQuestions}} out of {{totalNumOfQuestions}} questions
+	</div>
 </div>
