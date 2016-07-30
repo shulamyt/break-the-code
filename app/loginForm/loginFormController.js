@@ -9,6 +9,10 @@ define([
     function($scope, $location, UserService, QuestionService) {
         var self = this;
         $scope.user = {};
+        var groupNum = $location.search().groupNum;
+        if(typeof(groupNum)!='undefined' && groupNum != ""){
+            $scope.user.groupNum = groupNum;
+        }
         var createUser = UserService.createUser($scope.user).then(function(user){
             $scope.user.id = user.id;
         });

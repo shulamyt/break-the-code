@@ -5,11 +5,16 @@ var testPlanConfiguration = require('../../questions/testPlanConfiguration');
 
 function TestPlanService(){};
 
-TestPlanService.prototype.getTestPlan = function() {
+TestPlanService.prototype.getTestPlan = function(groupNum) {
 	var self = this;
 	return new Promise(function(resolve, reject) {
 		var testPlan = [];
-		var groupConfig = self.getRandomGroupConfig();
+		if(typeof(groupNum)!='undefined' && groupNum != ""){
+			var groupConfig = self.getGroupConfig(groupNum);
+		}else{
+			var groupConfig = self.getRandomGroupConfig();
+		}
+
 		self.addQuestionsFromGroupConfig(groupConfig, testPlan);
 		self.addQuestionsForOtherFloor(testPlan);
 		self.addSpecialQuestions(testPlan);
@@ -68,9 +73,13 @@ TestPlanService.prototype.shuffle = function(array){
 };
 
 TestPlanService.prototype.getRandomGroupConfig = function(){
+	var num = this.randomNumber(0, groups.length-1);
+	return this.getGroupConfig(num);
+};
+
+TestPlanService.prototype.getGroupConfig = function(num){
 	var configuration = this.getTestPlanConfiguration();
 	var groups = configuration.groups;
-	var num = this.randomNumber(0, groups.length-1);
 	return groups[num];
 };
 

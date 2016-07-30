@@ -62,7 +62,7 @@ module.exports = function (app) {
     });
     //create
     app.post('/user', function (req, res) {
-        testPlanService.getTestPlan().then(function(testPlan){
+        testPlanService.getTestPlan(req.body.groupNum).then(function(testPlan){
             var user = {};
             user.id = new Date().getTime();
             user.testPlan = testPlan;
