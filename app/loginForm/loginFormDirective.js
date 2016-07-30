@@ -21,7 +21,7 @@ app.directive('loginform', function() {
                     autoOpen: false,
                     closeOnEscape: false,
                     buttons: {
-                        "Let's start !": function() {
+                        "Continue": function() {
                             $( this ).dialog( "close" );
                             $('body').find(".welcome").hide();
                             scope.startTheGame();

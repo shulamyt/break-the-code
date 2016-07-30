@@ -25,7 +25,7 @@ define([
         $scope.startTheGame = function (){
             createUser.then(function(user){
                  UserService.updateUser($scope.user);
-                 $location.path('questions');
+                 $location.path('explain');
                  QuestionService.restartQuestionIndex();
             });
         };

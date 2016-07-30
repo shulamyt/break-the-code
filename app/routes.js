@@ -5,7 +5,9 @@ define([
 	'text!login/loginTemplate.html',
 	'login/loginController',
 	'text!questions/questionsTemplate.html',
-	'questions/questionsController'
+	'questions/questionsController',
+	'text!explain/explainTemplate.html',
+	'explain/explainController'
 ], function(app) {
 	app.config(function($routeProvider, $locationProvider){
 		$routeProvider
@@ -20,6 +22,10 @@ define([
 		.when('/questions', {
 			templateUrl: "questions/questionsTemplate.html",
 			controller: "QuestionsController"
+		})
+		.when('/explain', {
+			templateUrl: "explain/explainTemplate.html",
+			controller: "ExplainController"
 		})
 		.otherwise({
 			templateUrl: "login/loginTemplate.html",

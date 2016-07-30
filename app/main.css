@@ -96,7 +96,7 @@
     /*background-position: center;*/
 }
 
-.title{
+.welcome .title{
     background-image: url(image/getTheCode.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -218,7 +218,6 @@
     cursor: pointer;
     color: rgb(255, 255, 255);
     font-family: Arial;
-    font-size: 15px;
     font-weight: bold;
     padding: 16px 61px;
     text-decoration: none;
@@ -238,3 +237,52 @@
 .questionsCounter{
     float: right;
 }
+
+.explain .instraction{
+    background-image: url(image/explain.jpg);
+    background-repeat: no-repeat;
+    height: 704px;
+}
+
+.explain .title{
+    color: #363636;
+    font-family: Arial;
+    font-weight: bold;
+    padding: 16px 61px;
+    font-size: 38px;
+    text-align: center;
+}
+
+.explain button{
+    box-shadow: rgb(151, 196, 254) 0px 1px 0px 0px inset;
+    border-radius: 6px;
+    border: 1px solid rgb(51, 127, 237);
+    display: inline-block;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    font-family: Arial;
+    font-weight: bold;
+    padding: 16px 61px;
+    text-decoration: none;
+    text-shadow: rgb(21, 112, 205) 0px 1px 0px;
+    background: linear-gradient(rgb(61, 148, 246) 5%, rgb(30, 98, 208) 100%) rgb(61, 148, 246);
+    font-size: 38px;
+    width: 317px;
+}
+
+.explain .areYouReady{
+    text-align: center;
+    font-size: 28px;
+}
+
+.explainButton{
+    position: absolute;
+    bottom: 46px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0px;
+    right: 0px;
+    width: 318px;
+    z-index: 100;
+}
+
