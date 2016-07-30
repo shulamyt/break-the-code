@@ -43,14 +43,14 @@
     color: white;
     width: 477px;
     height: 257px;
-    font-size: 18px;
+    font-size: 16px;
 }
 .answerArea .mark{
     float: left;
 }
 .answerArea textarea{
     width: 451px;
-    height: 228px;
+    height: 214px;
     background: black;
     color: white;
     border: none;
