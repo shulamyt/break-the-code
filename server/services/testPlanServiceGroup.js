@@ -73,6 +73,8 @@ TestPlanService.prototype.shuffle = function(array){
 };
 
 TestPlanService.prototype.getRandomGroupConfig = function(){
+	var configuration = this.getTestPlanConfiguration();
+	var groups = configuration.groups;
 	var num = this.randomNumber(0, groups.length-1);
 	return this.getGroupConfig(num);
 };
