@@ -111,8 +111,8 @@ var getExperimenterAnswers = function(experimenter){
 };
 
 var writeExperimenterAnswers = function(experimenter, answers){
-	var correct = createCsvOutputForRanges(experimenter, answers, function(ans){return ans.rightAnswer == ans.userAnswer});
-	var wrong   = createCsvOutputForRanges(experimenter, answers, function(ans){return ans.rightAnswer != ans.userAnswer});
+	var correct = createCsvOutputForRanges(experimenter, answers, function(ans){return ans.rightanswer == ans.useranswer});
+	var wrong   = createCsvOutputForRanges(experimenter, answers, function(ans){return ans.rightanswer != ans.useranswer});
 	correct += "\r\n";
 	wrong += "\r\n";
 	correctFileStream.write(correct);
