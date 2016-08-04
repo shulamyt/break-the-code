@@ -4,8 +4,8 @@ var fs = require('fs');
 //var connectionUrl = "postgres://root:shulamyt@localhost/postgres";
 var connectionUrl ="postgres://root:root@localhost/postgres";
 
-var EXPERIMENTERS_TABLE_NAME = 'realExperimenter0108';
-var ANSWERS_TABLE_NAME = 'realAnswer0108';
+var EXPERIMENTERS_TABLE_NAME = 'realExperimenter04082';
+var ANSWERS_TABLE_NAME = 'realAnswer04082';
 
 var SELECT_EXPERIMENTERS_IDS_QUERY = 'SELECT ID from ' + EXPERIMENTERS_TABLE_NAME;
 var SELECT_EXPERIMENTERS_ANSWERS_QUERY = 'SELECT * from ' + ANSWERS_TABLE_NAME + ' where userId = ';
@@ -50,10 +50,10 @@ var fetchExperimenterIds = function(){
 		db.query(SELECT_EXPERIMENTERS_IDS_QUERY, function (err, result) {
 			if (err) {
 				console.log(err);
-				reject('error getExperimentersId');
+			}else {
+				experimenters = result.rows;
+				resolve(result);
 			}
-			experimenters = result.rows;
-			resolve(result);
 		});	
 	});
 
@@ -68,7 +68,11 @@ var handleNextExperimenter = function(){
 			if(experimenter != null){
 				console.log("experimenter id = " + experimenter.id);
 				getExperimenterAnswers(experimenter)
-					.then(function(answers){writeExperimenterAnswers(experimenter, answers)})
+					.then(function(answers){
+						if(answers != null && answers.length > 0) {
+							writeExperimenterAnswers(experimenter, answers);
+						}
+					})
 					.then(handleNextExperimenter);
 			}
 			else{
@@ -85,8 +89,9 @@ var getExperimenterAnswers = function(experimenter){
 		db.query(SELECT_EXPERIMENTERS_ANSWERS_QUERY + experimenter.id, function (err, result) {
 			if (err) {
 				console.log(err);
+			}else {
+				resolve(result.rows);
 			}
-			resolve(result.rows);
 		});
 	});
 	return promise;
@@ -94,16 +99,27 @@ var getExperimenterAnswers = function(experimenter){
 
 var writeExperimenterAnswers = function(experimenter, answers){
 	var promise =  new Promise(function(resolve, reject) {
-		var correct = createOutputForCorrectFile(experimenter, answers);
-		//var wrong = createOutputForWrongFile();
-
-
+		var correct = createCsvOutput(experimenter, answers, function(ans){return ans.rightAnswer == ans.userAnswer});
+		var wrong   = createCsvOutput(experimenter, answers, function(ans){return ans.rightAnswer != ans.userAnswer});
 	});
 	return promise;
 };
 
-var createOutputForCorrectFile = function(experimenter, answers){
-	console.log("hiii");
+var createCsvOutput = function(experimenter, answers, indicator){
+	var output = experimenter.id;
+	for(var questionId = 0; questionId <= 33; questionId++){
+		output = output + ',';
+		var filteredAnswers = answers.filter(function(ans){
+			return ans.questionid == questionId;
+		});
+		if(filteredAnswers.length > 0) {
+			var answer = filteredAnswers[0];
+			if (indicator(answer)) {
+				output = output + answer.duration;
+			}
+		}
+	}
+	return output;
 };
 
 var writeToFile = function(str, fileName){
