@@ -38,14 +38,6 @@ node r.js -o build.js
 # open browser
 # http://localhost:3000/#/login
 --
-postgres:
-start:
-postgres -D 'C:\Program Files\PostgreSQL\9.5\data'
-
-psql.exe -U postgres
---
-first time:
-https://wiki.postgresql.org/wiki/First_steps
 
 CREATE SCHEMA test;
 CREATE USER x PASSWORD 'y';
@@ -53,9 +45,6 @@ GRANT ALL ON SCHEMA test TO x;
 GRANT ALL ON ALL TABLES IN SCHEMA test TO x;
 \q
 
---
-psql.exe -U x -d postgres
-y
 --
 DROP TABLE Experimenter;
 CREATE TABLE Experimenter(
@@ -100,9 +89,12 @@ restart in server:
 cd ~
 cd break-the-code
 ps -ef
-kill -9 [PM2]
-pm2 start start_server.js --node-args="--debug=5858"
-sudo service nginx restart
+
+
+
+tokill=`ps -fe|grep  PM2|awk '{ printf $2" "}'`; kill -9 $tokill;
+pm2 start start_server.js --node-args="--debug=5858";
+sudo service nginx restart;
 
 pm2 logs
 //clear logs
@@ -121,14 +113,9 @@ CREATE USER root PASSWORD 'pass';
 GRANT ALL ON SCHEMA test TO root;
 GRANT ALL ON ALL TABLES IN SCHEMA test TO root;
 
-
-\q
-su - root
-
-
 ------------------------------------
 ******BEFORE START WORKING WITH DB******:
-pg_dump -d postgres > backup.sql
+pg_dump -d postgres > backup0408.sql
 
 psql -d postgres
 
@@ -136,8 +123,15 @@ select * from Experimenter;
 select * from Answer;
 
 -----------------------------------------------------------
+
+pg_dump -d postgres -t realAnswer0408 > backup12271506.sql
+
+
+select count(*) FROM realAnswer0408 where rightAnswer = userAnswer and questionId = '1';
+
 -----------------------------------------------------------
-CREATE TABLE Answer1506(
+-----------------------------------------------------------
+CREATE TABLE Answer0408(
    userId bigint,
    questionId text,
    rightAnswer text,
@@ -149,7 +143,7 @@ CREATE TABLE Answer1506(
 );
 
 
-CREATE TABLE Experimenter1506(
+CREATE TABLE Experimenter0408(
    ID bigint PRIMARY KEY,
    start boolean,
    timestamp timestamp default current_timestamp,
@@ -172,11 +166,11 @@ CREATE TABLE Experimenter1506(
    testPlanId text ARRAY
 );
 
-insert into Answer1506(userId, questionId, rightAnswer, userAnswer, serialNumber, duration, skip, timestamp) select userId, questionId, rightAnswer, userAnswer, serialNumber, duration, skip, timestamp  from Answer;
+insert into Answer0408(userId, questionId, rightAnswer, userAnswer, serialNumber, duration, skip, timestamp) select userId, questionId, rightAnswer, userAnswer, serialNumber, duration, skip, timestamp  from Answer;
 
-insert into Experimenter1506(ID, start, timestamp, age, gender, selfTaught, baFinised, baStarted, baStudied, maFinised, maStarted, maStudied, phdFinised, phdStarted, phdStudied, yearsOfExperience,  programmingLanguages, assessSelfProgrammingSkills, firstTime, testPlanId) select ID, start, timestamp, age, gender, selfTaught, baFinised, baStarted, baStudied, maFinised, maStarted, maStudied, phdFinised, phdStarted, phdStudied, yearsOfExperience,  programmingLanguages, assessSelfProgrammingSkills, firstTime, testPlanId from Experimenter;
+insert into Experimenter0408(ID, start, timestamp, age, gender, selfTaught, baFinised, baStarted, baStudied, maFinised, maStarted, maStudied, phdFinised, phdStarted, phdStudied, yearsOfExperience,  programmingLanguages, assessSelfProgrammingSkills, firstTime, testPlanId) select ID, start, timestamp, age, gender, selfTaught, baFinised, baStarted, baStudied, maFinised, maStarted, maStudied, phdFinised, phdStarted, phdStudied, yearsOfExperience,  programmingLanguages, assessSelfProgrammingSkills, firstTime, testPlanId from Experimenter;
 
-CREATE TABLE realExperimenter1506(
+CREATE TABLE realExperimenter0408(
    ID bigint PRIMARY KEY,
    start boolean,
    timestamp timestamp default current_timestamp,
@@ -199,9 +193,9 @@ CREATE TABLE realExperimenter1506(
    testPlanId text ARRAY
 );
 
-insert into realExperimenter1506(ID, start, timestamp, age, gender, selfTaught, baFinised, baStarted, baStudied, maFinised, maStarted, maStudied, phdFinised, phdStarted, phdStudied, yearsOfExperience,  programmingLanguages, assessSelfProgrammingSkills, firstTime, testPlanId) select ID, start, timestamp, age, gender, selfTaught, baFinised, baStarted, baStudied, maFinised, maStarted, maStudied, phdFinised, phdStarted, phdStudied, yearsOfExperience,  programmingLanguages, assessSelfProgrammingSkills, firstTime, testPlanId from Experimenter1506 where id in (select userId from Answer1506) and age IS NOT NULL and age < 99;
+insert into realExperimenter0408(ID, start, timestamp, age, gender, selfTaught, baFinised, baStarted, baStudied, maFinised, maStarted, maStudied, phdFinised, phdStarted, phdStudied, yearsOfExperience,  programmingLanguages, assessSelfProgrammingSkills, firstTime, testPlanId) select ID, start, timestamp, age, gender, selfTaught, baFinised, baStarted, baStudied, maFinised, maStarted, maStudied, phdFinised, phdStarted, phdStudied, yearsOfExperience,  programmingLanguages, assessSelfProgrammingSkills, firstTime, testPlanId from Experimenter0408 where id in (select userId from Answer0408) and age IS NOT NULL and age < 99;
 
-CREATE TABLE realAnswer1506(
+CREATE TABLE realAnswer0408(
    userId bigint,
    questionId text,
    rightAnswer text,
@@ -212,11 +206,14 @@ CREATE TABLE realAnswer1506(
    timestamp timestamp default current_timestamp
 );
 
-insert into realAnswer1506(userId, questionId, rightAnswer, userAnswer, serialNumber, duration, skip, timestamp) select userId, questionId, rightAnswer, userAnswer, serialNumber, duration, skip, timestamp  from Answer1506 where userId in (select id from realExperimenter1506);
-
-pg_dump -d postgres -t realAnswer1506 > backup12271506.sql
+insert into realAnswer0408(userId, questionId, rightAnswer, userAnswer, serialNumber, duration, skip, timestamp) select userId, questionId, rightAnswer, userAnswer, serialNumber, duration, skip, timestamp  from Answer0408 where userId in (select id from realExperimenter0408);
 
 
-select count(*) FROM realAnswer1506 where rightAnswer = userAnswer and questionId = '1';
 
 
+select questionId, duration from realAnswer0408 where rightAnswer != userAnswer and userId userId in (select id from realExperimenter0408);
+
+
+
+-----------------------------------------------------------
+-----------------------------------------------------------
