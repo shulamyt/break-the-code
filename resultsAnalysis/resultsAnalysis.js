@@ -7,6 +7,16 @@ var connectionUrl = remoteConnectionUrl;
 var EXPERIMENTERS_TABLE_NAME = 'realExperimenter0408';
 var ANSWERS_TABLE_NAME = 'realAnswer0408';
 
+var TITELS = ["four/aLogic","four/aLogicNegative", "four/aLogicNegative1", "four/aLogicNegative2",
+	"four/aStructure", "four/b1Logic", "four/bLogic", "four/bStructure", "four/cLogic", "four/cStructure",
+	"four/forArithmetic", "four/forArray", "three/aLogic", "three/aLogicNegative", "three/aLogicNegative1",
+	"three/aLogicNegative2", "three/aStructure", "three/b1Logic", "three/bLogic", "three/bStructure",
+	"three/cLogic", "three/cStructure", "three/forArithmetic", "three/forArray", "two/aLogic",
+	"two/aLogicNegative", "two/aLogicNegative1", "two/aLogicNegative2", "two/aStructure", "two/bLogic",
+	"two/bStructure", "two/forArithmetic", "two/forArray", "special/forArr0", "special/forArr1",
+	"special/forArr2", "special/forArr3","special/forArr4","special/forArr5","special/forArr6"];
+
+
 var CORRECT_FILE_NAME = 'correct.csv';
 var WRONG_FILE_NAME = 'wrong.csv';
 
@@ -182,10 +192,22 @@ var closeFiles = function(){
 	return promise;
 };
 
+var addTitles = function(){
+	var promise =  new Promise(function(resolve, reject) {
+		var csvTitles = "," + TITELS.join();
+		csvTitles += "\r\n";
+		correctFileStream.write(csvTitles);
+		wrongFileStream.write(csvTitles);
+		resolve();
+	});
+	return promise;
+};
+
 Promise.all([
 	createConnection(),
 	prepareFiles()
 ]).then(fetchExperimenterIds)
+	.then(addTitles)
 	.then(handleNextExperimenter)
 	.then(closeFiles)
 	.then(closeConnection);
