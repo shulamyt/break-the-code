@@ -7,12 +7,18 @@ var connectionUrl ="postgres://root:root@localhost/postgres";
 var EXPERIMENTERS_TABLE_NAME = 'realExperimenter04082';
 var ANSWERS_TABLE_NAME = 'realAnswer04082';
 
+var CORRECT_FILE_NAME = 'correct.txt';
+var WRONG_FILE_NAME = 'wrong.txt';
+
 var SELECT_EXPERIMENTERS_IDS_QUERY = 'SELECT ID from ' + EXPERIMENTERS_TABLE_NAME;
 var SELECT_EXPERIMENTERS_ANSWERS_QUERY = 'SELECT * from ' + ANSWERS_TABLE_NAME + ' where userId = ';
 
 var db;
 var experimenters;
 var experimentersIndex = -1;
+
+var correctFileStream;
+var wrongFileStream;
 
 var createConnection = function(){
 	var promise = new Promise(function(resolve, reject) {
@@ -60,8 +66,6 @@ var fetchExperimenterIds = function(){
 	return promise;
 };
 
-
-
 var handleNextExperimenter = function(){
 	var promise =  new Promise(function(resolve, reject) {
 		getNextExperimenter().then(function(experimenter){
@@ -83,7 +87,6 @@ var handleNextExperimenter = function(){
 	return promise;
 };
 
-
 var getExperimenterAnswers = function(experimenter){
 	var promise =  new Promise(function(resolve, reject) {
 		db.query(SELECT_EXPERIMENTERS_ANSWERS_QUERY + experimenter.id, function (err, result) {
@@ -98,11 +101,12 @@ var getExperimenterAnswers = function(experimenter){
 };
 
 var writeExperimenterAnswers = function(experimenter, answers){
-	var promise =  new Promise(function(resolve, reject) {
-		var correct = createCsvOutput(experimenter, answers, function(ans){return ans.rightAnswer == ans.userAnswer});
-		var wrong   = createCsvOutput(experimenter, answers, function(ans){return ans.rightAnswer != ans.userAnswer});
-	});
-	return promise;
+	var correct = createCsvOutput(experimenter, answers, function(ans){return ans.rightAnswer == ans.userAnswer});
+	var wrong   = createCsvOutput(experimenter, answers, function(ans){return ans.rightAnswer != ans.userAnswer});
+	correct += "\r\n";
+	wrong += "\r\n";
+	correctFileStream.write(correct);
+	wrongFileStream.write(wrong);
 };
 
 var createCsvOutput = function(experimenter, answers, indicator){
@@ -122,9 +126,10 @@ var createCsvOutput = function(experimenter, answers, indicator){
 	return output;
 };
 
+
 var writeToFile = function(str, fileName){
 	var promise =  new Promise(function(resolve, reject) {
-		fs.writeFile(fileName, str, function(){
+		fs.writeFile(fileName, str, function(err){
 			if (err){
 				console.log(err);
 			}
@@ -134,16 +139,6 @@ var writeToFile = function(str, fileName){
 		});
 	});
 	return promise;
-
-	////var path = __dirname + "/../../questions/" + questionInfo.path;
-	//fs.writeFile(fileName, str, function(){
-	//	if (err) throw err;
-	//	console.log('It\'s saved!');
-	//});
-	//fs.writeFile('wrong.txt', 'Hello Node.js', function(){
-	//	if (err) throw err;
-	//	console.log('It\'s saved!');
-	//});
 };
 
 var getNextExperimenter = function(){
@@ -159,29 +154,28 @@ var getNextExperimenter = function(){
 	return promise;
 };
 
-/*
-var writeExperimenterResults = function(answers){
-	getExperimenterAnswers().then()
-	//var path = __dirname + "/../../questions/" + questionInfo.path;
-	//fs.writeFile('correct.txt', 'Hello Node.js', (err) => {
-	//	if (err) throw err;
-	//	console.log('It\'s saved!');
-	//});
-	//fs.writeFile('wrong.txt', 'Hello Node.js', (err) => {
-	//	if (err) throw err;
-	//	console.log('It\'s saved!');
-	//});
-
+var prepareFiles = function(){
+	var promise =  new Promise(function(resolve, reject) {
+		correctFileStream = fs.createWriteStream(CORRECT_FILE_NAME, {'flags': 'a'});
+		wrongFileStream = fs.createWriteStream(WRONG_FILE_NAME, {'flags': 'a'});
+		resolve();
+	});
+	return promise;
 };
-*/
 
+var closeFiles = function(){
+	var promise =  new Promise(function(resolve, reject) {
+		correctFileStream.end();
+		wrongFileStream.end();
+		resolve();
+	});
+	return promise;
+};
 
-
-
-
-
-
-createConnection()
-	.then(fetchExperimenterIds)
+Promise.all([
+	createConnection(),
+	prepareFiles()
+]).then(fetchExperimenterIds)
 	.then(handleNextExperimenter)
+	.then(closeFiles)
 	.then(closeConnection);
