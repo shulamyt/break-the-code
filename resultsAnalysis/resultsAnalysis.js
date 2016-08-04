@@ -1,14 +1,14 @@
 var pg = require('pg');
 var fs = require('fs');
 
-//var connectionUrl = "postgres://root:shulamyt@localhost/postgres";
-var connectionUrl ="postgres://root:root@localhost/postgres";
+var remoteConnectionUrl = "postgres://root:shulamyt@localhost/postgres";
+var connectionUrl = remoteConnectionUrl;
 
-var EXPERIMENTERS_TABLE_NAME = 'realExperimenter04082';
-var ANSWERS_TABLE_NAME = 'realAnswer04082';
+var EXPERIMENTERS_TABLE_NAME = 'realExperimenter0408';
+var ANSWERS_TABLE_NAME = 'realAnswer0408';
 
-var CORRECT_FILE_NAME = 'correct.txt';
-var WRONG_FILE_NAME = 'wrong.txt';
+var CORRECT_FILE_NAME = 'correct.csv';
+var WRONG_FILE_NAME = 'wrong.csv';
 
 var SELECT_EXPERIMENTERS_IDS_QUERY = 'SELECT ID from ' + EXPERIMENTERS_TABLE_NAME;
 var SELECT_EXPERIMENTERS_ANSWERS_QUERY = 'SELECT * from ' + ANSWERS_TABLE_NAME + ' where userId = ';
@@ -70,7 +70,6 @@ var handleNextExperimenter = function(){
 	var promise =  new Promise(function(resolve, reject) {
 		getNextExperimenter().then(function(experimenter){
 			if(experimenter != null){
-				console.log("experimenter id = " + experimenter.id);
 				getExperimenterAnswers(experimenter)
 					.then(function(answers){
 						if(answers != null && answers.length > 0) {
@@ -80,6 +79,7 @@ var handleNextExperimenter = function(){
 					.then(handleNextExperimenter);
 			}
 			else{
+				console.log("No more experimenters :)");
 				resolve();
 			}
 		});
@@ -101,27 +101,37 @@ var getExperimenterAnswers = function(experimenter){
 };
 
 var writeExperimenterAnswers = function(experimenter, answers){
-	var correct = createCsvOutput(experimenter, answers, function(ans){return ans.rightAnswer == ans.userAnswer});
-	var wrong   = createCsvOutput(experimenter, answers, function(ans){return ans.rightAnswer != ans.userAnswer});
+	var correct = createCsvOutputForRanges(experimenter, answers, function(ans){return ans.rightAnswer == ans.userAnswer});
+	var wrong   = createCsvOutputForRanges(experimenter, answers, function(ans){return ans.rightAnswer != ans.userAnswer});
 	correct += "\r\n";
 	wrong += "\r\n";
 	correctFileStream.write(correct);
 	wrongFileStream.write(wrong);
 };
 
-var createCsvOutput = function(experimenter, answers, indicator){
-	var output = experimenter.id;
-	for(var questionId = 0; questionId <= 33; questionId++){
-		output = output + ',';
-		var filteredAnswers = answers.filter(function(ans){
-			return ans.questionid == questionId;
-		});
-		if(filteredAnswers.length > 0) {
-			var answer = filteredAnswers[0];
-			if (indicator(answer)) {
-				output = output + answer.duration;
-			}
+var getAnswerDurationByIndicator = function(answers, indicator, questionId){
+	var duration = "";
+	var filteredAnswers = answers.filter(function(ans){
+		return ans.questionid == questionId;
+	});
+	if(filteredAnswers.length > 0) {
+		var answer = filteredAnswers[0];
+		if (indicator(answer)) {
+			duration = answer.duration;
 		}
+	}
+	return duration;
+};
+
+
+var createCsvOutputForRanges = function(experimenter, answers, indicator){
+	var output = experimenter.id;
+	for(var questionId = 1; questionId <= 33; questionId++){
+		output = output + ',' + getAnswerDurationByIndicator(answers, indicator, questionId);
+	}
+
+	for(var questionId = 100; questionId <= 106; questionId++){
+		output = output + ',' + getAnswerDurationByIndicator(answers, indicator, questionId);
 	}
 	return output;
 };
