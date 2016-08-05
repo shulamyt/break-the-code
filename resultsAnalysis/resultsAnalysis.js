@@ -16,11 +16,33 @@ var TITELS = ["four/aLogic","four/aLogicNegative", "four/aLogicNegative1", "four
 	"two/bStructure", "two/forArithmetic", "two/forArray", "special/forArr0", "special/forArr1",
 	"special/forArr2", "special/forArr3","special/forArr4","special/forArr5","special/forArr6"];
 
+var EXPERIMENTERS_TITELS = ["id",
+    "start",
+    "timestamp",
+    "age",
+    "gender",
+    "selftaught",
+    "bafinised",
+    "bastarted",
+    "bastudied",
+    "mafinised",
+    "mastarted",
+    "mastudied",
+    "phdfinised",
+    "phdstarted",
+    "phdstudied",
+    "yearsofexperience",
+    "programminglanguages",
+    "assessselfprogrammingskills",
+    "firsttime",
+    "testplanid"]
 
+var END_OF_LINE_CSV =  "\r\n";
 var CORRECT_FILE_NAME = 'correct.csv';
 var WRONG_FILE_NAME = 'wrong.csv';
+var EXPERIMENTERS_FILE_NAME = 'experimenters.csv';
 
-var SELECT_EXPERIMENTERS_IDS_QUERY = 'SELECT ID from ' + EXPERIMENTERS_TABLE_NAME;
+var SELECT_EXPERIMENTERS_QUERY = 'SELECT * from ' + EXPERIMENTERS_TABLE_NAME;
 var SELECT_EXPERIMENTERS_ANSWERS_QUERY = 'SELECT * from ' + ANSWERS_TABLE_NAME + ' where userId = ';
 
 var db;
@@ -29,6 +51,7 @@ var experimentersIndex = -1;
 
 var correctFileStream;
 var wrongFileStream;
+var experimentersFileStream;
 
 var createConnection = function(){
 	var promise = new Promise(function(resolve, reject) {
@@ -61,9 +84,9 @@ var closeConnection = function(what){
 	return promise;
 };
 
-var fetchExperimenterIds = function(){
+var fetchExperimenters = function(){
 	var promise = new Promise(function(resolve, reject) {
-		db.query(SELECT_EXPERIMENTERS_IDS_QUERY, function (err, result) {
+		db.query(SELECT_EXPERIMENTERS_QUERY, function (err, result) {
 			if (err) {
 				console.log(err);
 			}else {
@@ -111,12 +134,31 @@ var getExperimenterAnswers = function(experimenter){
 };
 
 var writeExperimenterAnswers = function(experimenter, answers){
-	var correct = createCsvOutputForRanges(experimenter, answers, function(ans){return ans.rightanswer == ans.useranswer});
-	var wrong   = createCsvOutputForRanges(experimenter, answers, function(ans){return ans.rightanswer != ans.useranswer});
-	correct += "\r\n";
-	wrong += "\r\n";
-	correctFileStream.write(correct);
-	wrongFileStream.write(wrong);
+	var experimenterCvs = createCsvOutputForExperimenter(experimenter);
+	var correctCvs = createCsvOutputForRanges(experimenter, answers, function(ans){return ans.rightanswer == ans.useranswer});
+	var wrongCvs   = createCsvOutputForRanges(experimenter, answers, function(ans){return ans.rightanswer != ans.useranswer});
+	experimentersFileStream.write(experimenterCvs);
+	correctFileStream.write(correctCvs);
+	wrongFileStream.write(wrongCvs);
+};
+
+var createCsvOutputForExperimenter = function(experimenter, answers){
+	var csv = "";
+	for(var i = 0; i < EXPERIMENTERS_TITELS.length; i++){
+		var field = EXPERIMENTERS_TITELS[i];
+		var value = experimenter[field];
+		if(typeof(value)!='undefined'){
+			if(Array.isArray(value)){
+				csv = csv + '"' + value.toString() + '"';
+			}
+			else{
+				csv = csv + value;
+			}
+		}
+		csv = csv + ',';
+	}
+	csv += END_OF_LINE_CSV;
+	return csv;
 };
 
 var getAnswerDurationByIndicator = function(answers, indicator, questionId){
@@ -143,6 +185,7 @@ var createCsvOutputForRanges = function(experimenter, answers, indicator){
 	for(var questionId = 100; questionId <= 106; questionId++){
 		output = output + ',' + getAnswerDurationByIndicator(answers, indicator, questionId);
 	}
+	output += END_OF_LINE_CSV;
 	return output;
 };
 
@@ -178,6 +221,7 @@ var prepareFiles = function(){
 	var promise =  new Promise(function(resolve, reject) {
 		correctFileStream = fs.createWriteStream(CORRECT_FILE_NAME, {'flags': 'a'});
 		wrongFileStream = fs.createWriteStream(WRONG_FILE_NAME, {'flags': 'a'});
+		experimentersFileStream = fs.createWriteStream(EXPERIMENTERS_FILE_NAME, {'flags': 'a'});
 		resolve();
 	});
 	return promise;
@@ -192,12 +236,36 @@ var closeFiles = function(){
 	return promise;
 };
 
+var createCsvFromJsonKeys = function(json){
+	var array = Object.keys(json);
+	var csv = createCsvFromArray(array);
+	return csv;
+};
+
+
+var createCsvFromArray = function(array){
+	var csv = array.join();
+	csv += END_OF_LINE_CSV;
+	return csv;
+};
+
+var addTitlesToAnswerFiles = function(){
+	var csvTitles = "," + createCsvFromArray(TITELS);
+	correctFileStream.write(csvTitles);
+	wrongFileStream.write(csvTitles);
+};
+
+var addTitlesToExperimentersFile = function(){
+	var csvTitles = createCsvFromArray(EXPERIMENTERS_TITELS);
+	experimentersFileStream.write(csvTitles);
+};
+
+
+
 var addTitles = function(){
 	var promise =  new Promise(function(resolve, reject) {
-		var csvTitles = "," + TITELS.join();
-		csvTitles += "\r\n";
-		correctFileStream.write(csvTitles);
-		wrongFileStream.write(csvTitles);
+		addTitlesToAnswerFiles();
+		addTitlesToExperimentersFile();
 		resolve();
 	});
 	return promise;
@@ -206,7 +274,7 @@ var addTitles = function(){
 Promise.all([
 	createConnection(),
 	prepareFiles()
-]).then(fetchExperimenterIds)
+]).then(fetchExperimenters)
 	.then(addTitles)
 	.then(handleNextExperimenter)
 	.then(closeFiles)
