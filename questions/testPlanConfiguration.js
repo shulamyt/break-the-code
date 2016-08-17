@@ -32,7 +32,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			{
 				id: 3,
 				path: "segments/many/four/aLogicNegative1.js",
-				answer: "2",
+				answer: "1",
 				nextQuestions: [1, 2, 4],
 				timeForQuestion: 60,
 				score: 999
@@ -41,7 +41,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			{
 				id: 4,
 				path: "segments/many/four/aLogicNegative2.js",
-				answer: "1",
+				answer: "2",
 				nextQuestions: [1, 2, 3],
 				timeForQuestion: 60,
 				score: 999
@@ -177,7 +177,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 			{
 				id: 19,
 				path: "segments/many/three/bLogic.js",
-				answer: "2",
+				answer: "1",
 				nextQuestions: [18, 21, 20, 13], 
 				timeForQuestion: 60,
 				score: 999
