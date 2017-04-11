@@ -13,7 +13,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 		questionsInfo : [
 			{
 				id: 1,
-				path: "segments/many/four/aLogic.js",
+				path: "segments/four/aLogic.js",
 				answer: "2",
 				nextQuestions: [5, 2, 3, 4],
 				timeForQuestion: 60,
@@ -22,7 +22,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 2,
-				path: "segments/many/four/aLogicNegative.js",
+				path: "segments/four/aLogicNegative.js",
 				answer: "1",
 				nextQuestions: [1, 3, 4],
 				timeForQuestion: 60,
@@ -31,7 +31,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 3,
-				path: "segments/many/four/aLogicNegative1.js",
+				path: "segments/four/aLogicNegative1.js",
 				answer: "1",
 				nextQuestions: [1, 2, 4],
 				timeForQuestion: 60,
@@ -40,7 +40,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 4,
-				path: "segments/many/four/aLogicNegative2.js",
+				path: "segments/four/aLogicNegative2.js",
 				answer: "2",
 				nextQuestions: [1, 2, 3],
 				timeForQuestion: 60,
@@ -49,7 +49,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 5,
-				path: "segments/many/four/aStructure.js",
+				path: "segments/four/aStructure.js",
 				answer: "8",
 				nextQuestions: [1, 8, 10, 11, 12],
 				timeForQuestion: 60,
@@ -58,7 +58,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 6,
-				path: "segments/many/four/b1Logic.js",
+				path: "segments/four/b1Logic.js",
 				answer: "1",
 				nextQuestions: [7],
 				timeForQuestion: 60,
@@ -67,7 +67,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 7,
-				path: "segments/many/four/bLogic.js",
+				path: "segments/four/bLogic.js",
 				answer: "2",
 				nextQuestions: [6, 9, 8, 1], 
 				timeForQuestion: 60,
@@ -77,7 +77,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 8,
-				path: "segments/many/four/bStructure.js",
+				path: "segments/four/bStructure.js",
 				answer: "4",
 				nextQuestions: [7, 9, 5],
 				timeForQuestion: 60,
@@ -86,7 +86,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 9,
-				path: "segments/many/four/cLogic.js",
+				path: "segments/four/cLogic.js",
 				answer: "1",
 				nextQuestions: [7, 1, 10],
 				timeForQuestion: 60,
@@ -95,7 +95,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 10,
-				path: "segments/many/four/cStructure.js",
+				path: "segments/four/cStructure.js",
 				answer: "6",
 				nextQuestions: [9, 8, 5, 11, 12],
 				timeForQuestion: 60,
@@ -104,7 +104,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 11,
-				path: "segments/many/four/forArithmetic.js",
+				path: "segments/four/forArithmetic.js",
 				answer: "2", 
 				nextQuestions: [5, 10, 12],
 				timeForQuestion: 90,
@@ -113,7 +113,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 12,
-				path: "segments/many/four/forArray.js",
+				path: "segments/four/lpay.js",
 				answer: "1",
 				nextQuestions: [5, 10, 11],
 				timeForQuestion: 90,
@@ -122,7 +122,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 //******************************three*******************************************
 			{
 				id: 13,
-				path: "segments/many/three/aLogic.js",
+				path: "segments/three/aLogic.js",
 				nextQuestions: [17, 14, 15, 16],
 				answer: "2",
 				timeForQuestion: 60,
@@ -131,7 +131,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 14,
-				path: "segments/many/three/aLogicNegative.js",
+				path: "segments/three/aLogicNegative.js",
 				answer: "1",
 				nextQuestions: [13, 15, 16],
 				timeForQuestion: 60,
@@ -140,7 +140,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 15,
-				path: "segments/many/three/aLogicNegative1.js",
+				path: "segments/three/aLogicNegative1.js",
 				answer: "1",
 				nextQuestions: [13, 14, 16],
 				timeForQuestion: 60,
@@ -149,7 +149,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 16,
-				path: "segments/many/three/aLogicNegative2.js",
+				path: "segments/three/aLogicNegative2.js",
 				answer: "2",
 				nextQuestions: [13, 14, 15],
 				timeForQuestion: 60,
@@ -158,7 +158,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 17,
-				path: "segments/many/three/aStructure.js",
+				path: "segments/three/aStructure.js",
 				answer: "4",
 				nextQuestions: [13, 20, 22, 23, 24],
 				timeForQuestion: 60,
@@ -167,7 +167,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 18,
-				path: "segments/many/three/b1Logic.js",
+				path: "segments/three/b1Logic.js",
 				answer: "1",
 				nextQuestions: [19],
 				timeForQuestion: 60,
@@ -176,7 +176,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 19,
-				path: "segments/many/three/bLogic.js",
+				path: "segments/three/bLogic.js",
 				answer: "1",
 				nextQuestions: [18, 21, 20, 13], 
 				timeForQuestion: 60,
@@ -186,7 +186,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 20,
-				path: "segments/many/three/bStructure.js",
+				path: "segments/three/bStructure.js",
 				answer: "3",
 				nextQuestions: [19, 21, 17],
 				timeForQuestion: 60,
@@ -195,7 +195,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 21,
-				path: "segments/many/three/cLogic.js",
+				path: "segments/three/cLogic.js",
 				answer: "1",
 				nextQuestions: [19, 13, 22],
 				timeForQuestion: 60,
@@ -204,7 +204,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 22,
-				path: "segments/many/three/cStructure.js",
+				path: "segments/three/cStructure.js",
 				answer: "6",
 				nextQuestions: [21, 20, 17, 23, 24],
 				timeForQuestion: 60,
@@ -213,7 +213,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 23,
-				path: "segments/many/three/forArithmetic.js",
+				path: "segments/three/forArithmetic.js",
 				answer: "1", 
 				nextQuestions: [17, 22, 24],
 				timeForQuestion: 90,
@@ -222,7 +222,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 24,
-				path: "segments/many/three/forArray.js",
+				path: "segments/three/lpay.js",
 				answer: "2",
 				nextQuestions: [17, 22, 23],
 				timeForQuestion: 90,
@@ -231,7 +231,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 //******************************two*******************************************			
 			{
 				id: 25,
-				path: "segments/many/two/aLogic.js",
+				path: "segments/two/aLogic.js",
 				answer: "1",
 				nextQuestions: [26, 27, 28, 29, 30, 33],
 				timeForQuestion: 60,
@@ -240,7 +240,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 26,
-				path: "segments/many/two/aLogicNegative.js",
+				path: "segments/two/aLogicNegative.js",
 				answer: "2",
 				nextQuestions: [25, 27, 28],
 				timeForQuestion: 60,
@@ -249,7 +249,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 27,
-				path: "segments/many/two/aLogicNegative1.js",
+				path: "segments/two/aLogicNegative1.js",
 				answer: "1",
 				nextQuestions: [25, 26, 28],
 				timeForQuestion: 60,
@@ -258,7 +258,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 28,
-				path: "segments/many/two/aLogicNegative2.js",
+				path: "segments/two/aLogicNegative2.js",
 				answer: "2",
 				nextQuestions: [25, 26, 27],
 				timeForQuestion: 60,
@@ -267,7 +267,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 29,
-				path: "segments/many/two/aStructure.js",
+				path: "segments/two/aStructure.js",
 				answer: "3",
 				nextQuestions: [25, 31, 32, 33],
 				timeForQuestion: 60,
@@ -276,7 +276,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 30,
-				path: "segments/many/two/bLogic.js",
+				path: "segments/two/bLogic.js",
 				answer: "1",
 				nextQuestions: [25, 31], 
 				timeForQuestion: 60,
@@ -286,7 +286,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 31,
-				path: "segments/many/two/bStructure.js",
+				path: "segments/two/bStructure.js",
 				answer: "2",
 				nextQuestions: [29, 30],
 				timeForQuestion: 60,
@@ -295,7 +295,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 32,
-				path: "segments/many/two/forArithmetic.js",
+				path: "segments/two/forArithmetic.js",
 				answer: "2",
 				nextQuestions: [33, 25, 29], 
 				timeForQuestion: 90,
@@ -304,7 +304,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 33,
-				path: "segments/many/two/forArray.js",
+				path: "segments/two/lpay.js",
 				answer: "1",
 				nextQuestions: [32, 29, 25],
 				timeForQuestion: 90,
@@ -313,7 +313,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 //******************************special*******************************************		
 			{
 				id: 100,
-				path: "special/forArr0.js",
+				path: "loop/lp0.js",
 				answer: "abcde",
 				timeForQuestion: 60,
 				score: 999
@@ -321,7 +321,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 101,
-				path: "special/forArr1.js",
+				path: "loop/lp1.js",
 				answer: "abcde",
 				timeForQuestion: 60,
 				score: 999
@@ -329,7 +329,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 102,
-				path: "special/forArr2.js",
+				path: "loop/lp2.js",
 				answer: "abcd",
 				timeForQuestion: 60,
 				score: 999
@@ -337,7 +337,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 103,
-				path: "special/forArr3.js",
+				path: "loop/lp3.js",
 				answer: "bcde",
 				timeForQuestion: 60,
 				score: 999
@@ -345,7 +345,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 104,
-				path: "special/forArr4.js",
+				path: "loop/lp4.js",
 				answer: "bcd",
 				timeForQuestion: 60,
 				score: 999
@@ -353,7 +353,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 105,
-				path: "special/forArr5.js",
+				path: "loop/lp5.js",
 				answer: "edcba",
 				timeForQuestion: 60,
 				score: 999
@@ -361,7 +361,7 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 
 			{
 				id: 106,
-				path: "special/forArr6.js",
+				path: "loop/lp6.js",
 				answer: "edcb",
 				timeForQuestion: 60,
 				score: 999
