@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Software engineering experiment tool",
   "scripts": {
-    "start": "node app/server/main.js",
-    "build": "node r.js -o build.js"
+    "start": "node ./server/start_server.js",
+    "build": "node r.js -o build.js",
+    "start:dev": "node ./server/start_server_localhost.js"
   },
   "repository": {
     "type": "git",

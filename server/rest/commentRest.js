@@ -1,4 +1,4 @@
-var commentDao = require('./../services/commentDao');
+var commentDao = require('./../dao/commentDao');
 
 module.exports = function (app) {
     app.post('/comment', function (req, res) {

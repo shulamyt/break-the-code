@@ -1,14 +1,15 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var path = require('path');
 
 var app = express();
-app.use(express.static('target'));
+app.use(express.static(path.resolve('./target')));
 app.use(bodyParser.json());
 
 //for local host:
 //var server = app.listen(3000, function () {
 //for server:
-var server = app.listen(8080, 'getTheCodes', function () {
+var server = app.listen(8080, function () {
 
   var host = server.address().address;
   var port = server.address().port;
@@ -17,7 +18,7 @@ var server = app.listen(8080, 'getTheCodes', function () {
 
 })
 
-require('./server/rest/userRest')(app);
-require('./server/rest/answerRest')(app);
-require('./server/rest/questionRest')(app);
-require('./server/rest/commentRest')(app);
+require('./rest/userRest')(app);
+require('./rest/answerRest')(app);
+require('./rest/questionRest')(app);
+require('./rest/commentRest')(app);
