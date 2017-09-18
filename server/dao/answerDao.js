@@ -1,17 +1,11 @@
-var pg = require('pg');
 var dbUtils = require('../db/dbUtils');
-//server:
-var conString = "postgres://root:shulamyt@localhost/postgres";
-//localhost:
-//var conString = "postgres://x:y@localhost/postgres";
+var client = require('../db/client');
 
-function AnswerDao(){
-
-};
+function AnswerDao(){};
 
 AnswerDao.prototype.save = function(answer){
     var promise = new Promise(function(resolve, reject) {
-        pg.connect(conString, function(err, client, done) {
+        client.connect(function(err, client, done) {
             if(err) {
                 return console.error('error fetching client from pool', err);
             }

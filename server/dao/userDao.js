@@ -1,17 +1,11 @@
-var pg = require('pg');
 var dbUtils = require('../db/dbUtils');
-//server:
-var conString = "postgres://root:shulamyt@localhost/postgres";
-//localhost:
-//var conString = "postgres://x:y@localhost/postgres";
+var client = require('../db/client');
 
-function UserDao(){
-
-};
+function UserDao(){};
 
 UserDao.prototype.update = function(user){
     var promise = new Promise(function(resolve, reject) {
-        pg.connect(conString, function(err, client, done) {
+        client.connect(function(err, client, done) {
             if(err) {
                 return console.error('error fetching client from pool', err);
             }
@@ -33,7 +27,7 @@ UserDao.prototype.save = function(user){
     //console.log("userDao is going to save user...");
     var promise = new Promise(function(resolve, reject) {
         //console.log("userDao is asking for connection...");
-        pg.connect(conString, function(err, client, done) {
+        client.connect(function(err, client, done) {
             if(err) {
                 //console.log("userDao - no connection for you!");
                 return console.error('error fetching client from pool', err);

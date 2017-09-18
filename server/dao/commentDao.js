@@ -1,15 +1,11 @@
-var pg = require('pg');
 var dbUtils = require('../db/dbUtils');
-//server:
-var conString = "postgres://root:shulamyt@localhost/postgres";
+var client = require('../db/client');
 
-function CommentDao(){
-
-};
+function CommentDao(){};
 
 CommentDao.prototype.save = function(comment){
     var promise = new Promise(function(resolve, reject) {
-        pg.connect(conString, function(err, client, done) {
+        client.connect(function(err, client, done) {
             if(err) {
                 return console.error('error saving comment ', err);
             }
