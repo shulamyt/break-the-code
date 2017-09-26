@@ -4,7 +4,6 @@
   "description": "Software engineering experiment tool",
   "scripts": {
     "start": "node ./server/start_server.js",
-    "start:debug": "node --debug=5858 ./server/start_server.js",
     "build": "node r.js -o build.js"
   },
   "repository": {
