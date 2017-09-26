@@ -9,6 +9,12 @@ class CountDownTimer  extends Component {
     };
   };
 
+  componentWillReceiveProps (nextProps) {
+    if(this.props.startTime != nextProps.startTime){
+      this.setState({remainingTimeInSeconds: nextProps.startTime});
+    }
+  };
+
   tick() {
     this.setState({remainingTimeInSeconds: this.state.remainingTimeInSeconds - 1});
     if (this.state.remainingTimeInSeconds <= 0) {

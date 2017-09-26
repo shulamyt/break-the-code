@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CodeMirror from 'react-codemirror';
+import CodeMirror from 'react-codemirror2';
 import CountDownTimer from './count-down-timer';
 import set from 'lodash/set';
 import 'codemirror/lib/codemirror.css';
