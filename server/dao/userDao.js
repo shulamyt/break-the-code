@@ -1,5 +1,5 @@
 var dbUtils = require('../db/dbUtils');
-var client = require('../db/client');
+var pool = require('../db/client');
 
 function UserDao(){};
 
@@ -32,20 +32,19 @@ UserDao.prototype.update = function(user){
 
 UserDao.prototype.save = function(user){
     var queryStr = dbUtils.jsonToUpdateQuery(user, "Experimenter", ["questions", "testPlan"]);
-    client.connect(err => {
-        if (err) {
-            console.error(err.stack);
-            return;
-        }
-        client.query(queryStr, [], (err, data) => {
+    return new Promise(function(resolve, reject) {
+        pool.connect((err, client, release) => {
             if (err) {
-                console.error(err.stack);
-                client.end();
-            } else {
-                client.end();
-                resolve(data);
+                return console.error('Error acquiring client', err.stack);
             }
-        });
+            client.query(queryStr, (err, result) => {
+                release();
+                if (err) {
+                    return console.error('Error executing query', err.stack);
+                }
+                resolve(result.rows);
+            })
+        })
     });
 };
 
