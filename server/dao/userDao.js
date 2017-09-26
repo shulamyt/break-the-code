@@ -1,5 +1,5 @@
 var dbUtils = require('../db/dbUtils');
-var pool = require('../db/client');
+var pool = require('../db/pool');
 
 function UserDao(){};
 
