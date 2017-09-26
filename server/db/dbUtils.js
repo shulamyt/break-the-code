@@ -74,5 +74,22 @@ DBUtils.prototype.jsonToInsertQuery = function(json, tableName, ignore){
     return query;
 };
 
+DBUtils.prototype.runQuery = function(pool, queryStr){
+    return new Promise(function(resolve, reject) {
+        pool.connect((err, client, release) => {
+            if (err) {
+                return console.error('Error acquiring client', err.stack);
+            }
+            client.query(queryStr, (err, result) => {
+                release();
+                if (err) {
+                    return console.error('Error executing query', err.stack);
+                }
+                resolve(result.rows);
+            })
+        })
+    });
+};
+
 var dbUtils = new DBUtils();
 module.exports = dbUtils;
