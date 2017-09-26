@@ -3,25 +3,32 @@ import {BrowserRouter} from 'react-router-dom';
 import {renderRoutes} from 'react-router-config';
 import WelcomePage from './welcome-page';
 import PersonalInformationQuestionnairePage from './personal-information-questionnaire-page';
+import ExplainPage from './explain-page';
+import ExperimentPage from './experiment-page';
+
 
 const routes = [
-  // {
-  //   path: '/',
-  //   exact: true,
-  //   component: WelcomePage
-  // },
   {
     path: '/',
     exact: true,
-    component: PersonalInformationQuestionnairePage
+    component: WelcomePage
   },
+  // {
+  //   path: '/',
+  //   exact: true,
+  //   component: ExplainPage
+  // },
   {
     path: '/personalInformationQuestionnaire',
     component: PersonalInformationQuestionnairePage
   },
   {
     path: '/explain',
-    component: PersonalInformationQuestionnairePage
+    component: ExplainPage
+  },
+  {
+    path: '/experiment',
+    component: ExperimentPage
   }
 ];
 
