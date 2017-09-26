@@ -36,6 +36,7 @@
     "lodash": "^4.17.4",
     "react": "^15.6.1",
     "react-checkbox-list": "0.0.2",
+    "react-codemirror": "^1.0.0",
     "react-dom": "^15.6.1",
     "react-router-config": "^1.0.0-beta.4",
     "react-router-dom": "^4.2.2"
