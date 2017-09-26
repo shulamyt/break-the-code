@@ -10,13 +10,13 @@ class WelcomePage extends Component {
         <p>We do not collect any identifying information. All information gathered is anonymous for research purposes only.</p>
         <p>You may retire at any point (even though we'd be happy if you stay with us until the end).</p>
         <p>Good luck!</p>
-        <div onClick={this.onGotYouClicked()}>Got you!</div>
+        <div onClick={this.onGotYouClicked.bind(this)}>Got you!</div>
       </div>
     );
   }
 
   onGotYouClicked() {
-
+    this.props.history.push('/personalInformationQuestionnaire');
   }
 }
 
