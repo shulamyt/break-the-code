@@ -12,34 +12,27 @@ module.exports = function (app) {
             user.age = parseInt(req.body.age);
             user.gender = req.body.gender;
 
-            user.yearsOfExperience = req.body.yearsOfExperience;
+            user.yearsOfExperience = parseInt(req.body.yearsOfExperience);
             user.programmingLanguages = req.body.programmingLanguages;
-            if(req.body.assessProgrammingSkills == '0 (novice)'){
-                user.assessSelfProgrammingSkills = 0;
-            }
-            else if(req.body.assessProgrammingSkills == '5 (expert)'){
-                user.assessSelfProgrammingSkills = 5;
-            }else{
-                user.assessSelfProgrammingSkills = req.body.assessProgrammingSkills;
-            }
+            user.assessSelfProgrammingSkills = parseInt(req.body.assessProgrammingSkills);
             user.firstTime = !req.body.notFirstTime;
 
             if(req.body.degree){
                 user.selfTaught = req.body.degree.selfTaught||false;
                 if(req.body.degree.BA){
                     user.baFinished = req.body.degree.BA.finished||false;
-                    user.baStarted = req.body.degree.BA.started;
-                    user.baStudied = req.body.degree.BA.studied;
+                    user.baStarted = parseInt(req.body.degree.BA.started);
+                    user.baStudied = parseInt(req.body.degree.BA.studied);
                 }
                 if(req.body.degree.MA){
                     user.maFinished = req.body.degree.MA.finished||false;
-                    user.maStarted = req.body.degree.MA.started;
-                    user.maStudied = req.body.degree.MA.studied;
+                    user.maStarted = parseInt(req.body.degree.MA.started);
+                    user.maStudied = parseInt(req.body.degree.MA.studied);
                 }
                 if(req.body.degree.PhD) {
                     user.phdFinished = req.body.degree.PhD.finished||false;
-                    user.phdStarted = req.body.degree.PhD.started;
-                    user.phdStudied = req.body.degree.PhD.studied;
+                    user.phdStarted = parseInt(req.body.degree.PhD.started);
+                    user.phdStudied = parseInt(req.body.degree.PhD.studied);
                 }
             }
         }
