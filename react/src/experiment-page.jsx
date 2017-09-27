@@ -7,11 +7,14 @@ import 'codemirror/lib/codemirror.css';
 import 'codemirror/mode/javascript/javascript';
 import * as UserService from './user-service';
 import * as RestService from './rest-utilities';
+import Modal from 'react-modal';
+import * as StyleService from './experiment-page.scss';
 
 class ExperimentPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      showModal: false,
       userAnswer: "",
       currentQuestionNum: 0,
       user: {}
@@ -80,8 +83,7 @@ class ExperimentPage extends Component {
       readOnly: true
     };
     return(
-      <div>
-        <div>ExperimentPage</div>
+      <div className="experiment-page">
         <div className="leftScreen">
           <CodeMirror value={this.getCode()} options={options}/>
         </div>
@@ -100,6 +102,7 @@ class ExperimentPage extends Component {
           <div onClick={this.onSkipClicked.bind(this)}>Skip</div>
           <div>Question number {this.getCurrentQuestionNum() + 1} out of {this.getTotalNumberOfQuestions()} questions</div>
         </div>
+        {this.createQuestionSummaryModal()}
       </div>
     );
   }
@@ -119,7 +122,7 @@ class ExperimentPage extends Component {
   onThinkIMadeItClicked() {
     this.endAt = this.takeTime();
     this.postAnswer();
-    this.continueToNextQuestion();
+    this.setState({showModal: true});
   }
 
   onSkipClicked() {
@@ -133,6 +136,10 @@ class ExperimentPage extends Component {
     return currentQuestion.answer;
   }
 
+  getUserAnswer(){
+    return this.state.userAnswer;
+  }
+
   postAnswer(skip) {
     let currentQuestion = this.getCurrentQuestion();
     let user = this.getUser();
@@ -140,7 +147,7 @@ class ExperimentPage extends Component {
     answer.questionId = currentQuestion.id;
     answer.rightAnswer = this.getRightAnswer();
     answer.time = this.endAt - this.startAt;
-    answer.userAnswer = this.state.userAnswer;
+    answer.userAnswer = this.getUserAnswer();
     answer.userId = user.id;
     answer.skip = isEmpty(skip) ? false : skip;
     answer.questionIndex = this.getCurrentQuestionNum();
@@ -151,7 +158,7 @@ class ExperimentPage extends Component {
     if(this.hasMoreQuestions()) {
       let currentQuestionNum = this.getCurrentQuestionNum() + 1;
       this.startAt = this.takeTime();
-      this.setState({currentQuestionNum, userAnswer: ""});
+      this.setState({currentQuestionNum, userAnswer: "", showModal: false});
     }else{
       this.endOfExperiment();
     }
@@ -166,6 +173,61 @@ class ExperimentPage extends Component {
   endOfExperiment() {
     this.props.history.push('/summary');
   }
+
+  createQuestionSummaryModal() {
+    return (
+      <Modal
+        isOpen={this.state.showModal}
+        contentLabel="summary"
+        overlayClassName="Overlay"
+        className={StyleService.questionSummaryModal}
+      >
+        <div>
+          <div>Your:</div>
+          <div>{this.getUserAnswer()}</div>
+        </div>
+
+        <div>
+          <div>Right:</div>
+          <div>{this.getRightAnswer()}</div>
+        </div>
+        {this.createCompliment()}
+        <div onClick={this.onCloseModalClicked.bind(this)}>Let's continue!</div>
+      </Modal>
+    );
+  }
+
+  onCloseModalClicked(){
+    this.continueToNextQuestion();
+  }
+
+  createCompliment() {
+    if(!this.theUserAnswerCorrectly()){
+      return;
+    }
+    let compliment = this.getCompliment();
+    return (
+      <div>
+        <div>{compliment}</div>
+      </div>
+    );
+  }
+
+  getCompliment(){
+    let compliments = ["Good!", "Good :)", "Nice :)", "Nice!", "Wow!", "Wow :)", "Right :)", "Right!"];
+    return compliments[this.getRandomInt(0, compliments.length-1)];
+  };
+
+  getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+  };
+
+  theUserAnswerCorrectly() {
+    return this.getUserAnswer() == this.getRightAnswer();
+  }
 }
 
 export default ExperimentPage;
+
+
+

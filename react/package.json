@@ -39,6 +39,7 @@
     "react-checkbox-list": "0.0.2",
     "react-codemirror2": "^2.0.0",
     "react-dom": "^15.6.1",
+    "react-modal": "^2.3.2",
     "react-router-config": "^1.0.0-beta.4",
     "react-router-dom": "^4.2.2"
   }
