@@ -43,14 +43,16 @@ DBUtils.prototype.getRepresentation = function(value){
 DBUtils.prototype.getArrayRepresentation = function(value){
     if(Object.prototype.toString.call( value ) === '[object Array]'){
         var arrayRepresentation = "'{";
-        for(var item of value){
-            if(typeof item === "string"){
-                arrayRepresentation = arrayRepresentation + '"'+item+'"' + ", ";
-            }else{
-                arrayRepresentation = arrayRepresentation + item + ", ";
+        if(value.length > 0){
+            for (var item of value) {
+                if (typeof item === "string") {
+                    arrayRepresentation = arrayRepresentation + '"' + item + '"' + ", ";
+                } else {
+                    arrayRepresentation = arrayRepresentation + item + ", ";
+                }
             }
+            arrayRepresentation = arrayRepresentation.substring(0, arrayRepresentation.length - 2);
         }
-        arrayRepresentation = arrayRepresentation.substring(0, arrayRepresentation.length - 2);
         arrayRepresentation = arrayRepresentation + "}'";
     }
     return arrayRepresentation;
