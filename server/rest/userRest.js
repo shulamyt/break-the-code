@@ -37,8 +37,12 @@ module.exports = function (app) {
             }
         }
         if(user.id != undefined) {
-            userDao.update(user);
-            console.log('update user.id = ' + user.id);
+            userDao.update(user).then(function(){
+                console.log('update user.id = ' + user.id);
+                res.status(200).json(user);
+            });
+        }else{
+            res.status(204);
         }
     });
     //create
@@ -53,9 +57,10 @@ module.exports = function (app) {
             }
             user.testPlanId = testPlanId;
             questionService.addQuestions(user.testPlan).then(function(){
-                    userDao.save(user);
-                    console.log('create user.id = ' + user.id);
-                    res.status(201).json(user);
+                    userDao.save(user).then(function(){
+                        console.log('create user.id = ' + user.id);
+                        res.status(201).json(user);
+                    });
             });
         });
     });
