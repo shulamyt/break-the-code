@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
+import * as UserService from './user-service';
 
 class WelcomePage extends Component {
+
+  constructor(props) {
+    super(props);
+    UserService.getUser();
+  };
+
   render() {
     return(
       <div>

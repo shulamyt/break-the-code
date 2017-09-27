@@ -16,6 +16,17 @@ module.exports = {
 
   context,
 
+  devServer: {
+    proxy:{
+      '/services': {
+        target: 'http://getthecodes.com',
+        pathRewrite: {
+          '/services': ''
+        }
+      }
+    }
+  },
+
   module: {
     rules: [
       {

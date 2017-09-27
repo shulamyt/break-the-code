@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import CodeMirror from 'react-codemirror2';
 import CountDownTimer from './count-down-timer';
 import set from 'lodash/set';
+import isEmpty from 'lodash/isEmpty';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/mode/javascript/javascript';
+import * as UserService from './user-service';
 
 class ExperimentPage extends Component {
   constructor(props) {
@@ -11,20 +13,16 @@ class ExperimentPage extends Component {
     this.state = {
       userAnswer: "",
       currentQuestionNum: 0,
-      testPlan: [
-        {
-          id: 1,
-          code: 'var component = {\n\tname: "react-codemirror",\n\tauthor: "Jed Watson",\n\trepo: "https://github.com/JedWatson/react-codemirror"\n};',
-          timeForQuestion: 5
-        },
-        {
-          id: 1,
-          code: 'var component = {};',
-          timeForQuestion: 10
-        }
-      ]
+      user: {}
     };
   };
+
+  componentDidMount() {
+    UserService.getUser().then(function(user){
+      this.setState({user});
+    }.bind(this))
+  };
+
 
   getCode() {
     let question = this.getCurrentQuestion();
@@ -33,11 +31,27 @@ class ExperimentPage extends Component {
 
   getCurrentQuestion(){
     let testPlan = this.getTestPlan();
-    return testPlan[this.getCurrentQuestionNum()];
+    let defaultCurrentQuestion = {
+      code: null,
+      timeForQuestion: null
+    };
+    let currentQuestion = testPlan[this.getCurrentQuestionNum()];
+    if(isEmpty(currentQuestion)){
+      currentQuestion = defaultCurrentQuestion;
+    }
+    return currentQuestion;
   }
 
   getTestPlan(){
-    return this.state.testPlan;
+    let testPlan = [];
+    if(!isEmpty(this.getUser())){
+      testPlan = this.getUser().testPlan;
+    }
+    return testPlan;
+  }
+
+  getUser(){
+    return this.state.user;
   }
 
   getStartTime() {

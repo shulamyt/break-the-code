@@ -8,15 +8,10 @@ import ExperimentPage from './experiment-page';
 
 
 const routes = [
-  // {
-  //   path: '/',
-  //   exact: true,
-  //   component: WelcomePage
-  // },
   {
     path: '/',
     exact: true,
-    component: ExperimentPage
+    component: WelcomePage
   },
   {
     path: '/personalInformationQuestionnaire',
