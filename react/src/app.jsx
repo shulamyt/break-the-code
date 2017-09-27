@@ -5,7 +5,7 @@ import WelcomePage from './welcome-page';
 import PersonalInformationQuestionnairePage from './personal-information-questionnaire-page';
 import ExplainPage from './explain-page';
 import ExperimentPage from './experiment-page';
-
+import SummaryPage from './summary-page';
 
 const routes = [
   {
@@ -24,6 +24,10 @@ const routes = [
   {
     path: '/experiment',
     component: ExperimentPage
+  },
+  {
+    path: '/summary',
+    component: SummaryPage
   }
 ];
 

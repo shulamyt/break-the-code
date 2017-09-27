@@ -6,6 +6,7 @@ import isEmpty from 'lodash/isEmpty';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/mode/javascript/javascript';
 import * as UserService from './user-service';
+import * as RestService from './rest-utilities';
 
 class ExperimentPage extends Component {
   constructor(props) {
@@ -17,8 +18,13 @@ class ExperimentPage extends Component {
     };
   };
 
+  takeTime(){
+    return window.performance ? window.performance.now() : new Date().getTime();
+  }
+
   componentDidMount() {
     UserService.getUser().then(function(user){
+      this.startAt = this.takeTime();
       this.setState({user});
     }.bind(this))
   };
@@ -54,7 +60,7 @@ class ExperimentPage extends Component {
     return this.state.user;
   }
 
-  getStartTime() {
+  getQuestionDuration() {
     let question = this.getCurrentQuestion();
     return question.timeForQuestion;
   }
@@ -80,7 +86,7 @@ class ExperimentPage extends Component {
           <CodeMirror value={this.getCode()} options={options}/>
         </div>
         <div className="clock">
-          <CountDownTimer startTime={this.getStartTime()} timeIsOver={this.timeIsOver.bind(this)}/>
+          <CountDownTimer startTime={this.getQuestionDuration()} timeIsOver={this.timeIsOver.bind(this)}/>
         </div>
         <div className="rightScreen">
           <div>
@@ -88,7 +94,7 @@ class ExperimentPage extends Component {
             Type here your answer, press the relevant button below when you finish.
           </div>
           <div>
-            <textarea autoFocus value={this.state.value} onChange={this.handleChange.bind(this, 'userAnswer')} />
+            <textarea autoFocus value={this.state.userAnswer} onChange={this.handleChange.bind(this, 'userAnswer')} />
           </div>
           <div onClick={this.onThinkIMadeItClicked.bind(this)}>Think I made it!</div>
           <div onClick={this.onSkipClicked.bind(this)}>Skip</div>
@@ -111,16 +117,54 @@ class ExperimentPage extends Component {
   }
 
   onThinkIMadeItClicked() {
-    this.increaseCurrentQuestionNum();
+    this.endAt = this.takeTime();
+    this.postAnswer();
+    this.continueToNextQuestion();
   }
 
   onSkipClicked() {
-    this.increaseCurrentQuestionNum();
+    this.endAt = this.takeTime();
+    this.postAnswer(true);
+    this.continueToNextQuestion();
   }
 
-  increaseCurrentQuestionNum() {
-    let currentQuestionNum = this.state.currentQuestionNum + 1;
-    this.setState({currentQuestionNum});
+  getRightAnswer(){
+    let currentQuestion = this.getCurrentQuestion();
+    return currentQuestion.answer;
+  }
+
+  postAnswer(skip) {
+    let currentQuestion = this.getCurrentQuestion();
+    let user = this.getUser();
+    let answer = {};
+    answer.questionId = currentQuestion.id;
+    answer.rightAnswer = this.getRightAnswer();
+    answer.time = this.endAt - this.startAt;
+    answer.userAnswer = this.state.userAnswer;
+    answer.userId = user.id;
+    answer.skip = isEmpty(skip) ? false : skip;
+    answer.questionIndex = this.getCurrentQuestionNum();
+    RestService.post('services/answer',answer);
+  }
+
+  continueToNextQuestion() {
+    if(this.hasMoreQuestions()) {
+      let currentQuestionNum = this.getCurrentQuestionNum() + 1;
+      this.startAt = this.takeTime();
+      this.setState({currentQuestionNum, userAnswer: ""});
+    }else{
+      this.endOfExperiment();
+    }
+  }
+
+  hasMoreQuestions() {
+    let testPlan = this.getTestPlan();
+    let currentQuestionNum = this.getCurrentQuestionNum();
+    return (testPlan.length - 1) > currentQuestionNum;
+  }
+
+  endOfExperiment() {
+    this.props.history.push('/summary');
   }
 }
 

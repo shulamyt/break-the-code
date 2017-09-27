@@ -42,6 +42,10 @@ class CountDownTimer  extends Component {
     return seconds;
   }
 
+  componentWillUnmount(){
+    clearInterval(this.interval);
+  }
+
   render() {
     return(
       <div>
