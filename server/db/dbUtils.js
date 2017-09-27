@@ -15,6 +15,7 @@ DBUtils.prototype.jsonToUpdateQuery = function(json, tableName, ignore){
     queryPart1 = queryPart1.substring(0, queryPart1.length - 2);
     queryPart1 = queryPart1 + " WHERE id = " + json["id"] + ";";
     var query = queryPart1;
+    console.log(query);
     return query;
 };
 
