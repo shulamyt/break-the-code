@@ -35,9 +35,9 @@ class ExperimentPage extends Component {
       code: null,
       timeForQuestion: null
     };
-    let currentQuestion = testPlan[this.getCurrentQuestionNum()];
-    if(isEmpty(currentQuestion)){
-      currentQuestion = defaultCurrentQuestion;
+    let currentQuestion = defaultCurrentQuestion;
+    if(!isEmpty(testPlan) && !isEmpty(testPlan[this.getCurrentQuestionNum()])) {
+      currentQuestion = testPlan[this.getCurrentQuestionNum()];
     }
     return currentQuestion;
   }
