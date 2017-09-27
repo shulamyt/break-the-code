@@ -9,7 +9,7 @@ module.exports = function (app) {
         if(req && req.body){
             user.start = true;
             user.id = req.body.id;
-            user.age = req.body.age;
+            user.age = parseInt(req.body.age);
             user.gender = req.body.gender;
 
             user.yearsOfExperience = req.body.yearsOfExperience;

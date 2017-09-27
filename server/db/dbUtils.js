@@ -6,7 +6,7 @@ DBUtils.prototype.jsonToUpdateQuery = function(json, tableName, ignore){
     var queryPart1 = "UPDATE  "+ tableName + " SET ";
     for(var prop in json) {
         var value = json[prop];
-        if(ignore && ignore.indexOf(prop) != -1 || value == null || value == undefined | prop=="id"){
+        if(ignore && ignore.indexOf(prop) != -1 || value == null || value == undefined || prop=="id"){
             continue;
         }
         var valueRepresentation = this.getRepresentation(value);
