@@ -27,31 +27,19 @@ module.exports = function (app) {
             if(req.body.degree){
                 user.selfTaught = req.body.degree.selfTaught||false;
                 if(req.body.degree.BA){
-                    user.baFinised = req.body.degree.BA.finised||false;
+                    user.baFinished = req.body.degree.BA.finished||false;
                     user.baStarted = req.body.degree.BA.started;
-                    if(req.body.degree.BA.studied == '5+'){
-                        user.baStudied = 6;
-                    }else {
-                        user.baStudied = req.body.degree.BA.studied;
-                    }
+                    user.baStudied = req.body.degree.BA.studied;
                 }
                 if(req.body.degree.MA){
-                    user.maFinised = req.body.degree.MA.finised||false;
+                    user.maFinished = req.body.degree.MA.finished||false;
                     user.maStarted = req.body.degree.MA.started;
-                    if(req.body.degree.MA.studied == '5+'){
-                        user.maStudied = 6;
-                    }else {
-                        user.maStudied = req.body.degree.MA.studied;
-                    }
+                    user.maStudied = req.body.degree.MA.studied;
                 }
                 if(req.body.degree.PhD) {
-                    user.phdFinised = req.body.degree.PhD.finised||false;
+                    user.phdFinished = req.body.degree.PhD.finished||false;
                     user.phdStarted = req.body.degree.PhD.started;
-                    if(req.body.degree.PhD.studied == '5+'){
-                        user.phdStudied = 6;
-                    }else {
-                        user.phdStudied = req.body.degree.PhD.studied;
-                    }
+                    user.phdStudied = req.body.degree.PhD.studied;
                 }
             }
         }

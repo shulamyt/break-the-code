@@ -1,26 +1,30 @@
 import isEmpty from 'lodash/isEmpty';
+import assign from 'lodash/assign';
 import * as RestService from './rest-utilities';
 
-var user = {};
+var currentUser = {};
 export function getUser() {
   return new Promise(function(resolve, reject) {
-    if(!isEmpty(user)){
-      resolve(user);
+    if(!isEmpty(currentUser)){
+      resolve(currentUser);
     }
     else{
-      RestService.post('services/user', user).then(function(newUser) {
-        user = newUser;
-        resolve(user);
+      RestService.post('services/user', currentUser).then(function(user) {
+        currentUser = user;
+        resolve(currentUser);
       });
     }
   })
 }
 
-export function updateUser(newUser) {
-  user = newUser;
+export function updateUserData(userData) {
   return new Promise(function(resolve, reject) {
-    RestService.put('services/user', {}).then(function(updatedUser) {
-      user = updatedUser;
+    getUser().then(function(user){
+      assign(user, userData);
+      RestService.put('services/user', user).then(function(updatedUser) {
+        currentUser = updatedUser;
+        resolve(currentUser);
+      });
     });
   })
 }

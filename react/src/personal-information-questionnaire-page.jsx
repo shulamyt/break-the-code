@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import set from 'lodash/set';
 import get from 'lodash/get';
+import * as UserService from './user-service';
 import CheckboxList from 'react-checkbox-list';
 
 class PersonalInformationQuestionnairePage extends Component {
@@ -185,7 +186,12 @@ class PersonalInformationQuestionnairePage extends Component {
     );
   }
 
+  getUser(){
+    return this.state.user;
+  }
+
   onContinueClicked() {
+    UserService.updateUserData(this.getUser());
     this.props.history.push('/explain');
   }
 }
