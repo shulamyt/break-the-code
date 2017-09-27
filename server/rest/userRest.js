@@ -9,30 +9,30 @@ module.exports = function (app) {
         if(req && req.body){
             user.start = true;
             user.id = req.body.id;
-            user.age = parseInt(req.body.age);
+            req.body.age != '' ? user.age = parseInt(req.body.age) : '';
             user.gender = req.body.gender;
 
-            user.yearsOfExperience = parseInt(req.body.yearsOfExperience);
+            req.body.yearsOfExperience != '' ? user.yearsOfExperience = parseInt(req.body.yearsOfExperience) : '';
             user.programmingLanguages = req.body.programmingLanguages;
-            user.assessSelfProgrammingSkills = parseInt(req.body.assessProgrammingSkills);
+            req.body.assessProgrammingSkills != '' ? user.assessSelfProgrammingSkills = parseInt(req.body.assessProgrammingSkills) : '';
             user.firstTime = !req.body.notFirstTime;
 
             if(req.body.degree){
                 user.selfTaught = req.body.degree.selfTaught||false;
                 if(req.body.degree.BA){
                     user.baFinished = req.body.degree.BA.finished||false;
-                    user.baStarted = parseInt(req.body.degree.BA.started);
-                    user.baStudied = parseInt(req.body.degree.BA.studied);
+                    req.body.degree.BA.started != '' ? user.baStarted = parseInt(req.body.degree.BA.started) : '';
+                    req.body.degree.BA.started != '' ? user.baStudied = parseInt(req.body.degree.BA.studied) : '';
                 }
                 if(req.body.degree.MA){
                     user.maFinished = req.body.degree.MA.finished||false;
-                    user.maStarted = parseInt(req.body.degree.MA.started);
-                    user.maStudied = parseInt(req.body.degree.MA.studied);
+                    req.body.degree.MA.started != '' ? user.maStarted = parseInt(req.body.degree.MA.started) : '';
+                    req.body.degree.MA.studied != '' ? user.maStudied = parseInt(req.body.degree.MA.studied) : '';
                 }
                 if(req.body.degree.PhD) {
                     user.phdFinished = req.body.degree.PhD.finished||false;
-                    user.phdStarted = parseInt(req.body.degree.PhD.started);
-                    user.phdStudied = parseInt(req.body.degree.PhD.studied);
+                    req.body.degree.PhD.started != '' ? user.phdStarted = parseInt(req.body.degree.PhD.started) : '';
+                    req.body.degree.PhD.studied != '' ? user.phdStudied = parseInt(req.body.degree.PhD.studied) : '';
                 }
             }
         }
