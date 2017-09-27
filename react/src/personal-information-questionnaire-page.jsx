@@ -17,17 +17,17 @@ class PersonalInformationQuestionnairePage extends Component {
           BA: {
             started:  "",
             studied:  "",
-            finished: ""
+            finished: false
           },
           MA: {
             started:  "",
             studied:  "",
-            finished: ""
+            finished: false
           },
           PhD: {
             started:  "",
             studied:  "",
-            finished: ""
+            finished: false
           },
         },
         programmingLanguages: [],
@@ -68,8 +68,8 @@ class PersonalInformationQuestionnairePage extends Component {
                 years
               </label>
               <label>
-                and finished in
-                {this.createSelectRange('user.degree.BA.finished', 1980, 2020)}
+                finished
+                <input type="checkbox" value={user.degree.BA.finished} onChange={this.handleChange.bind(this, 'user.degree.BA.finished')} />
               </label>
             </div>
             <div>MSc/MA:
@@ -83,8 +83,8 @@ class PersonalInformationQuestionnairePage extends Component {
                 years
               </label>
               <label>
-                and finished in
-                {this.createSelectRange('user.degree.MA.finished', 1980, 2020)}
+                finished
+                <input type="checkbox" value={user.degree.MA.finished} onChange={this.handleChange.bind(this, 'user.degree.MA.finished')} />
               </label>
             </div>
             <div>PhD:
@@ -98,8 +98,8 @@ class PersonalInformationQuestionnairePage extends Component {
                 years
               </label>
               <label>
-                and finished in
-                {this.createSelectRange('user.degree.PhD.finished', 1980, 2020)}
+                finished
+                <input type="checkbox" value={user.degree.PhD.finished} onChange={this.handleChange.bind(this, 'user.degree.PhD.finished')} />
               </label>
             </div>
           </div>
