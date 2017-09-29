@@ -8,7 +8,6 @@ import 'codemirror/mode/javascript/javascript';
 import * as UserService from './user-service';
 import * as RestService from './rest-utilities';
 import Modal from 'react-modal';
-import * as StyleService from './experiment-page.scss';
 
 class ExperimentPage extends Component {
   constructor(props) {
@@ -180,7 +179,6 @@ class ExperimentPage extends Component {
         isOpen={this.state.showModal}
         contentLabel="summary"
         overlayClassName="Overlay"
-        className={StyleService.questionSummaryModal}
       >
         <div>
           <div>Your:</div>

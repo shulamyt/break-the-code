@@ -1,10 +1,10 @@
 .experiment-page{
-  .questionSummaryModal{
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    right: 40px;
-    bottom: 40px;
-    z-index: 100;
+
+}
+.ReactModalPortal{
+  &>div{
+    &>div{
+      z-index: 100;
+    }
   }
 }
