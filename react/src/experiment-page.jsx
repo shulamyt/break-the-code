@@ -13,6 +13,7 @@ import './experiment-page.scss';
 class ExperimentPage extends Component {
   constructor(props) {
     super(props);
+    this.rightAnswersNum = 0;
     this.state = {
       showModal: false,
       userAnswer: "",
@@ -157,6 +158,7 @@ class ExperimentPage extends Component {
   }
 
   continueToNextQuestion() {
+    this.countScore();
     if(this.hasMoreQuestions()) {
       let currentQuestionNum = this.getCurrentQuestionNum() + 1;
       this.startAt = this.takeTime();
@@ -176,13 +178,9 @@ class ExperimentPage extends Component {
     this.props.history.push('/summary');
   }
 
-  createQuestionSummaryModal() {
-    return (
-      <Modal
-        isOpen={this.state.showModal}
-        contentLabel="summary"
-        overlayClassName="Overlay"
-      >
+  createQuestionSummary(){
+    return(
+      <div>
         <div>
           <div>Your:</div>
           <div>{this.getUserAnswer()}</div>
@@ -194,6 +192,32 @@ class ExperimentPage extends Component {
         </div>
         {this.createCompliment()}
         <div onClick={this.onCloseModalClicked.bind(this)}>Let's continue!</div>
+      </div>
+    );
+  }
+
+  createExperimentSummary(){
+    return(
+      <div>
+        <div>Thank you so much for taking part in our experiment!</div>
+        <div>Remember, the questions you answered were randomly picked from a bank of questions. You might got especially hard or especially easy questions, so you cannot actually compare your result with others..</div>
+        <div>You answered correctly on {this.getRightAnswersNum()} out of {this.getTotalNumberOfQuestions()} questions</div>
+      </div>
+    );
+  }
+
+  createQuestionSummaryModal() {
+    let modalContent = this.createQuestionSummary();
+    if(!this.hasMoreQuestions()){
+      modalContent = this.createExperimentSummary();
+    }
+    return (
+      <Modal
+        isOpen={this.state.showModal}
+        contentLabel="summary"
+        overlayClassName="Overlay"
+      >
+        {modalContent}
       </Modal>
     );
   }
@@ -225,6 +249,20 @@ class ExperimentPage extends Component {
 
   theUserAnswerCorrectly() {
     return this.getUserAnswer() == this.getRightAnswer();
+  }
+
+  countScore() {
+    if(this.theUserAnswerCorrectly()){
+      this.increaseRightAnswersNum();
+    }
+  }
+
+  increaseRightAnswersNum() {
+    this.rightAnswersNum ++;
+  }
+
+  getRightAnswersNum() {
+    return this.rightAnswersNum;
   }
 }
 
