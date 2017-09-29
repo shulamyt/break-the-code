@@ -8,6 +8,7 @@ import 'codemirror/mode/javascript/javascript';
 import * as UserService from './user-service';
 import * as RestService from './rest-utilities';
 import Modal from 'react-modal';
+import './experiment-page.scss';
 
 class ExperimentPage extends Component {
   constructor(props) {
@@ -107,7 +108,9 @@ class ExperimentPage extends Component {
   }
 
   timeIsOver() {
-    console.log('timeIsOver');
+    this.endAt = this.takeTime();
+    this.postAnswer();
+    this.setState({showModal: true});
   }
 
   getCurrentQuestionNum() {
