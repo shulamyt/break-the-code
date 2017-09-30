@@ -49,8 +49,7 @@ class CountDownTimer  extends Component {
   render() {
     return(
       <div>
-        <spane>{this.getMinutes()} : </spane>
-        <spane>{this.getSeconds()}</spane>
+        <spane>{this.getMinutes()} : {this.getSeconds()}</spane>
       </div>
     )
   }
