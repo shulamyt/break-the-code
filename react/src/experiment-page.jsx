@@ -57,6 +57,9 @@ class ExperimentPage extends Component {
     if(!isEmpty(this.getUser())){
       testPlan = this.getUser().testPlan;
     }
+    if(testPlan == undefined){
+      testPlan = [];
+    }
     return testPlan;
   }
 
@@ -119,6 +122,9 @@ class ExperimentPage extends Component {
   }
 
   getTotalNumberOfQuestions() {
+    if (isEmpty(this.getTestPlan())) {
+      return 0;
+    }
     return this.getTestPlan().length;
   }
 
@@ -267,6 +273,3 @@ class ExperimentPage extends Component {
 }
 
 export default ExperimentPage;
-
-
-

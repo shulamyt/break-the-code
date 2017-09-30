@@ -3,6 +3,7 @@ import set from 'lodash/set';
 import get from 'lodash/get';
 import * as UserService from './user-service';
 import CheckboxList from 'react-checkbox-list';
+import './personal-information-questionnaire-page.scss';
 
 class PersonalInformationQuestionnairePage extends Component {
 
@@ -41,13 +42,15 @@ class PersonalInformationQuestionnairePage extends Component {
   render() {
     let user = this.state.user;
     return (
-      <div className="">
-        <div className="form">
-          <div>
-            <label>Age:<input type="text" value={user.age} onChange={this.handleChange.bind(this, 'user.age')} /></label>
+      <div className="personalInformationQuestionnairePage container">
+        <form>
+          <div className="form-group">
+            <label>Age:<input className="form-control" type="text" value={user.age} onChange={this.handleChange.bind(this, 'user.age')} /></label>
+          </div>
+          <div className="form-group">
             <label>
               Gender:
-              <select value={user.gender} onChange={this.handleChange.bind(this, 'user.gender')}>
+              <select className="form-control" value={user.gender} onChange={this.handleChange.bind(this, 'user.gender')}>
                 <option value=""/>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
@@ -56,8 +59,15 @@ class PersonalInformationQuestionnairePage extends Component {
           </div>
           <div>
             <div>How did you learn to program:</div>
-            <label>Self taught<input type="checkbox" value={user.degree.selfTaught} onChange={this.handleChange.bind(this, 'user.degree.selfTaught')} /></label>
-            <div>BSc/BA:
+            <div className="form-check">
+              <label className="form-check-label">
+                <input className="form-check-input" type="checkbox" value={user.degree.selfTaught}
+                onChange={this.handleChange.bind(this, 'user.degree.selfTaught')} />
+                Self taught
+              </label>
+            </div>
+            <div className="degreeDetails">
+              <div>BSc/BA:</div>
               <label>
                 started in
                 {this.createSelectRange('user.degree.BA.started', 1980, 2020)}
@@ -69,10 +79,12 @@ class PersonalInformationQuestionnairePage extends Component {
               </label>
               <label>
                 finished
-                <input type="checkbox" value={user.degree.BA.finished} onChange={this.handleChange.bind(this, 'user.degree.BA.finished')} />
+                <input type="checkbox" value={user.degree.BA.finished} onChange={this.handleChange.bind(this,
+                'user.degree.BA.finished')} />
               </label>
             </div>
-            <div>MSc/MA:
+            <div className="degreeDetails">
+              <div>MSc/MA:</div>
               <label>
                 started in
                 {this.createSelectRange('user.degree.MA.started', 1980, 2020)}
@@ -84,10 +96,12 @@ class PersonalInformationQuestionnairePage extends Component {
               </label>
               <label>
                 finished
-                <input type="checkbox" value={user.degree.MA.finished} onChange={this.handleChange.bind(this, 'user.degree.MA.finished')} />
+                <input type="checkbox" value={user.degree.MA.finished} onChange={this.handleChange.bind(this,
+                'user.degree.MA.finished')} />
               </label>
             </div>
-            <div>PhD:
+            <div className="degreeDetails">
+              <div>PhD:</div>
               <label>
                 started in
                 {this.createSelectRange('user.degree.PhD.started', 1980, 2020)}
@@ -99,7 +113,8 @@ class PersonalInformationQuestionnairePage extends Component {
               </label>
               <label>
                 finished
-                <input type="checkbox" value={user.degree.PhD.finished} onChange={this.handleChange.bind(this, 'user.degree.PhD.finished')} />
+                <input type="checkbox" value={user.degree.PhD.finished} onChange={this.handleChange.bind(this,
+                'user.degree.PhD.finished')} />
               </label>
             </div>
           </div>
@@ -111,7 +126,7 @@ class PersonalInformationQuestionnairePage extends Component {
           </div>
           <div>
             <label>
-              With which programming languages do you have a good familiarity:
+              How do you assess your programming skills?
               {this.createAssessProgrammingSkills()}
             </label>
           </div>
@@ -127,8 +142,8 @@ class PersonalInformationQuestionnairePage extends Component {
               <input type="checkbox" value={user.notFirstTime} onChange={this.handleChange.bind(this, 'user.notFirstTime')} />
             </label>
           </div>
-        </div>
-        <div onClick={this.onContinueClicked.bind(this)}>Continue</div>
+        </form>
+        <button type="button" className="btn btn-primary"  onClick={this.onContinueClicked.bind(this)}>Continue</button>
       </div>
     );
   };
