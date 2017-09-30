@@ -112,9 +112,11 @@ class ExperimentPage extends Component {
   }
 
   timeIsOver() {
-    this.endAt = this.takeTime();
-    this.postAnswer();
-    this.setState({showModal: true});
+    if(this.getUser().testPlan != undefined){
+      this.endAt = this.takeTime();
+      this.postAnswer();
+      this.setState({showModal: true});
+    }
   }
 
   getCurrentQuestionNum() {
