@@ -23,9 +23,8 @@ export function updateUserData(userData) {
       assign(user, userData);
       RestService.put('services/user', user).then(function(updatedUser) {
         if(currentUser.id != updatedUser.id){
-          console.log('problem in user id!');
+          console.error('problem in user id!');
         };
-        //resolve(currentUser);
       });
     });
   })
