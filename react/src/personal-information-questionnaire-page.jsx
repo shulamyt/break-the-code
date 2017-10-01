@@ -42,9 +42,9 @@ class PersonalInformationQuestionnairePage extends Component {
   render() {
     let user = this.state.user;
     return (
-      <div className="personalInformationQuestionnairePage container">
+      <div className="personalInformationQuestionnairePage">
         <form>
-          <div className="form-group">
+          <div className="form-group age">
             <label>Age:<input className="form-control" type="text" value={user.age} onChange={this.handleChange.bind(this, 'user.age')} /></label>
           </div>
           <div className="form-group">
@@ -57,8 +57,8 @@ class PersonalInformationQuestionnairePage extends Component {
               </select>
             </label>
           </div>
-          <div>
-            <div>How did you learn to program:</div>
+          <div>How did you learn to program:</div>
+          <div className="learnToProgram">
             <div className="form-check">
               <label className="form-check-label">
                 <input className="form-check-input" type="checkbox" value={user.degree.selfTaught}
@@ -118,13 +118,13 @@ class PersonalInformationQuestionnairePage extends Component {
               </label>
             </div>
           </div>
-          <div>
+          <div className="programmingLanguagesList">
             <label>
               With which programming languages do you have a good familiarity:
               {this.createProgrammingLanguagesList()}
             </label>
           </div>
-          <div>
+          <div className="programmingSkills">
             <label>
               How do you assess your programming skills?
               {this.createAssessProgrammingSkills()}

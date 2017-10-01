@@ -1,4 +1,17 @@
+@import 'utils.scss';
 .personalInformationQuestionnairePage{
+  width: 676px;
+  @include center-horizontal-div;
+
+  .age{
+    float: left;
+    width: 100px;
+    margin-right: 29px;
+  }
+  .learnToProgram{
+    padding-left: 20px;
+  }
+
   .degreeDetails{
     label{
       margin-left: 10px;
@@ -7,5 +20,25 @@
       margin-left: 5px;
       margin-right: 5px;
     }
+  }
+  .programmingSkills {
+    input {
+      margin-left: 20px;
+    }
+  }
+  .programmingLanguagesList {
+    &>label{
+      &>div{
+        padding-left: 20px;
+      }
+    }
+    .checkbox {
+      float: left;
+      margin-right: 40px;
+      width: 90px;
+    }
+  }
+  .btn{
+    @include center-horizontal-div;
   }
 }
