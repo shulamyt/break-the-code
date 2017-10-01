@@ -19,10 +19,10 @@ module.exports = {
   devServer: {
     proxy:{
       '/services': {
-        target: 'http://getthecodes.com',
-        pathRewrite: {
-          '/services': ''
-        }
+        target: 'http://getthecodes.com'
+        // pathRewrite: {
+        //   '/services': '/services'
+        // }
       }
     }
   },
