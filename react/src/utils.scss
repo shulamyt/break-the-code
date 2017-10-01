@@ -1,7 +1,20 @@
+@mixin center-vertical-div() {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin center-horizontal-div() {
+  position: relative;
+  float: left;
+  left: 50%;
+  transform: translate(-50%);
+}
+
 @mixin clearfix() {
   &:after {
+    content: '';
     display: block;
-    content: "";
     clear: both;
   }
 }
