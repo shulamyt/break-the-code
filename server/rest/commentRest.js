@@ -1,7 +1,7 @@
 var commentDao = require('./../dao/commentDao');
 
 module.exports = function (app) {
-    app.post('/comment', function (req, res) {
+    app.post('/services/comment', function (req, res) {
         var comment = {};
         comment.userId = req.body.userId;
 

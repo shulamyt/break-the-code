@@ -4,7 +4,7 @@ var questionService = require('./../services/questionService');
 
 module.exports = function (app) {
     //update
-    app.put('/user', function (req, res) {
+    app.put('/services/user', function (req, res) {
         var user = {};
         if(req && req.body){
             user.start = true;
@@ -46,7 +46,7 @@ module.exports = function (app) {
         }
     });
     //create
-    app.post('/user', function (req, res) {
+    app.post('/services/user', function (req, res) {
         testPlanService.getTestPlan(req.body.groupNum).then(function(testPlan){
             var user = {};
             user.id = new Date().getTime();

@@ -2,7 +2,7 @@ var beautify_js = require('js-beautify').js;
 var questionService = require('./../services/questionService');
 
 module.exports = function (app) {
-    app.get('/question/:questionId', function (req, res) {
+    app.get('/services/question/:questionId', function (req, res) {
         var questionId = req.params.questionId;
         questionService.getQuestion(questionId).then(function(question) {
             var beautifulCode = beautify_js(question.code);

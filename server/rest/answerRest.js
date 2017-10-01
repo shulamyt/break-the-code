@@ -3,7 +3,7 @@ var questionService = require('./../services/questionService');
 
 module.exports = function (app) {
 
-    app.post('/answer', function (req, res) {
+    app.post('/services/answer', function (req, res) {
         var answer = {};
         answer.userId = req.body.userId;
         answer.questionId = req.body.questionId;
