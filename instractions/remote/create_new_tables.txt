@@ -45,5 +45,6 @@ CREATE TABLE Experimenter(
    programmingLanguages text ARRAY,
    assessSelfProgrammingSkills int,
    firstTime boolean,
-   testPlanId text ARRAY
+   testPlanId text ARRAY,
+   mode text
 );

@@ -51,6 +51,8 @@ module.exports = function (app) {
             var user = {};
             user.id = new Date().getTime();
             user.testPlan = testPlan;
+            var experimentModes = ['regular', 'noGui', 'noClock'];
+            user.mode = experimentModes[Math.floor(Math.random() * experimentModes.length)];
             var testPlanId = [];
             for(var i in testPlan){
                 testPlanId.push(testPlan[i].id);
