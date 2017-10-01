@@ -3,10 +3,11 @@
 .explainPage{
   @include center-horizontal-div;
   background: url(../image/explain.jpg) no-repeat;
-  height: 704px;
   width: 1258px;
+  height: 704px;
   .btn{
+    @include center-horizontal-div;
     position: absolute;
-    bottom: 80px;
+    bottom: -43px;
   }
 }
