@@ -2,13 +2,20 @@ import React, { Component } from 'react';
 import './summary-questionnaire.scss';
 import set from 'lodash/set';
 import debounce from 'lodash/debounce';
+import assign from 'lodash/assign';
+import isEmpty from 'lodash/isEmpty';
 import * as RestService from './rest-utilities';
+import * as UserService from './user-service';
 
 class SummaryQuestionnaire extends Component {
 
   constructor(props) {
     super(props);
     this.state = {};
+    UserService.getUser().then((user)=>{
+      this.userId = user.id;
+      this.insertQuestionnaire();
+    });
     this.sendQuestionnaireDebounce = debounce(this.sendQuestionnaire,  250, { 'maxWait': 500 });
   }
 
@@ -21,6 +28,12 @@ class SummaryQuestionnaire extends Component {
     set(this.state, field, value);
     this.setState(this.state);
   };
+
+  insertQuestionnaire(){
+    RestService.put('services/summaryQuestionnaire', this.getQuestionnaireData()).then(function(updatedUser) {
+
+    });
+  }
 
   sendQuestionnaire(){
     RestService.post('services/summaryQuestionnaire', this.getQuestionnaireData()).then(function(updatedUser) {
@@ -91,7 +104,13 @@ class SummaryQuestionnaire extends Component {
   }
 
   getQuestionnaireData() {
-    return this.state;
+    let userId = this.getUserId();
+    let questionnaireData = assign(this.state, {id: userId});
+    return questionnaireData;
+  }
+
+  getUserId() {
+    return this.userId;
   }
 }
 

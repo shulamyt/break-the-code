@@ -10,4 +10,12 @@ module.exports = function (app) {
             res.status(200);
         });
     });
+
+    app.put('/services/summaryQuestionnaire', function (req, res) {
+        summaryQuestionnaireDao.save(req.body).then(function(questionnaire){
+            res.status(200);
+        });
+    });
+
+
 };

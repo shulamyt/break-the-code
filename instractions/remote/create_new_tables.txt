@@ -10,6 +10,7 @@ CREATE TABLE Answer(
 );
 
 CREATE TABLE Questionnaire(
+   id bigint PRIMARY KEY,
      tooLong int,
      wasEngaging int,
      feelingOfChallenge int,
