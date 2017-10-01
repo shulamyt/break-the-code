@@ -102,9 +102,11 @@ class ExperimentPage extends Component {
           <div>
             <textarea autoFocus value={this.state.userAnswer} onChange={this.handleChange.bind(this, 'userAnswer')} />
           </div>
-          <div onClick={this.onThinkIMadeItClicked.bind(this)}>Think I made it!</div>
-          <div onClick={this.onSkipClicked.bind(this)}>Skip</div>
-          <div>Question number {this.getCurrentQuestionNum() + 1} out of {this.getTotalNumberOfQuestions()} questions</div>
+          <div className="footer">
+            <button type="button" className="btn btn-primary"   onClick={this.onThinkIMadeItClicked.bind(this)}>Think I made it!</button>
+            <button type="button" className="btn btn-secondary"   onClick={this.onSkipClicked.bind(this)}>Skip</button>
+            <div>Question number {this.getCurrentQuestionNum() + 1} out of {this.getTotalNumberOfQuestions()} questions</div>
+          </div>
         </div>
         {this.createQuestionSummaryModal()}
       </div>
@@ -189,17 +191,18 @@ class ExperimentPage extends Component {
   createQuestionSummary(){
     return(
       <div>
-        <div>
-          <div>Your:</div>
-          <div>{this.getUserAnswer()}</div>
-        </div>
-
-        <div>
-          <div>Right:</div>
-          <div>{this.getRightAnswer()}</div>
+        <div className="answersCompare">
+          <div className="userAnswer">
+            <div>Your:</div>
+            <div>{this.getUserAnswer()}</div>
+          </div>
+          <div className="rightAnswer">
+            <div>Right:</div>
+            <div>{this.getRightAnswer()}</div>
+          </div>
         </div>
         {this.createCompliment()}
-        <div onClick={this.onCloseModalClicked.bind(this)}>Let's continue!</div>
+        <button type="button" className="btn btn-primary" onClick={this.onCloseModalClicked.bind(this)}>Let's continue!</button>
       </div>
     );
   }

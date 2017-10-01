@@ -1,3 +1,5 @@
+@import 'utils.scss';
+
 .experiment-page{
   height: 100%;
   background: #363533 url(../image/office_2_scren_resize.jpg) no-repeat;
@@ -34,6 +36,15 @@
         border: none;
       }
     }
+    .footer{
+      &>div{
+        float: right;
+      }
+      &>.btn{
+        padding: 3px 8px;
+        margin-right: 5px;
+      }
+    }
   }
   .clock{
     font-size: 45px;
@@ -46,6 +57,21 @@
   &>div{
     &>div{
       z-index: 100;
+    }
+  }
+  .ReactModal__Content{
+    width: 550px;
+    height: 450px;
+    .answersCompare{
+      @include clearfix;
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+    .userAnswer{
+      float: left;
+    }
+    .rightAnswer{
+      float: right;
     }
   }
 }
