@@ -141,7 +141,13 @@ class ExperimentPage extends Component {
   onSkipClicked() {
     this.endAt = this.takeTime();
     this.postAnswer(true);
-    this.continueToNextQuestion();
+    if(this.hasMoreQuestions()){
+      this.continueToNextQuestion();
+    }
+    else{
+      this.setState({showModal: true});
+    }
+
   }
 
   getRightAnswer(){
@@ -173,8 +179,6 @@ class ExperimentPage extends Component {
       let currentQuestionNum = this.getCurrentQuestionNum() + 1;
       this.startAt = this.takeTime();
       this.setState({currentQuestionNum, userAnswer: "", showModal: false});
-    }else{
-      this.endOfExperiment();
     }
   }
 
@@ -182,10 +186,6 @@ class ExperimentPage extends Component {
     let testPlan = this.getTestPlan();
     let currentQuestionNum = this.getCurrentQuestionNum();
     return (testPlan.length - 1) > currentQuestionNum;
-  }
-
-  endOfExperiment() {
-    this.props.history.push('/summary');
   }
 
   createQuestionSummary(){
@@ -210,9 +210,9 @@ class ExperimentPage extends Component {
   createExperimentSummary(){
     return(
       <div>
-        <div>Thank you so much for taking part in our experiment!</div>
+        <div className="thankYou">Thank you so much for taking part in our experiment!</div>
         <div>Remember, the questions you answered were randomly picked from a bank of questions. You might got especially hard or especially easy questions, so you cannot actually compare your result with others..</div>
-        <div>You answered correctly on {this.getRightAnswersNum()} out of {this.getTotalNumberOfQuestions()} questions</div>
+        <div className="finalResults">You answered correctly on {this.getRightAnswersNum()} out of {this.getTotalNumberOfQuestions()} questions</div>
       </div>
     );
   }
