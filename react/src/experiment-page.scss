@@ -54,6 +54,8 @@
   }
 }
 .ReactModalPortal{
+  @include center-horizontal-div;
+
   &>div{
     &>div{
       z-index: 100;
