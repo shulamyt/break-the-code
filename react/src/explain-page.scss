@@ -1,6 +1,10 @@
+@import 'utils.scss';
+
 .explainPage{
+  @include center-horizontal-div;
   background: url(../image/explain.jpg) no-repeat;
   height: 704px;
+  width: 1258px;
   .btn{
     position: absolute;
     bottom: 80px;
