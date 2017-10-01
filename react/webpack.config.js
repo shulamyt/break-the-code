@@ -20,9 +20,6 @@ module.exports = {
     proxy:{
       '/services': {
         target: 'http://getthecodes.com'
-        // pathRewrite: {
-        //   '/services': '/services'
-        // }
       }
     }
   },
