@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
+import './explain-page.scss';
 
 class ExplainPage extends Component {
   render() {
     return(
-      <div>
-        <div>Are you ready?</div>
-        <div onClick={this.onLetsStartClicked.bind(this)}>Let's start!</div>
+      <div className='explainPage'>
+        <button type="button" className="btn btn-primary" onClick={this.onLetsStartClicked.bind(this)}>Let's start!</button>
       </div>
     );
   }
