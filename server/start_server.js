@@ -8,9 +8,6 @@ app.use(express.static(staticPath));
 console.log(staticPath);
 app.use(bodyParser.json());
 
-//for local host:
-//var server = app.listen(3000, function () {
-//for server:
 var server = app.listen(8080, function () {
 
   var host = server.address().address;
@@ -24,3 +21,4 @@ require('./rest/userRest')(app);
 require('./rest/answerRest')(app);
 require('./rest/questionRest')(app);
 require('./rest/commentRest')(app);
+require('./rest/summaryQuestionnaireRest')(app);

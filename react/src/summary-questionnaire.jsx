@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import './summary-questionnaire.scss';
 import set from 'lodash/set';
+import debounce from 'lodash/debounce';
+import * as RestService from './rest-utilities';
 
 class SummaryQuestionnaire extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {};
+    this.sendQuestionnaireDebounce = debounce(this.sendQuestionnaire,  250, { 'maxWait': 500 });
   }
 
   handleChange(field, event) {
@@ -14,8 +17,15 @@ class SummaryQuestionnaire extends Component {
     if(event.target.type=="checkbox"){
       value = event.target.checked;
     }
+    this.sendQuestionnaireDebounce();
     set(this.state, field, value);
     this.setState(this.state);
+  };
+
+  sendQuestionnaire(){
+    RestService.post('services/summaryQuestionnaire', this.getQuestionnaireData()).then(function(updatedUser) {
+
+    });
   };
 
   createScale(field) {
@@ -78,6 +88,10 @@ class SummaryQuestionnaire extends Component {
         {this.mapQuestion()}
       </div>
     );
+  }
+
+  getQuestionnaireData() {
+    return this.state;
   }
 }
 

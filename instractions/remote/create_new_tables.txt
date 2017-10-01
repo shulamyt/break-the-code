@@ -9,6 +9,20 @@ CREATE TABLE Answer(
    timestamp timestamp default current_timestamp
 );
 
+CREATE TABLE Questionnaire(
+     tooLong int,
+     wasEngaging int,
+     feelingOfChallenge int,
+     howOthersDid int,
+     importantToGetHighScore int,
+     careIfSucceeded int,
+     answerQuickly int,
+     answerCorrectly int,
+     checkedBeforeSubmitting int,
+     notClearWhatToDo int,
+     withoutReadingTheInstructions int,
+     otherWillEnjoy int
+);
 
 CREATE TABLE Experimenter(
    ID bigint PRIMARY KEY,
