@@ -9,6 +9,7 @@ import * as UserService from './user-service';
 import * as RestService from './rest-utilities';
 import Modal from 'react-modal';
 import './experiment-page.scss';
+import SummaryQuestionnaire from './summary-questionnaire';
 
 class ExperimentPage extends Component {
   constructor(props) {
@@ -190,7 +191,7 @@ class ExperimentPage extends Component {
 
   createQuestionSummary(){
     return(
-      <div>
+      <div className="questionSummary">
         <div className="answersCompare">
           <div className="userAnswer">
             <div>Your:</div>
@@ -209,10 +210,11 @@ class ExperimentPage extends Component {
 
   createExperimentSummary(){
     return(
-      <div>
+      <div className="experimentSummary">
         <div className="thankYou">Thank you so much for taking part in our experiment!</div>
         <div>Remember, the questions you answered were randomly picked from a bank of questions. You might got especially hard or especially easy questions, so you cannot actually compare your result with others..</div>
         <div className="finalResults">You answered correctly on {this.getRightAnswersNum()} out of {this.getTotalNumberOfQuestions()} questions</div>
+        <SummaryQuestionnaire/>
       </div>
     );
   }

@@ -65,11 +65,14 @@
   }
 
   .ReactModal__Content{
-    width: 550px;
+    width: 561px;
     height: 450px;
-    &>div{
+    .questionSummary{
       @include center-vertical-div;
       height: 137px;
+    }
+    .experimentSummary{
+
     }
     .answersCompare{
       @include clearfix;
