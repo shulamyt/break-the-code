@@ -6,7 +6,7 @@ class WelcomePage extends Component {
 
   constructor(props) {
     super(props);
-    UserService.getUser();
+    UserService.getUser().then((user)=>{document.body.classList.add(user.mode);});
   };
 
   render() {
