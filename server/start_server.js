@@ -3,7 +3,9 @@ var bodyParser = require('body-parser');
 var path = require('path');
 
 var app = express();
-app.use(express.static(path.resolve('./target')));
+var staticPath = path.resolve('./react/dist');
+app.use(express.static(staticPath));
+console.log(staticPath);
 app.use(bodyParser.json());
 
 //for local host:
