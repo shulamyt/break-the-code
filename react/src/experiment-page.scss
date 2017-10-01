@@ -54,26 +54,38 @@
   }
 }
 .ReactModalPortal{
-  @include center-horizontal-div;
 
   &>div{
     &>div{
       z-index: 100;
     }
   }
+  .ReactModal__Overlay{
+    z-index: 10;
+  }
+
   .ReactModal__Content{
     width: 550px;
     height: 450px;
+    &>div{
+      @include center-vertical-div;
+      height: 137px;
+    }
     .answersCompare{
       @include clearfix;
       padding-left: 60px;
       padding-right: 60px;
+      margin-bottom: 50px;
     }
     .userAnswer{
       float: left;
     }
     .rightAnswer{
       float: right;
+    }
+    .compliment{
+      margin-bottom: 15px;
+      text-align:center;
     }
     .thankYou{
       font-size: 32px;
@@ -82,6 +94,9 @@
     .finalResults{
       font-size: 23px;
       text-align: center;
+    }
+    .btn{
+      @include center-horizontal-div();
     }
   }
 }

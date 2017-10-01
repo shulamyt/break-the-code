@@ -222,11 +222,21 @@ class ExperimentPage extends Component {
     if(!this.hasMoreQuestions()){
       modalContent = this.createExperimentSummary();
     }
+    let customStyles = {
+      content : {
+        top                   : '50%',
+        left                  : '50%',
+        right                 : 'auto',
+        bottom                : 'auto',
+        marginRight           : '-50%',
+        transform             : 'translate(-50%, -50%)'
+      }
+    };
     return (
       <Modal
         isOpen={this.state.showModal}
         contentLabel="summary"
-        overlayClassName="Overlay"
+        style={customStyles}
       >
         {modalContent}
       </Modal>
@@ -243,8 +253,8 @@ class ExperimentPage extends Component {
     }
     let compliment = this.getCompliment();
     return (
-      <div>
-        <div>{compliment}</div>
+      <div className="compliment">
+        {compliment}
       </div>
     );
   }
