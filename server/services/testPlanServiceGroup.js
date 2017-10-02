@@ -16,8 +16,8 @@ TestPlanService.prototype.getTestPlan = function(groupNum) {
 		}
 
 		self.addQuestionsFromGroupConfig(groupConfig, testPlan);
-		self.addQuestionsForOtherFloor(testPlan);
-		self.addSpecialQuestions(testPlan);
+		// self.addQuestionsForOtherFloor(testPlan);
+		// self.addSpecialQuestions(testPlan);
 		testPlan = self.shuffle(testPlan);
 		console.log(self.printTestPlan(testPlan));
 		resolve(testPlan);

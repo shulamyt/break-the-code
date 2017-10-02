@@ -6,9 +6,10 @@ TestPlanConfiguration.prototype.getConfiguration = function(){
 	var configuration = {
 		specialQuestions : [102, 103, 104, 105, 106],
 		groups:[
-			[13, 14, 15, 16], //al, an, an1, an2
-			[17, 22, 20, 13, 19, 21], //as, cs, bs, al, bl, cl
-			[17, 22, 23, 24]  //as, cs, f*, f[]
+			// [13, 14, 15, 16], //al, an, an1, an2
+			// [17, 22, 20, 13, 19, 21], //as, cs, bs, al, bl, cl
+			// [17, 22, 23, 24]  //as, cs, f*, f[]
+			[13, 14, 15, 16, 17, 22, 20, 19, 21, 23, 24]
 		],
 		questionsInfo : [
 			{
