@@ -170,7 +170,7 @@ class ExperimentPage extends Component {
     answer.time = this.endAt - this.startAt;
     answer.userAnswer = this.getUserAnswer();
     answer.userId = user.id;
-    answer.skip = isEmpty(skip) ? false : skip;
+    answer.skip = skip == undefined ? false : skip;
     answer.questionIndex = this.getCurrentQuestionNum();
     RestService.post('services/answer',answer);
   }
