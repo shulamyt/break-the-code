@@ -57,18 +57,19 @@ class SummaryQuestionnaire extends Component {
 
   mapQuestion(){
     let questionsData = [
+      {question: 'the experiment was fun', field: 'wasFun'},
       {question: 'The experiment was too long', field: 'tooLong'},
-      {question: 'I continued from each question to the next because it was engaging', field: 'wasEngaging'},
+      {question: 'It was important for me to answer quickly', field: 'answerQuickly'},
       {question: 'The experiment created a feeling of challenge', field: 'feelingOfChallenge'},
       {question: 'I wondered how others did', field: 'howOthersDid'},
+      {question: 'It was important for me to answer correctly', field: 'answerCorrectly'},
+      {question: 'It was not clear at the beginning what to do', field: 'notClearWhatToDo'},
+      {question: 'I continued from each question to the next because it was engaging', field: 'wasEngaging'},
       {question: 'It was important for me to get a high score', field: 'importantToGetHighScore'},
       {question: 'I did not care if I succeeded', field: 'careIfSucceeded'},
-      {question: 'It was important for me to answer quickly', field: 'answerQuickly'},
-      {question: 'It was important for me to answer correctly', field: 'answerCorrectly'},
+      {question: 'Other people would enjoy participating in the experiment', field: 'otherWillEnjoy'},
       {question: 'I checked the answer before submitting', field: 'checkedBeforeSubmitting'},
-      {question: 'It was not clear at the beginning what to do', field: 'notClearWhatToDo'},
-      {question: 'It was easy to understand what to do without reading the instructions', field: 'withoutReadingTheInstructions'},
-      {question: 'Other people would enjoy participating in the experiment', field: 'otherWillEnjoy'}
+      {question: 'It was easy to understand what to do without reading the instructions', field: 'withoutReadingTheInstructions'}
     ];
     let questions = questionsData.map((questionData) =>
       this.createQuestion(questionData)

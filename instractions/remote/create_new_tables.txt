@@ -22,7 +22,8 @@ CREATE TABLE Questionnaire(
      checkedBeforeSubmitting int,
      notClearWhatToDo int,
      withoutReadingTheInstructions int,
-     otherWillEnjoy int
+     otherWillEnjoy int,
+     wasFun int
 );
 
 CREATE TABLE Experimenter(
