@@ -215,8 +215,13 @@ class ExperimentPage extends Component {
         <div>Remember, the questions you answered were randomly picked from a bank of questions. You might got especially hard or especially easy questions, so you cannot actually compare your result with others..</div>
         <div className="finalResults">You answered correctly on {this.getRightAnswersNum()} out of {this.getTotalNumberOfQuestions()} questions</div>
         <SummaryQuestionnaire/>
+        <button type="button" className="btn btn-primary btn-lg" onClick={this.goodBye.bind(this)}>Good bye!</button>
       </div>
     );
+  }
+
+  goodBye(){
+    this.props.history.push('/end');
   }
 
   createQuestionSummaryModal() {

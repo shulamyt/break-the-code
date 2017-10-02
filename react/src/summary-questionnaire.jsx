@@ -89,10 +89,6 @@ class SummaryQuestionnaire extends Component {
     );
   }
 
-  goodBye(){
-    
-  }
-
   render() {
     return(
       <div className='summaryQuestionnaire'>
@@ -103,7 +99,6 @@ class SummaryQuestionnaire extends Component {
         {/*<div> 3: strongly disagree</div>*/}
         <div className='index'>-3: strongly disagree; 0: neither agree nor disagree; 3: strongly disagree</div>
         {this.mapQuestion()}
-        <button type="button" className="btn btn-primary btn-lg" onClick={this.goodBye.bind(this)}>Good bye!</button>
       </div>
     );
   }

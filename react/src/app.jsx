@@ -5,6 +5,8 @@ import WelcomePage from './welcome-page';
 import PersonalInformationQuestionnairePage from './personal-information-questionnaire-page';
 import ExplainPage from './explain-page';
 import ExperimentPage from './experiment-page';
+import EndPage from './end-page';
+
 
 const routes = [
   {
@@ -23,6 +25,10 @@ const routes = [
   {
     path: '/experiment',
     component: ExperimentPage
+  },
+  {
+    path: '/end',
+    component: EndPage
   }
 ];
 
