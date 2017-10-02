@@ -1,5 +1,11 @@
 @import 'utils.scss';
 
+.experiment-page {
+  .leftScreen {
+    width: 475px;
+  }
+}
+
 .regular, .noClock {
   .experiment-page {
     height: 100%;
@@ -13,7 +19,6 @@
       position: absolute;
       top: 55px;
       left: 66px;
-      width: 475px;
       .CodeMirror {
         height: 256px;
       }
