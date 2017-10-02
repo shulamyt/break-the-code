@@ -6,6 +6,7 @@ import PersonalInformationQuestionnairePage from './personal-information-questio
 import ExplainPage from './explain-page';
 import ExperimentPage from './experiment-page';
 import EndPage from './end-page';
+import * as UserService from './user-service';
 
 
 const routes = [
@@ -33,11 +34,24 @@ const routes = [
 ];
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  };
+
+  componentDidMount(){
+    UserService.getUser().then((user)=>{
+      this.setState({mode: user.mode});
+    });
+  }
+
   render() {
     return(
-      <BrowserRouter>
-        {renderRoutes(routes)}
-      </BrowserRouter>
+      <div className={this.state.mode}>
+        <BrowserRouter>
+          {renderRoutes(routes)}
+        </BrowserRouter>
+      </div>
     );
   }
 }

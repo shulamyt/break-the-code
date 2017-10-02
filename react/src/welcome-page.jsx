@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import * as UserService from './user-service';
 import './welcome-page.scss';
 
 class WelcomePage extends Component {
 
   constructor(props) {
     super(props);
-    UserService.getUser().then((user)=>{document.body.classList.add(user.mode);});
   };
 
   render() {
