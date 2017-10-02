@@ -57,7 +57,7 @@ class SummaryQuestionnaire extends Component {
 
   mapQuestion(){
     let questionsData = [
-      {question: 'the experiment was fun', field: 'wasFun'},
+      {question: 'The experiment was fun', field: 'wasFun'},
       {question: 'The experiment was too long', field: 'tooLong'},
       {question: 'It was important for me to answer quickly', field: 'answerQuickly'},
       {question: 'The experiment created a feeling of challenge', field: 'feelingOfChallenge'},
