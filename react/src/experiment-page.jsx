@@ -93,7 +93,7 @@ class ExperimentPage extends Component {
           <CodeMirror value={this.getCode()} options={options}/>
         </div>
         <div className="clock">
-          <CountDownTimer startTime={this.getQuestionDuration()} timeIsOver={this.timeIsOver.bind(this)}/>
+          <CountDownTimer hash={this.getCurrentQuestionNum()} startTime={this.getQuestionDuration()} timeIsOver={this.timeIsOver.bind(this)}/>
         </div>
         <div className="rightScreen">
           <div>

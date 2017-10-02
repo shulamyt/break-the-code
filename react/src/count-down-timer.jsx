@@ -10,9 +10,12 @@ class CountDownTimer  extends Component {
   };
 
   componentWillReceiveProps (nextProps) {
-    clearInterval(this.interval);
-    this.interval = setInterval(this.tick.bind(this), 1000);
-    this.setState({remainingTimeInSeconds: nextProps.startTime});
+    if(nextProps.hash != this.hash){
+      this.hash = nextProps.hash;
+      clearInterval(this.interval);
+      this.interval = setInterval(this.tick.bind(this), 1000);
+      this.setState({remainingTimeInSeconds: nextProps.startTime});
+    }
   };
 
   tick() {
