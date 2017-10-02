@@ -9,4 +9,4 @@ import App from './app';
 const div = document.createElement('div');
 document.body.append(div);
 UserService.getUser();
-render(<App />, div);
+render(<App />, document.getElementsByTagName("body")[0]);
