@@ -2,17 +2,24 @@ import isEmpty from 'lodash/isEmpty';
 import assign from 'lodash/assign';
 import * as RestService from './rest-utilities';
 
-var currentUser = {};
+var currentUser;
+var currentUserPromise;
 export function getUser() {
   return new Promise(function(resolve, reject) {
-    if(!isEmpty(currentUser)){
+    if(currentUser != undefined){
       resolve(currentUser);
     }
     else{
-      RestService.post('services/user', currentUser).then(function(user) {
-        currentUser = user;
-        resolve(currentUser);
-      });
+      if(currentUserPromise != undefined){
+        currentUserPromise.then(function(){
+          resolve(currentUser);
+        });
+      }else{
+        currentUserPromise = RestService.post('services/user', currentUser).then(function(user) {
+          currentUser = user;
+          resolve(currentUser);
+        });
+      }
     }
   })
 }
