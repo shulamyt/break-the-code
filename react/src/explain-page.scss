@@ -2,12 +2,17 @@
 
 .explainPage{
   @include center-horizontal-div;
-  background: url(../image/explain.jpg) no-repeat;
-  width: 1258px;
-  height: 704px;
   .btn{
     @include center-horizontal-div;
     position: absolute;
     bottom: -43px;
+  }
+}
+
+.regular, .noClock {
+  .explainPage {
+    background: url(../image/explain.jpg) no-repeat;
+    width: 1258px;
+    height: 704px;
   }
 }

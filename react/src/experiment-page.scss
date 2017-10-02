@@ -1,6 +1,6 @@
 @import 'utils.scss';
 
-.regular {
+.regular, .noClock {
   .experiment-page {
     height: 100%;
     background: #363533 url(../image/office_2_scren_resize.jpg) no-repeat;
@@ -53,6 +53,11 @@
       top: 408px;
       left: 226px;
     }
+  }
+}
+.noClock{
+  .clock {
+    display: none;
   }
 }
 .ReactModalPortal{
