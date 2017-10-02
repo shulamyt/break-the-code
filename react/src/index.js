@@ -6,7 +6,5 @@ import * as UserService from './user-service';
 
 import App from './app';
 
-const div = document.createElement('div');
-document.body.append(div);
 UserService.getUser();
 render(<App />, document.getElementsByTagName("body")[0]);
