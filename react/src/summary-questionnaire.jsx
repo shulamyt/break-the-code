@@ -92,7 +92,8 @@ class SummaryQuestionnaire extends Component {
   render() {
     return(
       <div className='summaryQuestionnaire'>
-        <div className='lastEffort'>Last effort...</div>
+        <div className='lastEffort'>Your feedback is important!</div>
+        <div className='lastEffort'>(still part of the experiment :-) )</div>
         <div className='instruction'>How much do you agree with the following statements:</div>
         {/*<div>-3: strongly disagree</div>*/}
         {/*<div> 0: neither agree nor disagree</div>*/}
