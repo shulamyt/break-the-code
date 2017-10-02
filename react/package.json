@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "trash dist",
     "prebuild": "npm run clean",
-    "build": "webpack",
+    "build": "webpack -p",
     "start": "webpack-dev-server -d --inline --hot --open --history-api-fallback"
   },
   "keywords": [],
