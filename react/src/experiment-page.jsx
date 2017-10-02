@@ -16,6 +16,7 @@ class ExperimentPage extends Component {
     super(props);
     this.rightAnswersNum = 0;
     this.state = {
+      modalType: "questionSummary", //questionSummaryExperimentSummary
       showModal: false,
       userAnswer: "",
       currentQuestionNum: 0,
@@ -180,6 +181,8 @@ class ExperimentPage extends Component {
       let currentQuestionNum = this.getCurrentQuestionNum() + 1;
       this.startAt = this.takeTime();
       this.setState({currentQuestionNum, userAnswer: "", showModal: false});
+    }else{
+      this.setState({showModal: true, modalType: "experimentSummary"});
     }
   }
 
@@ -203,7 +206,7 @@ class ExperimentPage extends Component {
           </div>
         </div>
         {this.createCompliment()}
-        <button type="button" className="btn btn-primary" onClick={this.onCloseModalClicked.bind(this)}>Let's continue!</button>
+        <button type="button" className="btn btn-primary" onClick={this.continue.bind(this)}>Let's continue!</button>
       </div>
     );
   }
@@ -224,9 +227,9 @@ class ExperimentPage extends Component {
     this.props.history.push('/end');
   }
 
-  createQuestionSummaryModal() {
+  createQuestionSummaryModal(type) {
     let modalContent = this.createQuestionSummary();
-    if(!this.hasMoreQuestions()){
+    if(this.state.modalType == 'experimentSummary'){
       modalContent = this.createExperimentSummary();
     }
     let customStyles = {
@@ -250,7 +253,7 @@ class ExperimentPage extends Component {
     );
   }
 
-  onCloseModalClicked(){
+  continue(){
     this.continueToNextQuestion();
   }
 
