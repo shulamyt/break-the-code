@@ -94,7 +94,9 @@ var handleNextExperimenter = function(){
 				})
 				.then(getExperimenterQuestionnaire.bind(null, experimenter))
 				.then(function(questionnaire){
-					writeExperimenterQuestionnaire(experimenter, questionnaire);
+					if(questionnaire.length > 0){
+                        writeExperimenterQuestionnaire(experimenter, questionnaire);
+					}
 				})
 				.then(handleNextExperimenter);
 			}
@@ -202,21 +204,6 @@ var createCsvOutputForRanges = function(experimenter, answers, indicator){
 	}
 	output += END_OF_LINE_CSV;
 	return output;
-};
-
-
-var writeToFile = function(str, fileName){
-	var promise =  new Promise(function(resolve, reject) {
-		fs.writeFile(fileName, str, function(err){
-			if (err){
-				console.log(err);
-			}
-			else{
-				resolve();
-			}
-		});
-	});
-	return promise;
 };
 
 var getNextExperimenter = function(){
