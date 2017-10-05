@@ -132,7 +132,7 @@ var getExperimenterQuestionnaire = function(experimenter){
 
 
 var writeExperimenterQuestionnaire = function(questionnaires){
-	for(var j = 0; i < questionnaires.length; j++) {
+	for(var j = 0; j < questionnaires.length; j++) {
         var questionnaireCvs = createCsvOutputForQuestionnaire(questionnaires[j]);
         questionnaireFileStream.write(questionnaireCvs);
     }
