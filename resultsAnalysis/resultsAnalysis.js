@@ -37,19 +37,19 @@ var EXPERIMENTERS_TITELS = ["id",
 
 var QUESTIONNAIRE_TITELS = [
     "id",
-	"tooLong",
-    "wasEngaging",
-    "feelingOfChallenge",
-    "howOthersDid",
-    "importantToGetHighScore",
-    "careIfSucceeded",
-    "answerQuickly",
-    "answerCorrectly",
-    "checkedBeforeSubmitting",
-    "notClearWhatToDo",
-    "withoutReadingTheInstructions",
-    "otherWillEnjoy",
-    "wasFun"
+	"toolong",
+    "wasengaging",
+    "feelingofchallenge",
+    "howothersdid",
+    "importanttogethighscore",
+    "careifsucceeded",
+    "answerquickly",
+    "answercorrectly",
+    "checkedbeforesubmitting",
+    "notclearwhattodo",
+    "withoutreadingtheinstructions",
+    "otherwillenjoy",
+    "wasfun"
 ];
 
 var END_OF_LINE_CSV =  "\r\n";
