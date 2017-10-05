@@ -86,13 +86,15 @@ var fetchExperimenters = function(){
 var handleNextExperimenter = function(){
 	var promise =  new Promise(function(resolve, reject) {
 		getNextExperimenter().then(function(experimenter){
+			console.log("experimenter " + experimenter.id + " is handle");
 			if(experimenter != null){
 				getExperimenterAnswers(experimenter).then(function(answers){
 					if(answers != null && answers.length > 0) {
-						writeExperimenterAnswers(experimenter, answers);
+                        console.log("experimenter " + experimenter.id + " answers are added");
+                        writeExperimenterAnswers(experimenter, answers);
 					}
 				})
-				.then(getExperimenterQuestionnaire.bind(experimenter))
+				.then(getExperimenterQuestionnaire.bind(null, experimenter))
 				.then(function(questionnaire){
 					writeExperimenterQuestionnaire(experimenter, questionnaire);
 				})
@@ -122,6 +124,7 @@ var getExperimenterQuestionnaire = function(experimenter){
     return new Promise(function(resolve, reject) {
         dbUtils.runQuery(SELECT_QUESTIONNAIRE_QUERY + experimenter.id).then(
             function (result) {
+                console.log("experimenter " + experimenter.id + " questionnaire get from db");
                 resolve(result.rows);
             }
         );
@@ -238,6 +241,7 @@ var prepareFiles = function(){
 		wrongFileStream = fs.createWriteStream(WRONG_FILE_NAME, {'flags': 'a'});
 		experimentersFileStream = fs.createWriteStream(EXPERIMENTERS_FILE_NAME, {'flags': 'a'});
         questionnaireFileStream = fs.createWriteStream(QUESTIONNAIRE_FILE_NAME, {'flags': 'a'});
+        console.log("files are ready!");
 		resolve();
 	});
 	return promise;
@@ -286,6 +290,7 @@ var addTitles = function(){
 		addTitlesToAnswerFiles();
 		addTitlesToExperimentersFile();
         addTitlesToQuestionnaire();
+        console.log("files have titles");
 		resolve();
 	});
 };
