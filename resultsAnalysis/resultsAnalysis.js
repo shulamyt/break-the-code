@@ -60,7 +60,7 @@ var QUESTIONNAIRE_FILE_NAME = 'questionnaire.csv';
 
 var SELECT_EXPERIMENTERS_QUERY = 'SELECT * from ' + EXPERIMENTERS_TABLE_NAME;
 var SELECT_EXPERIMENTERS_ANSWERS_QUERY = 'SELECT * from ' + ANSWERS_TABLE_NAME + ' where userId = ';
-var SELECT_QUESTIONNAIRE_QUERY = 'SELECT * from ' + QUESTIONNAIRE_TABLE_NAME + ' where userId = ';
+var SELECT_QUESTIONNAIRE_QUERY = 'SELECT * from ' + QUESTIONNAIRE_TABLE_NAME + ' where id = ';
 
 var experimenters;
 var experimentersIndex = -1;
