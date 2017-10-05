@@ -1,8 +1,8 @@
 var dbUtils = require('../server/db/dbUtils');
 var fs = require('fs');
 
-var EXPERIMENTERS_TABLE_NAME = 'realExperimenter0408';
-var ANSWERS_TABLE_NAME = 'realAnswer0408';
+var EXPERIMENTERS_TABLE_NAME = 'Experimenter';
+var ANSWERS_TABLE_NAME = 'Answer';
 var QUESTIONNAIRE_TABLE_NAME = 'Questionnaire';
 
 var TITELS = ["four/aLogic","four/aLogicNegative", "four/aLogicNegative1", "four/aLogicNegative2",
