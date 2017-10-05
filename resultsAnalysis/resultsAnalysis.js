@@ -93,9 +93,9 @@ var handleNextExperimenter = function(){
 					}
 				})
 				.then(getExperimenterQuestionnaire.bind(null, experimenter))
-				.then(function(questionnaire){
-					if(questionnaire.length > 0){
-                        writeExperimenterQuestionnaire(experimenter, questionnaire);
+				.then(function(questionnaires){
+					if(questionnaires.length > 0){
+                        writeExperimenterQuestionnaire(questionnaires);
 					}
 				})
 				.then(handleNextExperimenter);
@@ -131,9 +131,11 @@ var getExperimenterQuestionnaire = function(experimenter){
 };
 
 
-var writeExperimenterQuestionnaire = function(experimenter, questionnaire){
-	var questionnaireCvs = createCsvOutputForQuestionnaire(questionnaire);
-    questionnaireFileStream.write(questionnaireCvs);
+var writeExperimenterQuestionnaire = function(questionnaires){
+	for(var j = 0; i < questionnaires.length; j++) {
+        var questionnaireCvs = createCsvOutputForQuestionnaire(questionnaires[j]);
+        questionnaireFileStream.write(questionnaireCvs);
+    }
 };
 
 var writeExperimenterAnswers = function(experimenter, answers){
@@ -164,7 +166,7 @@ var createCsvOutputForExperimenter = function(experimenter, answers){
 	return csv;
 };
 
-var createCsvOutputForQuestionnaire = function(questionnaire){
+var createCsvOutputForQuestionnaire = function(questionnaires){
 	var csv = "";
 	for(var i = 0; i < QUESTIONNAIRE_TITELS.length; i++){
 		var field = QUESTIONNAIRE_TITELS[i];
