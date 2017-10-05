@@ -16,7 +16,8 @@ var TITELS = ["four/aLogic","four/aLogicNegative", "four/aLogicNegative1", "four
 
 var EXPERIMENTERS_TITELS = ["id",
     "start",
-    "timestamp",
+    // "timestamp",
+	"mode",
     "age",
     "gender",
     "selftaught",
