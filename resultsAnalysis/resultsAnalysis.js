@@ -1,11 +1,9 @@
-var pg = require('pg');
+var dbUtils = require('../server/db/dbUtils');
 var fs = require('fs');
-
-var remoteConnectionUrl = "postgres://root:shulamyt@localhost/postgres";
-var connectionUrl = remoteConnectionUrl;
 
 var EXPERIMENTERS_TABLE_NAME = 'realExperimenter0408';
 var ANSWERS_TABLE_NAME = 'realAnswer0408';
+var QUESTIONNAIRE_TABLE_NAME = 'Questionnaire';
 
 var TITELS = ["four/aLogic","four/aLogicNegative", "four/aLogicNegative1", "four/aLogicNegative2",
 	"four/aStructure", "four/b1Logic", "four/bLogic", "four/bStructure", "four/cLogic", "four/cStructure",
@@ -35,67 +33,53 @@ var EXPERIMENTERS_TITELS = ["id",
     "programminglanguages",
     "assessselfprogrammingskills",
     "firsttime",
-    "testplanid"]
+    "testplanid"];
+
+var QUESTIONNAIRE_TITELS = [
+    id,
+	tooLong,
+    wasEngaging,
+    feelingOfChallenge,
+    howOthersDid,
+    importantToGetHighScore,
+    careIfSucceeded,
+    answerQuickly,
+    answerCorrectly,
+    checkedBeforeSubmitting,
+    notClearWhatToDo,
+    withoutReadingTheInstructions,
+    otherWillEnjoy,
+    wasFun
+];
 
 var END_OF_LINE_CSV =  "\r\n";
 var CORRECT_FILE_NAME = 'correct.csv';
 var WRONG_FILE_NAME = 'wrong.csv';
 var EXPERIMENTERS_FILE_NAME = 'experimenters.csv';
+var QUESTIONNAIRE_FILE_NAME = 'questionnaire.csv';
 
 var SELECT_EXPERIMENTERS_QUERY = 'SELECT * from ' + EXPERIMENTERS_TABLE_NAME;
 var SELECT_EXPERIMENTERS_ANSWERS_QUERY = 'SELECT * from ' + ANSWERS_TABLE_NAME + ' where userId = ';
+var SELECT_QUESTIONNAIRE_QUERY = 'SELECT * from ' + QUESTIONNAIRE_TABLE_NAME + ' where userId = ';
 
-var db;
 var experimenters;
 var experimentersIndex = -1;
 
 var correctFileStream;
 var wrongFileStream;
 var experimentersFileStream;
+var questionnaireFileStream;
 
-var createConnection = function(){
-	var promise = new Promise(function(resolve, reject) {
-		pg.connect(connectionUrl, function(err, client, done) {
-			if (err) {
-				console.log(err);
-			}
-			else {
-				console.log("Connection open!");
-				db = client;
-				resolve(client);
-			}
-		});
-	});
-	return promise;
-};
-
-var closeConnection = function(what){
-	var promise =  new Promise(function(resolve, reject) {
-		db.end(function (err) {
-			if (err) {
-				console.log(err);
-			}
-			else {
-				console.log("Connection closed :)");
-				resolve();
-			}
-		});
-	});
-	return promise;
-};
 
 var fetchExperimenters = function(){
 	var promise = new Promise(function(resolve, reject) {
-		db.query(SELECT_EXPERIMENTERS_QUERY, function (err, result) {
-			if (err) {
-				console.log(err);
-			}else {
-				experimenters = result.rows;
-				resolve(result);
-			}
-		});	
+        dbUtils.runQuery(SELECT_EXPERIMENTERS_QUERY).then(
+            function (result) {
+                experimenters = result.rows;
+                resolve(result.rows);
+            }
+        );
 	});
-
 	return promise;
 };
 
@@ -103,13 +87,16 @@ var handleNextExperimenter = function(){
 	var promise =  new Promise(function(resolve, reject) {
 		getNextExperimenter().then(function(experimenter){
 			if(experimenter != null){
-				getExperimenterAnswers(experimenter)
-					.then(function(answers){
-						if(answers != null && answers.length > 0) {
-							writeExperimenterAnswers(experimenter, answers);
-						}
-					})
-					.then(handleNextExperimenter);
+				getExperimenterAnswers(experimenter).then(function(answers){
+					if(answers != null && answers.length > 0) {
+						writeExperimenterAnswers(experimenter, answers);
+					}
+				})
+				.then(getExperimenterQuestionnaire.bind(experimenter))
+				.then(function(questionnaire){
+					writeExperimenterQuestionnaire(experimenter, questionnaire);
+				})
+				.then(handleNextExperimenter);
 			}
 			else{
 				console.log("No more experimenters :)");
@@ -122,15 +109,29 @@ var handleNextExperimenter = function(){
 
 var getExperimenterAnswers = function(experimenter){
 	var promise =  new Promise(function(resolve, reject) {
-		db.query(SELECT_EXPERIMENTERS_ANSWERS_QUERY + experimenter.id, function (err, result) {
-			if (err) {
-				console.log(err);
-			}else {
-				resolve(result.rows);
-			}
-		});
+        dbUtils.runQuery(SELECT_EXPERIMENTERS_ANSWERS_QUERY + experimenter.id).then(
+            function (result) {
+                resolve(result.rows);
+            }
+		);
 	});
 	return promise;
+};
+
+var getExperimenterQuestionnaire = function(experimenter){
+    return new Promise(function(resolve, reject) {
+        dbUtils.runQuery(SELECT_QUESTIONNAIRE_QUERY + experimenter.id).then(
+            function (result) {
+                resolve(result.rows);
+            }
+        );
+    });
+};
+
+
+var writeExperimenterQuestionnaire = function(experimenter, questionnaire){
+	var questionnaireCvs = createCsvOutputForQuestionnaire(questionnaire);
+    questionnaireFileStream.write(questionnaireCvs);
 };
 
 var writeExperimenterAnswers = function(experimenter, answers){
@@ -154,6 +155,20 @@ var createCsvOutputForExperimenter = function(experimenter, answers){
 			else{
 				csv = csv + value;
 			}
+		}
+		csv = csv + ',';
+	}
+	csv += END_OF_LINE_CSV;
+	return csv;
+};
+
+var createCsvOutputForQuestionnaire = function(questionnaire){
+	var csv = "";
+	for(var i = 0; i < QUESTIONNAIRE_TITELS.length; i++){
+		var field = QUESTIONNAIRE_TITELS[i];
+		var value = questionnaire[field];
+		if(typeof(value)!='undefined'){
+			csv = csv + value;
 		}
 		csv = csv + ',';
 	}
@@ -222,6 +237,7 @@ var prepareFiles = function(){
 		correctFileStream = fs.createWriteStream(CORRECT_FILE_NAME, {'flags': 'a'});
 		wrongFileStream = fs.createWriteStream(WRONG_FILE_NAME, {'flags': 'a'});
 		experimentersFileStream = fs.createWriteStream(EXPERIMENTERS_FILE_NAME, {'flags': 'a'});
+        questionnaireFileStream = fs.createWriteStream(QUESTIONNAIRE_FILE_NAME, {'flags': 'a'});
 		resolve();
 	});
 	return promise;
@@ -260,22 +276,23 @@ var addTitlesToExperimentersFile = function(){
 	experimentersFileStream.write(csvTitles);
 };
 
-
+var addTitlesToQuestionnaire = function(){
+	var csvTitles = createCsvFromArray(QUESTIONNAIRE_TITELS);
+	questionnaireFileStream.write(csvTitles);
+};
 
 var addTitles = function(){
-	var promise =  new Promise(function(resolve, reject) {
+	return new Promise(function(resolve, reject) {
 		addTitlesToAnswerFiles();
 		addTitlesToExperimentersFile();
+        addTitlesToQuestionnaire();
 		resolve();
 	});
-	return promise;
 };
 
 Promise.all([
-	createConnection(),
 	prepareFiles()
 ]).then(fetchExperimenters)
 	.then(addTitles)
 	.then(handleNextExperimenter)
-	.then(closeFiles)
-	.then(closeConnection);
+	.then(closeFiles);
