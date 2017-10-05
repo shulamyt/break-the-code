@@ -166,7 +166,7 @@ var createCsvOutputForExperimenter = function(experimenter, answers){
 	return csv;
 };
 
-var createCsvOutputForQuestionnaire = function(questionnaires){
+var createCsvOutputForQuestionnaire = function(questionnaire){
 	var csv = "";
 	for(var i = 0; i < QUESTIONNAIRE_TITELS.length; i++){
 		var field = QUESTIONNAIRE_TITELS[i];
