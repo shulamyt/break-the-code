@@ -15,10 +15,18 @@ export function getUser() {
           resolve(currentUser);
         });
       }else{
-        currentUserPromise = RestService.post('services/user', currentUser).then(function(user) {
-          currentUser = user;
+        let userFromStorage = localStorage.getItem('getTheCodeUser');
+        if(userFromStorage == null || window.location.search == "?clean=true") {
+          currentUserPromise = RestService.post('services/user', currentUser).then(function (user) {
+            currentUser = user;
+            localStorage.setItem('getTheCodeUser', JSON.stringify(currentUser));
+            resolve(currentUser);
+          });
+        }
+        else{
+          currentUser = JSON.parse(userFromStorage);
           resolve(currentUser);
-        });
+        }
       }
     }
   })
