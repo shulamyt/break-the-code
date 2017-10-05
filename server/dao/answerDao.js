@@ -1,11 +1,10 @@
 var dbUtils = require('../db/dbUtils');
-var pool = require('../db/pool');
 
 function AnswerDao(){};
 
 AnswerDao.prototype.save = function(answer){
     var queryStr = dbUtils.jsonToInsertQuery(answer, "Answer");
-    return dbUtils.runQuery(pool, queryStr);
+    return dbUtils.runQuery(queryStr);
 };
 
 var answerDao = new AnswerDao();

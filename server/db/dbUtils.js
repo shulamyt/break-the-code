@@ -1,3 +1,5 @@
+var pool = require('./pool');
+
 function DBUtils(){
 
 };
@@ -77,7 +79,7 @@ DBUtils.prototype.jsonToInsertQuery = function(json, tableName, ignore){
     return query;
 };
 
-DBUtils.prototype.runQuery = function(pool, queryStr){
+DBUtils.prototype.runQuery = function(queryStr){
     return new Promise(function(resolve, reject) {
         pool.connect((err, client, release) => {
             if (err) {
