@@ -86,11 +86,9 @@ var fetchExperimenters = function(){
 var handleNextExperimenter = function(){
 	var promise =  new Promise(function(resolve, reject) {
 		getNextExperimenter().then(function(experimenter){
-			console.log("experimenter " + experimenter.id + " is handle");
 			if(experimenter != null){
 				getExperimenterAnswers(experimenter).then(function(answers){
 					if(answers != null && answers.length > 0) {
-                        console.log("experimenter " + experimenter.id + " answers are added");
                         writeExperimenterAnswers(experimenter, answers);
 					}
 				})
@@ -124,7 +122,6 @@ var getExperimenterQuestionnaire = function(experimenter){
     return new Promise(function(resolve, reject) {
         dbUtils.runQuery(SELECT_QUESTIONNAIRE_QUERY + experimenter.id).then(
             function (result) {
-                console.log("experimenter " + experimenter.id + " questionnaire get from db");
                 resolve(result);
             }
         );
@@ -255,13 +252,6 @@ var closeFiles = function(){
 	});
 	return promise;
 };
-
-var createCsvFromJsonKeys = function(json){
-	var array = Object.keys(json);
-	var csv = createCsvFromArray(array);
-	return csv;
-};
-
 
 var createCsvFromArray = function(array){
 	var csv = array.join();
