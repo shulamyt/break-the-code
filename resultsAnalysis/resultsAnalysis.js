@@ -172,9 +172,13 @@ var createCsvOutputForQuestionnaire = function(questionnaire){
 		var field = QUESTIONNAIRE_TITELS[i];
 		var value = questionnaire[field];
 		if(typeof(value)!='undefined'){
-			csv = csv + value;
+			if(csv != ""){
+                csv = csv + ',' + value;
+			}
+			else{
+                csv = value;
+            }
 		}
-		csv = csv + ',';
 	}
 	csv += END_OF_LINE_CSV;
 	return csv;
