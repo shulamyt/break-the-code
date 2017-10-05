@@ -75,8 +75,8 @@ var fetchExperimenters = function(){
 	var promise = new Promise(function(resolve, reject) {
         dbUtils.runQuery(SELECT_EXPERIMENTERS_QUERY).then(
             function (result) {
-                experimenters = result.rows;
-                resolve(result.rows);
+                experimenters = result;
+                resolve(result);
             }
         );
 	});
@@ -113,7 +113,7 @@ var getExperimenterAnswers = function(experimenter){
 	var promise =  new Promise(function(resolve, reject) {
         dbUtils.runQuery(SELECT_EXPERIMENTERS_ANSWERS_QUERY + experimenter.id).then(
             function (result) {
-                resolve(result.rows);
+                resolve(result);
             }
 		);
 	});
@@ -125,7 +125,7 @@ var getExperimenterQuestionnaire = function(experimenter){
         dbUtils.runQuery(SELECT_QUESTIONNAIRE_QUERY + experimenter.id).then(
             function (result) {
                 console.log("experimenter " + experimenter.id + " questionnaire get from db");
-                resolve(result.rows);
+                resolve(result);
             }
         );
     });
