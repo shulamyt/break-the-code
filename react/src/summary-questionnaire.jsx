@@ -99,7 +99,7 @@ class SummaryQuestionnaire extends Component {
         {/*<div>-3: strongly disagree</div>*/}
         {/*<div> 0: neither agree nor disagree</div>*/}
         {/*<div> 3: strongly disagree</div>*/}
-        <div className='index'>-3: strongly disagree; 0: neither agree nor disagree; 3: strongly disagree</div>
+        <div className='index'>-3: strongly disagree; 0: neither agree nor disagree; 3: strongly agree</div>
         {this.mapQuestion()}
       </div>
     );
