@@ -17,7 +17,7 @@ class WelcomePage extends Component {
           <p>During the game you will be given code snippets of varying difficulty drawn randomly from a pool. There is a time limit  for each question. Try to answer every question as quickly as possible (and of course correctly, but please think it out and do not guess!). Remember that your score depends on how fast and how correctly you answered. The total time is expected to be about 15 minutes.</p>
           <p>It is important to note:</p>
           <p>We do not collect any identifying information (not even IP addresses). All information gathered is anonymous for research purposes only.</p>
-          <p>You may retire at any point (even though we'd be happy if you stay with us until the end).  For any concerns contact: shulamyt@gmail.com</p>
+          <p>You may retire at any point (even though we'd be happy if you stay with us until the end).  For any concerns contact: Shulamyt Ajami (shulamyt@gmail.com), Dept. Computer Science, Hebrew University</p>
           <p>Continuing to the questionnaire indicates agreement to participate in the experiment.</p>
           <p>Good luck!</p>
         </div>
