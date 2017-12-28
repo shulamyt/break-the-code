@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var path = require('path');
 
 var app = express();
-var staticPath = path.resolve('./react/dist');
+var staticPath = path.resolve('/root/break-the-code/react/dist/');
 app.use(express.static(staticPath));
 console.log(staticPath);
 app.use(bodyParser.json());
