@@ -1,0 +1,34 @@
+CREATE TABLE Answer(
+   userId bigint,
+   questionId text,
+   rightAnswer text,
+   userAnswer text,
+   serialNumber int,
+   duration double precision,
+   skip boolean,
+   timestamp timestamp default current_timestamp
+);
+
+
+CREATE TABLE Experimenter(
+   ID bigint PRIMARY KEY,
+   start boolean,
+   timestamp timestamp default current_timestamp,
+   age int,
+   gender text,
+   selfTaught boolean,
+   baFinished boolean,
+   baStarted int,
+   baStudied int,
+   maFinished boolean,
+   maStarted int,
+   maStudied int,
+   phdFinished boolean,
+   phdStarted int,
+   phdStudied int,
+   yearsOfExperience int,
+   programmingLanguages text ARRAY,
+   assessSelfProgrammingSkills int,
+   firstTime boolean,
+   testPlanId text ARRAY
+);
