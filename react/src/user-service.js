@@ -16,7 +16,15 @@ export function getUser() {
         });
       }else{
         let userFromStorage = localStorage.getItem('getTheCodeUser');
-        if(userFromStorage == null || window.location.search == "?clean=true") {
+        if(userFromStorage == null || window.location.search.includes("clean=true")) {
+          if(window.location.search.includes("gui=true")){
+            currentUser={};
+            currentUser.mode='regular';
+          }
+          else if(window.location.search.includes("gui=false")){
+            currentUser={};
+            currentUser.mode='noGui';
+          }
           currentUserPromise = RestService.post('services/user', currentUser).then(function (user) {
             currentUser = user;
             localStorage.setItem('getTheCodeUser', JSON.stringify(currentUser));
