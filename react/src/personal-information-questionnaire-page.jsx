@@ -207,7 +207,7 @@ class PersonalInformationQuestionnairePage extends Component {
 
   onContinueClicked() {
     UserService.updateUserData(this.getUser());
-    this.props.history.push('/explain');
+    this.props.history.push('/experiment');
   }
 }
 
